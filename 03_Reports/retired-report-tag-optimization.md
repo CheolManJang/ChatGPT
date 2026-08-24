@@ -240,7 +240,29 @@ Operational TAG names or combinations could reveal internal workflow priorities 
 
 ## 8. Why the TAG Layer Was Removed
 
-The experiment succeeded because the TAGs helped identify and repair weak logic. They were not intended to remain part of the final report.
+The experiment succeeded because the TAGs helped isolate slow logic, identify weak points, and optimize the Report. They were not intended to remain part of the final report.
+
+### Primary removal reason: a small visible TAG had large AI weight
+
+To the user, a TAG looked like a short and simple label. To the AI, the same TAG could strongly influence:
+
+- Which logic received priority
+- Which rules and examples were retrieved or emphasized
+- Which dependencies were included in the working context
+- Which earlier results were compared
+- Which parts of the Report were reconsidered
+- Which output form was selected
+
+This influence was useful while diagnosing and optimizing one logic. After optimization, however, keeping the TAG meant keeping the diagnostic influence active on every later Report run. The AI could continue spending attention on TAG interpretation and related context even though the optimization work was complete.
+
+That created four direct risks:
+
+1. **Performance cost** — TAG definitions, mappings, examples, and related rules increased the context and reasoning scope.
+2. **Logic interference** — a TAG could overemphasize one logic and change the balance or order of other logic.
+3. **Regression** — a small later change could reactivate a retired TAG behavior or restore an older output method.
+4. **False permanence** — users could assume the optimized result was fixed, while the AI was still reconstructing behavior from TAGs and surrounding context.
+
+For this reason, TAG removal was part of the optimization completion criteria, not optional cleanup. TAGs were used only long enough to find and optimize the problem logic. The optimized behavior then had to work identically without TAGs before promotion to Live.
 
 Continued use would create a second maintenance problem:
 
@@ -253,7 +275,7 @@ Continued use would create a second maintenance problem:
 - Users could mistake diagnostic labels for business results.
 - The TAG layer would require its own versioning, History, backup, and recovery.
 
-The optimization goal was achieved when the logic became independently testable without relying on visible TAGs. At that point, the scaffolding had to be removed before Live.
+The optimization goal was achieved when the logic became faster, independently testable, and behaviorally equivalent without relying on visible TAGs. At that point, the scaffolding had to be removed before Live.
 
 ## 9. What Replaced TAG-Based Control
 

@@ -13,6 +13,19 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.14.6] - 2026-08-24
+
+### Corrected
+
+- Corrected the primary reason Report TAGs were removed after optimization: a TAG looked small to the user but carried large weight for the AI by influencing logic priority, rule and example retrieval, dependency scope, comparison targets, and output selection.
+- Clarified that leaving TAGs active after optimization could add processing cost, interfere with unrelated logic, revive retired behavior after a small change, and create false confidence that AI behavior was permanently fixed.
+
+### Changed
+
+- Defined TAG removal as part of optimization completion rather than optional cleanup.
+- Required the optimized Report to remain behaviorally equivalent and independently testable without visible TAGs before Live promotion.
+- Updated the current public documentation version from 0.14.5 to 0.14.6.
+
 ## [0.14.5] - 2026-08-24
 
 ### Corrected
