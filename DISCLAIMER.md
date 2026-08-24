@@ -62,8 +62,6 @@ To the maximum extent permitted by applicable law, the project owner and contrib
 
 This includes loss of data, profits, revenue, opportunity, availability, reputation, or business continuity; incorrect results; security incidents; failed backups; and direct, indirect, incidental, special, consequential, exemplary, or punitive damages.
 
-This limitation does not exclude liability that applicable law does not allow to be excluded or limited.
-
 ## 4. Not Professional Advice
 
 The repository does not provide legal, financial, investment, accounting, tax, cybersecurity, medical, or other regulated professional advice.
@@ -99,8 +97,6 @@ To the maximum extent permitted by applicable law, the project owner and contrib
 
 This includes, without limitation, direct, indirect, incidental, special, consequential, exemplary, or punitive damages; loss of data, revenue, profits, opportunity, reputation, business continuity, or system availability; incorrect decisions; security incidents; failed backups; external-service failures; or third-party claims.
 
-Nothing in this disclaimer excludes or limits liability that applicable law does not allow to be excluded or limited.
-
 ## 8. External Services and Product Changes
 
 ChatGPT, connected apps, Google Drive, Gmail, GitHub, external APIs, and other services are operated by third parties and can change, fail, restrict access, or behave differently by plan, account, region, rollout, permission, and workspace policy.
@@ -113,7 +109,7 @@ Public documentation intentionally excludes private trading algorithms, operatio
 
 Any financial, reporting, monitoring, notification, or automated workflow must be independently validated. Repository examples must not be treated as a recommendation to buy, sell, hold, or otherwise transact in any asset.
 
-## 10. Reference Examples from Google and Microsoft Terms
+## 10. Reference Examples from Google, Microsoft, and OpenAI Terms
 
 The following references show that even a large service provider separates a short service description from detailed warranty and liability terms.
 
@@ -148,6 +144,16 @@ It also acknowledges that computer and telecommunications systems are not fault-
 Microsoft's public Terms of Use also warns that technical documents may contain inaccuracies or typographical errors and that products and programs may change. See [Microsoft Terms of Use](https://www.microsoft.com/en-us/legal/terms-of-use).
 
 As with the Google examples, Microsoft's terms are drafting references only. They do not govern this repository or give this project Microsoft's contractual protections or legal resources.
+
+### OpenAI and ChatGPT
+
+OpenAI's Terms of Use for users outside the EEA, Switzerland, and the UK state:
+
+> “Output may not always be accurate.”
+
+They require users to evaluate output for accuracy and appropriateness, provide the services “as is,” state that use of outputs is at the user's sole risk, and limit specified damages and aggregate liability. Those limitations apply only to the maximum extent permitted by applicable law. See [OpenAI Terms of Use](https://openai.com/policies/row-terms-of-use/).
+
+OpenAI's terms do not say that OpenAI automatically accepts full legal responsibility whenever ChatGPT produces an incorrect answer. They instead allocate verification responsibility to the user and limit OpenAI's liability, subject to applicable law. These terms are a drafting reference only; they do not govern this repository.
 
 ## 11. Acceptance
 
