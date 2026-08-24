@@ -115,6 +115,14 @@ ChatGPT, connected apps, Google Drive, Gmail, GitHub, external APIs, and other s
 
 The project owner and contributors do not control or guarantee those services.
 
+### Third-party failures and claims
+
+Google Drive, Gmail, ChatGPT and other OpenAI services, Delphi and its related commercial tooling, SQLite and its distributions or integrations, operating systems, GitHub, external APIs, devices, libraries, and other dependencies are supplied, maintained, licensed, or operated by their respective providers or rights holders.
+
+If a loss, defect, outage, data-access problem, compatibility failure, security incident, licensing dispute, or other problem is caused by a third-party product or service, users should direct support requests, complaints, claims, and any exercise of legal rights to the responsible provider or rights holder under that provider's applicable license, terms, warranty, support policy, and dispute procedure.
+
+This repository, its owner, and its contributors do not represent those providers, do not control their products or services, and are not an intermediary, guarantor, insurer, reseller, or substitute responsible party for third-party failures. Nothing in this section determines that a provider is legally liable in a particular case; responsibility depends on the facts, applicable law, and the provider's governing terms.
+
 ## 9. Financial and Automated Workflows
 
 Public documentation intentionally excludes private trading algorithms, operational prices, holdings, raw financial data, and user-specific decision rules.
