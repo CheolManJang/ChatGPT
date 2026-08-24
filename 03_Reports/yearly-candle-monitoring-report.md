@@ -6,6 +6,20 @@
 > [!CAUTION]
 > **Use at your own risk.** This material is provided for technical education and general information only, without warranties. You are responsible for evaluating, testing, securing, and legally complying with any implementation. See the [Disclaimer](../DISCLAIMER.md).
 
+
+## Adoption Decision Summary
+
+| Field | Project record |
+|---|---|
+| Introduced because | Manual monitoring could miss items, reuse stale data, or convert missing evidence into a false negative. |
+| Intended improvement | Provide full-population validation, consistent report structure, explicit failure, and repeatable delivery preparation. |
+| Main difficulty | Completeness across data sources, sessions, exceptions, classification, and delayed market/provider data. |
+| Main advantage | More systematic and auditable report generation. |
+| Main disadvantage | High validation cost, latency, source dependence, and no tolerance for partial evidence. |
+| Observed result | Core architecture is documented; repeated end-to-end production readiness is not claimed. |
+| Current status | Development / testing. |
+| Retest trigger | Source, population, session, report schema, market/provider, or model changes. |
+
 ## 1. Overview
 
 This document describes a real applied-technology use case built around ChatGPT Plus without directly using the OpenAI API: a yearly-candle-based market monitoring and reporting workflow.
