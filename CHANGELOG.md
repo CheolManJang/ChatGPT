@@ -13,6 +13,21 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.12.1] - 2026-08-24
+
+### Added
+
+- Documented the retired `OPEN` and `CLOSE`-style commands that attempted to create explicit Library-to-Memory synchronization and work-session boundaries.
+- Documented their intended benefits: visible synchronization points, source comparison, ownership, result recording, and continuation.
+- Documented failure scenarios involving stale summaries, mid-session source changes, interrupted conversations, concurrent versions, partial close results, and false assumptions that memory was cleared or synchronized.
+- Documented the replacement: deterministic Rule Engine and Task Manager operations, registered source validation, Session GUID ownership, History, idempotency, and reconciliation.
+
+### Changed
+
+- Marked `OPEN` and `CLOSE` as retired Memory synchronization commands in the MENU/CMD documentation.
+- Clarified that conversational commands cannot make ChatGPT Memory behave like an atomic transactional database.
+- Updated the current public documentation version from 0.12.0 to 0.12.1.
+
 ## [0.12.0] - 2026-08-24
 
 ### Added
