@@ -13,6 +13,23 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.14.0] - 2026-08-24
+
+### Added
+
+- Added a retrospective on the temporary TAG mechanism used to split Report work into source, validation, processing, formatting, delivery, and result stages.
+- Documented how a visually simple TAG can materially change AI attention, retrieval scope, priority, stage order, validation focus, output selection, and context size.
+- Documented the optimization benefits: bounded context, clearer stage diagnosis, explicit prerequisites, focused tests, and safer NG/HOLD continuation.
+- Documented long-term risks: TAG proliferation, hidden duplicate rule layers, version drift, conflicting activation, missing dependencies, false determinism, context growth, synchronization risk, debugging ambiguity, and possible internal-logic leakage.
+- Added a temporary-use and removal procedure.
+
+### Changed
+
+- Marked persistent TAG-based report business logic as retired.
+- Mapped temporary TAG purposes to explicit replacements: report state machine, input contracts, validation gates, TASK dependencies, module commands, NG/HOLD, continuation records, versioned output schemas, Session GUIDs, and History.
+- Clarified that report color badges are display labels only and do not execute logic.
+- Updated the current public documentation version from 0.13.0 to 0.14.0.
+
 ## [0.13.0] - 2026-08-24
 
 ### Added
