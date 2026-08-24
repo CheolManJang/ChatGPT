@@ -6,6 +6,20 @@
 > [!NOTE]
 > **Reference baseline:** 2026-08-24 · Individual ChatGPT Plus account · ChatGPT web/Work environment · No direct OpenAI API integration. Product capabilities are verified against the official documentation linked in Section 16, while operational observations are specific to this project's tested account, permissions, connected apps, and rollout state. Recheck this baseline after material ChatGPT product changes.
 
+
+## Adoption Decision Summary
+
+| Field | Project record |
+|---|---|
+| Introduced because | Direct OpenAI API development was not the selected operating model; the project needed an accessible Plus-based coordination approach. |
+| Intended improvement | Coordinate persistent rules, connected sources, Gmail, GitHub, and scheduled work without direct API integration. |
+| Main difficulty | Capabilities differ by plan, context, permissions, rollout, and connector state. |
+| Main advantage | Lower custom infrastructure and a user-facing workflow. |
+| Main disadvantage | Less deterministic control, variable availability, and weaker observability than a purpose-built API system. |
+| Observed result | Architecture and boundaries are documented; complete identical behavior across contexts is not claimed. |
+| Current status | Development / partially verified. |
+| Retest trigger | Plan, product, connector, permission, model, or workspace changes. |
+
 ## 1. Purpose
 
 This project explores how to build a practical, persistent, rule-driven operating system around ChatGPT **without directly integrating the OpenAI API**.
