@@ -13,6 +13,18 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.8.5] - 2026-08-24
+
+### Added
+
+- Added Microsoft software, Microsoft 365/service, and public-document responsibility references.
+- Cited Microsoft's “as is” and user-risk language, its no-error-free/no-content-loss guarantee, and its warning that technical documents can contain inaccuracies.
+- Clarified that Microsoft terms are drafting references and do not govern this repository.
+
+### Changed
+
+- Updated the current public documentation version from 0.8.4 to 0.8.5.
+
 ## [0.8.4] - 2026-08-24
 
 ### Added
