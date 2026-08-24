@@ -169,7 +169,27 @@ After commit:
 - Check commit diff.
 - Record the publication result.
 
-## 7. Screenshot Policy
+## 7. Supporting Examples and Visual Evidence
+
+A feature document should include a supporting artifact when it materially improves understanding or verification.
+
+Allowed sanitized artifacts include:
+
+- Markdown examples
+- Fictional input and expected output
+- HTML report or email previews
+- Recreated SVG images
+- Mermaid lifecycle or workflow diagrams
+- Sanitized schemas
+- Before/after optimization comparisons
+- Reconstructed NG, HOLD, timeout, and recovery cases
+- Test fixtures and acceptance results
+
+Supporting artifacts must use fictional identifiers and non-operational values, state their baseline and purpose, describe what they do not prove, and pass the same publication gate as prose.
+
+Prefer recreated examples over real operational screenshots. Never publish an artifact containing real symbols, prices, holdings, accounts, recipients, private links, file IDs, credentials, private prompts, raw data, or reconstructable core algorithms.
+
+## 13. Screenshot Policy
 
 Screenshots are high risk because they may reveal information outside the intended crop.
 
