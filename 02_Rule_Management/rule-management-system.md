@@ -6,6 +6,10 @@
 > [!CAUTION]
 > **Use at your own risk.** This material is provided for technical education and general information only, without warranties. Evaluate, test, secure, back up, and legally review any implementation. See the [Disclaimer](../DISCLAIMER.md).
 
+## Functional Boundary
+
+The Rule Engine uses its own store, lifecycle, locks, validation, History, and command interface. It must not own TASK status, priority, execution attempts, or continuation state. See [Functional Separation: Rule Engine and Task Manager](../01_Architecture/rule-task-functional-separation.md).
+
 ## 1. Purpose
 
 The Rule Management System keeps approved operational rules separate from conversation, memory, temporary instructions, and unfinished proposals. It answers:
