@@ -3,6 +3,18 @@
 > [!NOTE]
 > **Document baseline:** 2026-08-24. This disclaimer is a general repository notice and is not legal advice. Its interpretation and enforceability can vary by jurisdiction. Obtain qualified legal advice when necessary.
 
+## Plain-Language Summary
+
+This is a free, non-commercial technical knowledge-sharing project. It is not a product, managed service, consulting engagement, or promise of support.
+
+All documentation, examples, code fragments, schemas, prompts, workflows, comments, and AI-assisted responses are shared for technical education, research, discussion, and experimentation. They are provided **“AS IS”** and **“AS AVAILABLE.”**
+
+The material may contain errors, omissions, hallucinations, insecure assumptions, outdated behavior, incompatibilities, or unexpected results. ChatGPT and other AI systems are non-deterministic and can behave differently across plans, accounts, contexts, permissions, connected applications, regions, and product updates.
+
+Before applying any material, users must independently review, test, validate, secure, back up, monitor, and confirm compliance with applicable laws and third-party terms. Automated actions, file changes, external communications, and high-impact decisions require human supervision.
+
+Use, modification, implementation, deployment, automation, and reliance are at the user's own risk. To the maximum extent permitted by applicable law, the project owner and contributors do not accept responsibility for resulting loss, damage, data loss, security incidents, service interruption, incorrect decisions, failed recovery, or third-party claims.
+
 ## 1. Technical and Educational Purpose
 
 This repository provides technical architecture, documentation, sanitized examples, implementation ideas, and AI-assisted discussion for educational and general informational purposes.
