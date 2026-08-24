@@ -1,5 +1,8 @@
 # ChatGPT Applied Technology Without the OpenAI API
 
+> [!NOTE]
+> **Reference baseline:** 2026-08-24 · Individual ChatGPT Plus account · ChatGPT web/Work environment · No direct OpenAI API integration. Product capabilities are verified against the official documentation linked in Section 16, while operational observations are specific to this project's tested account, permissions, connected apps, and rollout state. Recheck this baseline after material ChatGPT product changes.
+
 ## 1. Purpose
 
 This project explores how to build a practical, persistent, rule-driven operating system around ChatGPT **without directly integrating the OpenAI API**.
@@ -35,7 +38,8 @@ The system instead uses features available inside ChatGPT, such as:
 - Plugins and connected applications
 - Scheduled tasks
 - GitHub for public technical versioning
-- Google Drive for approved persistent source files
+- ChatGPT Library for approved authoritative source files
+- Google Drive for verified backup copies
 - Gmail for approved email workflows
 
 External services may still use their own connectors and authorization. “No OpenAI API” does not mean “no external integration.”
@@ -144,58 +148,64 @@ The applied-technology system currently contains or plans the following modules:
 7. **Human Approval Layer**  
    Review before important external communication, publication, deletion, or rule change.
 
-## 6. Google Drive: Role and Purpose
+## 6. Library and Google Drive: Current Operational Boundary
 
-Google Drive is used as the private persistent source layer for approved files that must survive individual chat sessions.
+### Confirmed project baseline as of 2026-08-24
 
-### Primary purposes
+**ChatGPT Library is the authoritative execution, search, and recovery source for this project.** The registered master file and its file registry define the current approved operational state.
 
-- Keep the current master files outside temporary conversation context
-- Allow a new session to load the latest approved source
-- Preserve private operational data outside the public GitHub repository
-- Store documents, spreadsheets, and exported snapshots
-- Support backup after approved changes
-- Separate reusable public design from private real-world data
+**Google Drive is backup-only.** It is not used as the normal execution source, search authority, or primary recovery authority.
 
-### Intended workflow
+### ChatGPT Library purposes
 
-1. The user places or updates an approved source file in Google Drive.
-2. ChatGPT accesses the file through the connected Google Drive capability.
-3. ChatGPT validates the file identity, version, and completeness.
-4. Work is performed using the latest approved source.
-5. Approved changes are saved back or exported as a new version.
-6. The operation result records what source was used and what changed.
+- Hold the current approved master and registered supporting files
+- Provide the source used by permitted Chat and Work workflows
+- Preserve stable file identity and version history where supported
+- Prevent conversational memory from becoming the only rule source
+- Supply the verified operational input before work begins
 
-### Why Drive is separate from GitHub
+### Google Drive purposes
+
+- Store verified backup copies exported from the authoritative Library source
+- Preserve recoverable snapshots outside the active execution layer
+- Support retention and disaster-recovery procedures
+- Keep private backup artifacts outside public GitHub
+
+### Required workflow
+
+1. Resolve the authoritative file through the approved Library path and registry.
+2. Verify identity, version, completeness, and access before execution.
+3. Perform work using that verified Library source.
+4. Validate the resulting change and record the source version used.
+5. Create or update the approved Google Drive backup only after validation.
+6. Re-query Drive to verify that the backup actually exists.
+7. Never silently use a Drive copy as the current operational master.
+
+### Why these roles are separate from GitHub
 
 **GitHub** stores public technical knowledge, sanitized examples, version history, Issues, and community feedback.
 
-**Google Drive** stores private or operational files that should not be published.
+**ChatGPT Library** stores the current private operational source approved for execution.
 
-Examples of files that belong in Drive rather than public GitHub include:
+**Google Drive** stores private backup copies and recovery artifacts.
 
-- Real master datasets
-- Private report inputs
-- Operational database snapshots
-- User-specific settings
-- Documents containing personal or confidential information
+### Current observed limits
 
-### Current challenges
-
-- File indexing or recognition can take time.
-- A connected file may not be immediately available in every session.
-- File name alone may not prove that the latest version was loaded.
-- Read and write capabilities depend on connector permissions.
-- Conflicting edits require version checks.
-- A backup result must not be claimed until the save is verified.
+- Library indexing or file recognition can take time after an upload or update.
+- Access can depend on whether a workflow runs in Chat, Project, or Work and on the permissions available to that context.
+- A file name alone does not prove that the correct version was loaded.
+- Drive connector access and write verification depend on authorization and folder permissions.
+- Connected storage does not guarantee immediate cross-context synchronization.
+- A backup must not be reported as successful until existence and identity are verified.
 
 ### Required safeguards
 
-- Verify file identity and last-modified information where available.
+- Resolve authoritative files through the registered Library identity, not name-only search.
 - Record the source version used for an operation.
-- Do not silently fall back to an old local copy.
-- Report access or synchronization failure as NG, not as “no data.”
-- Keep sensitive data out of public GitHub commits.
+- Treat access, identity, and synchronization failures as NG rather than “no data.”
+- Verify every Drive backup after upload.
+- Keep sensitive source files and backups out of public GitHub.
+- Revalidate this boundary whenever ChatGPT storage or workspace behavior materially changes.
 
 ## 7. Gmail: Role and Current Implementation
 
@@ -361,13 +371,19 @@ Using Plus instead of the OpenAI API reduces infrastructure work, but it creates
 - Technical Issues
 - Version history
 
+### Private ChatGPT Library
+
+- Authoritative operational source files
+- Registered master data and approved supporting files
+- User-specific configuration required for execution
+- Private report inputs and approved outputs
+
 ### Private Google Drive
 
-- Operational source files
-- Real datasets
-- User-specific configuration
-- Private reports
-- Approved database snapshots
+- Verified backup copies
+- Recovery packages and manifests
+- Exported snapshots retained under the backup policy
+- Never the normal execution or search authority
 
 ### Gmail
 
@@ -394,13 +410,14 @@ Using Plus instead of the OpenAI API reduces infrastructure work, but it creates
 - Work-management architecture
 - MENU and CMD design
 - GitHub Issue monitoring
-- Connected-file workflow experiments
+- Authoritative Library source workflow
+- Verified Google Drive backup workflow
 - Scheduled report and notification experiments
 
 ### Under construction or validation
 
 - A finalized shared rules database
-- Reliable latest-file verification across sessions
+- Reliable authoritative-file verification across all permitted contexts
 - Full Dev-to-Live promotion tests
 - Detailed Gmail delivery-state tracking
 - Reply-to-work-item linkage
@@ -417,7 +434,7 @@ Using Plus instead of the OpenAI API reduces infrastructure work, but it creates
 
 ## 16. Official Product References
 
-The architecture is informed by current official ChatGPT documentation:
+The product-capability baseline was rechecked on **2026-08-24** against current official ChatGPT documentation:
 
 - [Get started with ChatGPT Work](https://learn.chatgpt.com/docs/get-started-with-work)
 - [Plugins](https://learn.chatgpt.com/docs/plugins)
@@ -426,7 +443,7 @@ The architecture is informed by current official ChatGPT documentation:
 - [Set up a project teammate](https://learn.chatgpt.com/use-cases/project-teammate)
 - [ChatGPT on the web](https://learn.chatgpt.com/docs/web)
 
-Feature availability depends on the user's plan and workspace settings. The repository documents the tested reference environment separately from general concepts.
+Feature availability depends on plan, account, region, rollout, permissions, connected apps, and workspace settings. Official documentation establishes general product behavior; project-specific observations are labeled separately and must be retested after material product changes.
 
 ## 17. Summary
 
