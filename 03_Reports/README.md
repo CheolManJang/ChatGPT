@@ -5,6 +5,7 @@ Sanitized report-system architecture and case studies.
 - [G-Yearly Report: Google Drive–Based Case Study](g-yearly-report.md)
 - [Yearly-Candle Monitoring Report System](yearly-candle-monitoring-report.md)
 - [Yearly Report Email Delivery Module](yearly-report-email-delivery.md)
+- [Retired Report TAG Optimization](retired-report-tag-optimization.md)
 - [Download the sanitized color-coded HTML example](sanitized-g-yearly-report-example.html)
 
 ![Sanitized G-Yearly report preview](sanitized-g-yearly-report-preview.svg)
