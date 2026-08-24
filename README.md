@@ -130,13 +130,14 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.6.0** — Storage, workspace, synchronization, backup, and recovery boundaries
+**v0.7.0** — Developer architecture for deterministic rules and bounded inference
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
 
 ## Detailed Documentation
 
+- [Developer Approach for Rule-and-Inference Systems](docs/developer-approach-rule-and-inference-systems.md) — deterministic vs. inference boundaries, contracts, states, idempotency, verification, evals, observability, human approval, implementation sequence, anti-patterns, and release checklist.
 - [Storage, Context, and Workspace Boundaries](docs/storage-context-and-workspace-boundaries.md) — Library vs. Google Drive, Gmail attachments, memory synchronization, Chat, Projects, Work, authoritative sources, and confirmed non-guarantees.
 - [Complete Backup and Recovery Manifest](docs/complete-backup-and-recovery-manifest.md) — why ordinary backups are incomplete, required backup contents, restore order, validation, completion criteria, and non-restorable state.
 - [ChatGPT Reliability and Recovery](docs/chatgpt-reliability-and-recovery.md) — why stable workflows can suddenly drift, required foundation, memory review, conflict diagnosis, recovery steps, preventive controls, and limitations.
