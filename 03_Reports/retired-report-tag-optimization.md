@@ -257,7 +257,57 @@ Continued TAG use tends to “go out of alignment” because:
 
 This drift may appear gradual: early runs work, later runs become inconsistent, and no single database change explains the difference. That is why removal is a required optimization-completion step, not optional cleanup.
 
-## 13. Optimization Result
+## 13. Current AI Limitation: Small Changes Can Restore Retired Behavior
+
+> **Observed baseline: 2026-08-24, tested ChatGPT Plus web/Work contexts without direct OpenAI API calls.** This is a project observation, not a universal guarantee about every account or future model.
+
+The project observed that a small change to a report, prompt, rule description, stage, or output format could cause previously removed behavior to reappear. For example, a later modification could reconstruct TAG-like routing or an earlier workflow pattern even when the current written rule said that the mechanism was retired.
+
+This can occur because the AI does not execute the documentation as a permanently compiled program. It probabilistically reconstructs behavior from the currently available combination of:
+
+- System and developer instructions
+- Live rules and retrieved documents
+- Current conversation
+- Saved Memory
+- Examples
+- Earlier output patterns
+- Active tools and connected sources
+- Requested formatting
+- Model and product behavior
+
+A small edit can change which evidence receives attention, which example appears most relevant, or which earlier pattern is regenerated.
+
+### What precise rules can and cannot do
+
+Precise rules can reduce ambiguity, define expected behavior, and make failures testable. They cannot by themselves guarantee:
+
+- Permanent removal of an earlier behavior
+- Identical interpretation in every new context
+- Stable priority after unrelated prompt changes
+- Automatic synchronization across Chat, Project, Work, Memory, Library, and schedules
+- Deterministic regression-free output
+- The same behavior after a model or product update
+
+This is a current limitation of using a probabilistic AI as part of an operational system.
+
+### Required control
+
+Every material change must be treated as a possible regression trigger.
+
+After even a small change:
+
+1. Reload the authoritative current rules and source versions.
+2. Test that retired TAGs and commands remain inactive.
+3. Test stage ordering, stop conditions, NG/HOLD, and continuation.
+4. Compare output with the approved non-TAG baseline.
+5. Search for reintroduced aliases, examples, prompts, or fallback behavior.
+6. Test in every supported execution context.
+7. Record the rule version, model/product baseline, evidence, and result.
+8. Block Live promotion when any retired behavior returns.
+
+The safe architecture assumes that AI behavior may regress. Deterministic state machines, typed contracts, database constraints, validators, and regression tests must detect and contain that regression.
+
+## 14. Optimization Result
 
 The TAG experiment helped the project:
 
@@ -271,7 +321,7 @@ The TAG experiment helped the project:
 
 The final gain came not from retaining TAGs, but from using them to discover structure and then deleting them.
 
-## 14. Lessons for Developers
+## 15. Lessons for Developers
 
 - A short AI control marker can have much greater effect than its visible size suggests.
 - Temporary prompt structure is useful for discovering module boundaries.
