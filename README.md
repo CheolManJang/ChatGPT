@@ -126,7 +126,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.1.0** — Initial architecture documentation
+**v0.2.0** — MENU and CMD interface documentation
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
@@ -134,6 +134,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 ## Detailed Documentation
 
 - [Rule Management and Work Tracking System](docs/rule-management-and-work-tracking.md) — why the system was built, architecture, rule lifecycle, History, work management, concurrency, advantages, disadvantages, difficulties, limitations, open questions, and next steps.
+- [MENU and CMD Input Interface](docs/menu-and-command-interface.md) — command and menu namespaces, dot-based identifiers, explanation requests, parsing order, ambiguity handling, rule lifecycle integration, limitations, and tests.
 
 ## Planned Repository Structure
 
