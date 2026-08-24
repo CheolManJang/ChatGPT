@@ -6,6 +6,20 @@
 > [!CAUTION]
 > **Use at your own risk.** This is a sanitized delivery architecture. It does not contain recipients, email addresses, operational report values, real subjects, private attachments, credentials, tokens, or core financial algorithms. See the [Disclaimer](../DISCLAIMER.md).
 
+
+## Adoption Decision Summary
+
+| Field | Project record |
+|---|---|
+| Introduced because | Report generation and Gmail delivery failed for different reasons but were previously easy to confuse. |
+| Intended improvement | Separate immutable validated report packages from sending, delivery evidence, receipt, replies, and resend control. |
+| Main difficulty | Recipient privacy, attachment identity, timeout with uncertain side effects, and provider limitations. |
+| Main advantage | Safer resend and clearer distinction between generated, sent, delivered, received, and replied. |
+| Main disadvantage | More states, checks, latency, and provider-specific verification. |
+| Observed result | Delivery architecture is defined; guaranteed delivery and immediate reply detection are not claimed. |
+| Current status | Development / partially verified. |
+| Retest trigger | Gmail connector, permissions, recipient source, attachment, schedule, or provider changes. |
+
 ## 1. Functional Boundary
 
 This module manages delivery of an already generated and validated Yearly Report.
