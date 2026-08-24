@@ -13,6 +13,19 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.8.4] - 2026-08-24
+
+### Added
+
+- Added short quotations and links from Google's current Terms of Service and Google Drive-specific terms as disclaimer-drafting references.
+- Clarified that Google's terms do not govern this repository and do not guarantee equivalent enforceability.
+
+### Changed
+
+- Reduced the README liability notice to a concise non-commercial, use-at-your-own-risk statement.
+- Kept detailed warranty, responsibility, and liability language in the separate DISCLAIMER.
+- Updated the current public documentation version from 0.8.3 to 0.8.4.
+
 ## [0.8.3] - 2026-08-24
 
 ### Clarified
