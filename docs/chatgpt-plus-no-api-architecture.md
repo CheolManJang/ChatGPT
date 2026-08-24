@@ -38,8 +38,8 @@ The system instead uses features available inside ChatGPT, such as:
 - Plugins and connected applications
 - Scheduled tasks
 - GitHub for public technical versioning
-- ChatGPT Library for approved authoritative source files
-- Google Drive for verified backup copies
+- ChatGPT Library or Google Drive as the approved authoritative source, depending on the subsystem
+- Google Drive for backup copies and approved raw-data sharing
 - Gmail for approved email workflows
 
 External services may still use their own connectors and authorization. “No OpenAI API” does not mean “no external integration.”
@@ -148,64 +148,62 @@ The applied-technology system currently contains or plans the following modules:
 7. **Human Approval Layer**  
    Review before important external communication, publication, deletion, or rule change.
 
-## 6. Library and Google Drive: Current Operational Boundary
+## 6. Library and Google Drive: System-Specific Operational Boundary
 
 ### Confirmed project baseline as of 2026-08-24
 
-**ChatGPT Library is the authoritative execution, search, and recovery source for this project.** The registered master file and its file registry define the current approved operational state.
+There is no single storage rule for every subsystem. The authoritative execution source must be defined per system.
 
-**Google Drive is backup-only.** It is not used as the normal execution source, search authority, or primary recovery authority.
+| System or purpose | Current authoritative role |
+| --- | --- |
+| Yearly-Candle Monitoring Report | ChatGPT Library master and its registered file identity |
+| G-Yearly Report | Google Drive original source |
+| Approved raw-data exchange | Google Drive shared source |
+| Backup and recovery copies | Google Drive backup storage |
+| Public technical documentation | GitHub |
+| Conversational recall | ChatGPT memory and chat context; never authoritative alone |
 
 ### ChatGPT Library purposes
 
-- Hold the current approved master and registered supporting files
-- Provide the source used by permitted Chat and Work workflows
-- Preserve stable file identity and version history where supported
+- Hold the approved operational master for subsystems explicitly assigned to Library
+- Preserve file identity and versions where supported
+- Provide the verified source used by permitted Chat and Work workflows
 - Prevent conversational memory from becoming the only rule source
-- Supply the verified operational input before work begins
 
 ### Google Drive purposes
 
-- Store verified backup copies exported from the authoritative Library source
-- Preserve recoverable snapshots outside the active execution layer
-- Support retention and disaster-recovery procedures
-- Keep private backup artifacts outside public GitHub
+- Hold the operational original for subsystems explicitly assigned to Drive, including the G-Yearly Report
+- Share approved raw data between the user, external programs, and connected ChatGPT workflows
+- Store verified backup copies and recovery packages
+- Keep private operational material outside public GitHub
 
 ### Required workflow
 
-1. Resolve the authoritative file through the approved Library path and registry.
-2. Verify identity, version, completeness, and access before execution.
-3. Perform work using that verified Library source.
-4. Validate the resulting change and record the source version used.
-5. Create or update the approved Google Drive backup only after validation.
-6. Re-query Drive to verify that the backup actually exists.
-7. Never silently use a Drive copy as the current operational master.
-
-### Why these roles are separate from GitHub
-
-**GitHub** stores public technical knowledge, sanitized examples, version history, Issues, and community feedback.
-
-**ChatGPT Library** stores the current private operational source approved for execution.
-
-**Google Drive** stores private backup copies and recovery artifacts.
+1. Identify the subsystem before choosing a source.
+2. Resolve that subsystem's registered authoritative location.
+3. Verify file identity, version, schema, completeness, and access.
+4. Perform work using only the verified authoritative source.
+5. Validate and record the result and source version.
+6. Apply the subsystem's backup rule and verify the saved backup.
+7. Never substitute Library for Drive, or Drive for Library, without an approved migration.
 
 ### Current observed limits
 
-- Library indexing or file recognition can take time after an upload or update.
-- Access can depend on whether a workflow runs in Chat, Project, or Work and on the permissions available to that context.
-- A file name alone does not prove that the correct version was loaded.
-- Drive connector access and write verification depend on authorization and folder permissions.
+- Library indexing or recognition can be delayed after upload or update.
+- Drive retrieval can be slower because of connector, permission, indexing, conversion, and network stages.
+- Chat, Project, Work, and scheduled tasks may not expose identical file access.
+- A file name alone does not prove identity or latest-version status.
 - Connected storage does not guarantee immediate cross-context synchronization.
-- A backup must not be reported as successful until existence and identity are verified.
+- A backup or shared-data update is not complete until its existence and identity are rechecked.
 
 ### Required safeguards
 
-- Resolve authoritative files through the registered Library identity, not name-only search.
-- Record the source version used for an operation.
+- Store a per-system source registry containing provider, stable identity, role, version, and validation state.
+- Record the source version used for every material operation.
 - Treat access, identity, and synchronization failures as NG rather than “no data.”
-- Verify every Drive backup after upload.
+- Verify Drive writes and Library updates after completion.
 - Keep sensitive source files and backups out of public GitHub.
-- Revalidate this boundary whenever ChatGPT storage or workspace behavior materially changes.
+- Revalidate this mapping whenever a subsystem is migrated or ChatGPT storage behavior changes.
 
 ## 7. Gmail: Role and Current Implementation
 
@@ -373,17 +371,16 @@ Using Plus instead of the OpenAI API reduces infrastructure work, but it creates
 
 ### Private ChatGPT Library
 
-- Authoritative operational source files
-- Registered master data and approved supporting files
-- User-specific configuration required for execution
-- Private report inputs and approved outputs
+- Authoritative masters for subsystems assigned to Library
+- Registered supporting files and private outputs
+- Versioned artifacts where supported
 
 ### Private Google Drive
 
-- Verified backup copies
-- Recovery packages and manifests
-- Exported snapshots retained under the backup policy
-- Never the normal execution or search authority
+- Authoritative originals for subsystems assigned to Drive, including G-Yearly Report
+- Approved raw-data sharing
+- Verified backup copies, recovery packages, and manifests
+- User-managed operational files that must also be available outside ChatGPT
 
 ### Gmail
 
@@ -410,8 +407,10 @@ Using Plus instead of the OpenAI API reduces infrastructure work, but it creates
 - Work-management architecture
 - MENU and CMD design
 - GitHub Issue monitoring
-- Authoritative Library source workflow
-- Verified Google Drive backup workflow
+- System-specific authoritative-source registry
+- Library-master workflow for assigned systems
+- Drive-original workflow for G-Yearly Report
+- Verified Drive backup and raw-data-sharing workflows
 - Scheduled report and notification experiments
 
 ### Under construction or validation
