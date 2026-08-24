@@ -1,5 +1,8 @@
 # Storage, Context, and Workspace Boundaries
 
+> [!NOTE]
+> **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; product behavior and observed limitations are specific to the tested plan, context, permissions, connected apps, and rollout state. Revalidate after material product changes.
+
 ## 1. Purpose
 
 A ChatGPT-centered operating system uses several different storage and execution surfaces. They are not interchangeable.
@@ -69,68 +72,68 @@ Library is the ChatGPT-native persistent artifact layer for user-facing files.
 
 ## 4. Google Drive
 
-Google Drive is the connected private source layer for operational files.
+Google Drive has three approved roles in the current project: system-specific execution source, backup storage, and raw-data sharing.
 
 ### Strengths
 
-- Appropriate for private master datasets and user-managed files.
-- Accessible outside ChatGPT.
-- Supports familiar folders, sharing, and Google file workflows.
-- Useful for Docs, Sheets, Slides, exported databases, and operational snapshots.
-- Can provide the same approved private source to multiple ChatGPT sessions.
-- Separates private operational data from public GitHub documentation.
+- Appropriate for user-managed operational originals such as the G-Yearly Report.
+- Accessible outside ChatGPT and usable by external programs.
+- Supports folders, sharing, desktop synchronization, and Google-native files.
+- Suitable for raw-data exchange and verified backup packages.
+- Separates private operational material from public GitHub documentation.
 
 ### Weaknesses and limits
 
-- Connector authorization is required.
-- File indexing or recognition can be delayed.
+- Connector authorization and folder permissions are required.
+- File indexing, recognition, retrieval, and conversion can be delayed.
 - A new or changed file may not appear immediately.
-- File name alone does not prove that ChatGPT loaded the latest intended version.
-- Google-native files and downloaded/exported formats may behave differently.
-- Read and write capabilities depend on current permissions.
+- File name alone does not prove identity or latest-version status.
+- Google-native and downloaded/exported formats can behave differently.
 - Conflicting edits can occur outside ChatGPT.
-- Connector failure may return no result even though the file exists.
-- Accessing a file through a connected service can be slower than using an already-resolved ChatGPT-native artifact.
-- Network, indexing, permission, and conversion stages add latency.
+- Access is often slower than an already-resolved Library item because of connector and network stages.
+- Immediate event detection is not guaranteed.
 
 ### Best use in this project
 
-- Private operational master files
-- User-maintained source documents
-- Private reports and backups
-- Files that must also be available outside ChatGPT
-- Approved data shared across sessions
+- G-Yearly Report operational original
+- Approved raw-data sharing
+- User-maintained private source documents
+- Verified backup and recovery packages
+- Files that must be accessible outside ChatGPT
 
 ### Not suitable as the only source for
 
+- Subsystems explicitly assigned to a Library master
 - Session lock ownership
 - Chat-specific progress
 - Scheduled-task configuration
 - Memory state
 - Git commit history
-- Guaranteed immediate event detection
 
 ## 5. Library vs. Google Drive
 
 | Dimension | ChatGPT Library | Google Drive |
 | --- | --- | --- |
-| Primary role | ChatGPT-native persistent artifacts | External private operational source |
+| Current role | Authoritative source for assigned subsystems; native artifacts | G-Yearly original; raw-data sharing; backups; other assigned Drive sources |
 | Typical access | Directly resolved within ChatGPT | Connected-app lookup and retrieval |
 | Observed speed | Often faster after exact item resolution | May be slower because of connector and indexing stages |
 | Speed guarantee | None | None |
-| Version identity | Library file identity and versions | Drive file identity and Drive version behavior |
-| External editing | Limited to supported Library workflows | Common through Google tools and desktop sync |
-| Sync delay risk | File resolution and materialization | Connector indexing, permissions, conversion, external edits |
-| Best for | Finished artifacts, reusable documents, recovery packages | Private masters, shared operational files |
-| Full-system backup | No | No |
-| Public-data boundary | Can hold private or public items depending on user choice | Normally private operational layer in this project |
+| Version identity | Library item identity and versions | Drive file identity and Drive version behavior |
+| External program access | Limited to supported ChatGPT workflows | Stronger for desktop and external-program sharing |
+| Sync risk | Resolution and materialization delays | Connector indexing, permissions, conversion, and external edits |
+| Full-system backup alone | No | No |
+| Public-data boundary | Private unless deliberately published | Private operational layer |
 
-The project should not select one universally. It should use:
+### Current per-system source map
 
-- Library for final ChatGPT artifacts and versioned recovery bundles
-- Google Drive for private user-managed operational sources
-- GitHub for public technical documentation
-- A database/export format for authoritative rule and work state
+- Yearly-Candle Monitoring Report: Library master
+- G-Yearly Report: Google Drive original
+- Raw-data exchange: Google Drive
+- Backups and recovery packages: Google Drive
+- Public documentation and Issues: GitHub
+- Rules and work state: the registered authoritative database for that subsystem
+
+The system must resolve the subsystem first and then use its registered source. Provider substitution is a migration, not an automatic fallback.
 
 ## 6. Gmail Attachments
 
