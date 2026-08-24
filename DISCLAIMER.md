@@ -9,13 +9,21 @@ This repository provides technical architecture, documentation, sanitized exampl
 
 Nothing in this repository creates a professional, advisory, fiduciary, contractual, or service relationship between the project owner, contributors, and users.
 
-## 2. Not Professional Advice
+## 2. Non-Commercial Knowledge Sharing
+
+This repository is a non-commercial technical knowledge-sharing and public discussion project. It does not sell a product, software package, managed service, consulting engagement, support contract, performance guarantee, or outcome guarantee.
+
+Public access to the repository does not create a seller–buyer, vendor–customer, consultant–client, or service-provider relationship.
+
+Contributions, comments, and AI-assisted replies are shared to exchange technical ideas and should not be interpreted as an offer to sell or provide a commercial service.
+
+## 3. Not Professional Advice
 
 The repository does not provide legal, financial, investment, accounting, tax, cybersecurity, medical, or other regulated professional advice.
 
 Users must consult appropriately qualified professionals before relying on the material for decisions requiring professional judgment.
 
-## 3. User Responsibility
+## 4. User Responsibility
 
 You are solely responsible for:
 
@@ -30,7 +38,7 @@ You are solely responsible for:
 
 Applying, adapting, deploying, or operating material from this repository is at your own risk.
 
-## 4. No Warranty
+## 5. No Warranty
 
 The material is provided **“AS IS”** and **“AS AVAILABLE,”** without warranties or conditions of any kind, express or implied.
 
@@ -38,7 +46,7 @@ No warranty is made regarding accuracy, completeness, reliability, security, ava
 
 AI-generated material can contain errors, omissions, hallucinations, outdated information, insecure assumptions, or inconsistent results.
 
-## 5. Limitation of Liability
+## 6. Limitation of Liability
 
 To the maximum extent permitted by applicable law, the project owner and contributors will not be liable for claims, losses, costs, expenses, or damages arising from or related to use of, reliance on, modification of, implementation of, or inability to use repository material.
 
@@ -46,22 +54,22 @@ This includes, without limitation, direct, indirect, incidental, special, conseq
 
 Nothing in this disclaimer excludes or limits liability that applicable law does not allow to be excluded or limited.
 
-## 6. External Services and Product Changes
+## 7. External Services and Product Changes
 
 ChatGPT, connected apps, Google Drive, Gmail, GitHub, external APIs, and other services are operated by third parties and can change, fail, restrict access, or behave differently by plan, account, region, rollout, permission, and workspace policy.
 
 The project owner and contributors do not control or guarantee those services.
 
-## 7. Financial and Automated Workflows
+## 8. Financial and Automated Workflows
 
 Public documentation intentionally excludes private trading algorithms, operational prices, holdings, raw financial data, and user-specific decision rules.
 
 Any financial, reporting, monitoring, notification, or automated workflow must be independently validated. Repository examples must not be treated as a recommendation to buy, sell, hold, or otherwise transact in any asset.
 
-## 8. Acceptance
+## 9. Acceptance
 
 By using or implementing repository material, you acknowledge that you have read this disclaimer, understand the risks, and accept responsibility for your use to the extent permitted by applicable law.
 
-## 9. License Status
+## 10. License Status
 
 This disclaimer does not grant permission to copy, modify, distribute, or reuse repository content. Licensing rights are governed separately by the repository's selected license. Until a license is added, public visibility alone does not automatically grant reuse or redistribution rights.
