@@ -16,6 +16,19 @@ The repository also:
 
 This is not a production-data repository. All examples are sanitized and focus on reusable technical ideas.
 
+## Documentation Baseline
+
+Claims labeled **current**, **implemented**, **available**, **advantage**, **disadvantage**, or **limitation** must state:
+
+- Verification date
+- Tested plan and account type
+- Chat, Project, Work, or scheduled-task context
+- Connected application and relevant permission boundary
+- Whether the claim comes from official documentation, project observation, or inference
+- Conditions that require retesting
+
+Product behavior can change by plan, account, region, rollout, permissions, and workspace policy. Undated “current” claims are treated as incomplete documentation.
+
 ## Topics
 
 ### Rule Management and Rule Engine Design
@@ -133,7 +146,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.7.0** — Developer architecture for deterministic rules and bounded inference
+**v0.8.0** — Reference-baseline and current-source alignment
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
@@ -145,7 +158,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 - [Complete Backup and Recovery Manifest](docs/complete-backup-and-recovery-manifest.md) — why ordinary backups are incomplete, required backup contents, restore order, validation, completion criteria, and non-restorable state.
 - [ChatGPT Reliability and Recovery](docs/chatgpt-reliability-and-recovery.md) — why stable workflows can suddenly drift, required foundation, memory review, conflict diagnosis, recovery steps, preventive controls, and limitations.
 - [Public Repository Safety Policy](PUBLICATION_POLICY.md) — prohibited algorithms and data, sanitization, publication gates, screenshot safety, incident response, and public/private boundaries.
-- [ChatGPT Plus No-API Architecture](docs/chatgpt-plus-no-api-architecture.md) — overall applied-technology model, Plus reference environment, Free adaptation, Google Drive purpose, Gmail workflow, scheduled tasks, data separation, advantages, limitations, and current construction status.
+- [ChatGPT Plus No-API Architecture](docs/chatgpt-plus-no-api-architecture.md) — baseline: 2026-08-24, individual Plus account, ChatGPT web/Work, no direct OpenAI API; covers Library as the authoritative source, Drive as backup-only, Gmail, scheduled tasks, advantages, limitations, and verified construction status.
 - [Yearly-Candle Monitoring Report System](docs/yearly-candle-monitoring-report.md) — motivation, goals, private master, multi-session market verification, report and Gmail pipeline, difficulties, solutions, failure lessons, current status, limitations, and next steps.
 - [Rule Management and Work Tracking System](docs/rule-management-and-work-tracking.md) — why the system was built, architecture, rule lifecycle, History, work management, concurrency, advantages, disadvantages, difficulties, limitations, open questions, and next steps.
 - [MENU and CMD Input Interface](docs/menu-and-command-interface.md) — command and menu namespaces, dot-based identifiers, explanation requests, parsing order, ambiguity handling, rule lifecycle integration, limitations, and tests.
