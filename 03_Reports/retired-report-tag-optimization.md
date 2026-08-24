@@ -6,6 +6,20 @@
 > [!CAUTION]
 > **Use at your own risk.** TAG-based diagnostic instrumentation can improve temporary report-logic analysis but must not be assumed to provide deterministic execution, complete validation, or safe long-term rule management. See the [Disclaimer](../DISCLAIMER.md).
 
+
+## Adoption Decision Summary
+
+| Field | Project record |
+|---|---|
+| Introduced because | A report contained many logic blocks, making it difficult to locate which logic produced an incorrect result. |
+| Intended improvement | Add temporary visible diagnostic identifiers, find logic-specific weak points, optimize one logic, and add regression evidence. |
+| Main difficulty | Keeping TAG-to-logic mappings synchronized and preventing AI attention from being misdirected. |
+| Main advantage | Focused diagnosis without changing unrelated logic. |
+| Main disadvantage | TAG drift, hidden rule duplication, context influence, leakage risk, and regression. |
+| Observed result | The diagnostics helped optimize logic and were removed before Live; persistent TAG control is prohibited. |
+| Current status | Retired / replaced by explicit modules, evidence, and tests. |
+| Retest trigger | Any report logic, prompt, format, example, model, or context change. |
+
 ## 1. Status
 
 **Status: Diagnostic instrumentation completed; optimized logic retained; visible TAG layer removed before Live.**
