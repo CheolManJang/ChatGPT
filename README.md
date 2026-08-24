@@ -159,7 +159,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.14.3** — Corrected Report TAG diagnostic purpose
+**v0.14.4** — Expanded the Report TAG adoption record and added diagnostic evidence
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
@@ -178,6 +178,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 - [G-Yearly Report: Google Drive–Based Case Study](03_Reports/g-yearly-report.md) — why the Drive-based system was built, its registered original, workflow, qualitative speed model, advantages, disadvantages, encountered problems, reliability controls, benchmark plan, current status, and publication boundary.
 - [Yearly Report Email Delivery Module](03_Reports/yearly-report-email-delivery.md)
 - [Retired Report TAG Optimization](03_Reports/retired-report-tag-optimization.md) — temporary diagnostic labels added to Development report output to identify the logic responsible for each result, expose logic-specific weak points, optimize and regression-test that logic, and remove the TAG layer before Live. — separates validated report packages from Gmail delivery, recipient/attachment checks, idempotency, sent/delivered/received/replied states, NG, HOLD, and resend safety.
+- [Sanitized Report TAG Diagnostic Sample](03_Reports/report-tag-diagnostic-sample.md) — fictional before/after evidence showing focused logic diagnosis, regression checks, and removal of visible TAGs from Live output.
 - [Sanitized color-coded report example](03_Reports/sanitized-g-yearly-report-example.html) — fictional HTML layout with important validation states highlighted; no operational data.
 - [Yearly-Candle Monitoring Report System](03_Reports/yearly-candle-monitoring-report.md) — motivation, goals, private master, multi-session market verification, report and Gmail pipeline, difficulties, solutions, failure lessons, current status, limitations, and next steps.
 - [Rule Management System](02_Rule_Management/rule-management-system.md) — Development, Live, History, validation, promotion, rollback, rule ownership, and concurrency.

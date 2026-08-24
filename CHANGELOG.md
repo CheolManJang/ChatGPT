@@ -13,6 +13,22 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.14.4] - 2026-08-24
+
+### Added
+
+- Added the actual Report TAG adoption story: the report already contained many logic blocks, the user identified suspicious output, and the visible TAG narrowed AI analysis to the responsible logic and its dependencies.
+- Added a before/during/after comparison covering defect description, search scope, change risk, evidence, and Live output.
+- Added the difficulties encountered while defining logic boundaries, maintaining TAG mappings, separating root cause from presentation, preventing a hidden rule layer, preserving public-safe evidence, and removing TAGs safely.
+- Added a direct advantages/disadvantages table and an explicit statement of the improvement obtained.
+- Added a fictional Report TAG diagnostic sample showing focused correction, before/after output, regression checks, and TAG-free Live output.
+
+### Changed
+
+- Linked the Report TAG retrospective to its diagnostic evidence sample.
+- Preserved TAGs as Development-only diagnostic instrumentation: optimized logic remains, while visible TAGs are removed before Live.
+- Updated the current public documentation version from 0.14.3 to 0.14.4.
+
 ## [0.14.3] - 2026-08-24
 
 ### Corrected

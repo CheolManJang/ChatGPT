@@ -52,9 +52,54 @@ Temporary TAGs were therefore inserted into the Development report as instrument
 
 This allowed the user to point to a specific result and ask, in effect: “Which logic produced this part, and where is its weak point?”
 
+### Actual adoption story
+
+The TAG mechanism was introduced only after the first report had already been assembled from many logic blocks. At that point, the main problem was no longer whether the report could be generated. The problem was that the combined output did not reveal which individual logic was responsible when a result looked wrong.
+
+The user could see the defect in the report, but the AI had to search a broad and interacting set of instructions. A correction aimed at the whole report could improve one result while unintentionally changing another logic, output order, exception, or format.
+
+The project therefore added a visible identity to each Development result. The user inspected the report, pointed out the suspicious result, and used its TAG to identify the responsible logic. The AI then reviewed that logic's conditions, omissions, and boundary cases instead of rewriting the report globally. The corrected logic was rerun against the same case, compared with the previous output, and retained only after regression checks.
+
+This user-observation loop was essential. The TAG did not decide whether a result was correct; it made the suspected source of the result visible so that the user and AI could investigate it together.
+
+### Before and after adoption
+
+| Area | Before TAG diagnostics | During TAG diagnostics | Permanent result after TAG removal |
+|---|---|---|---|
+| Defect description | “The report result is wrong.” | “The result carrying `CLASSIFY` is wrong.” | Logic-specific test identifies the failing module. |
+| Search scope | Entire report prompt and all logic blocks | Responsible logic and known dependencies | Explicit module, contract, validator, and test scope |
+| Change risk | Unrelated behavior could be modified | Unrelated logic is marked out of scope | Regression suite protects approved behavior |
+| Evidence | Final output only | TAG, version, before/after output, validation result | Versioned result, test evidence, TASK result, and History |
+| Live output | Internal cause not observable | Development-only internal labels visible | Clean user-facing output without diagnostic TAGs |
+
+### Difficulties encountered while introducing TAGs
+
+- Deciding the correct logic boundary when one result depended on several upstream checks
+- Keeping the TAG-to-logic mapping synchronized while the report logic changed
+- Distinguishing a root-cause TAG from a later formatting or delivery TAG
+- Preventing a visible TAG from being mistaken for a permanent command or business rule
+- Avoiding excessive TAGs that would create a second, hidden rule system
+- Preserving before/after evidence without publishing private algorithms or operational values
+- Verifying that removing the TAG did not remove the optimized behavior
+- Rechecking retired TAG behavior after unrelated prompt, example, format, model, or context changes
+
+### Improvement obtained
+
+The important improvement was not shorter output or a new label. It was a safer optimization method:
+
+1. The user could identify the exact suspicious report result.
+2. The responsible logic became visible.
+3. The AI could narrow analysis to that logic and its dependencies.
+4. The logic's omission or weak boundary condition could be corrected without broad report rewrites.
+5. The same case could be compared before and after the change.
+6. A regression case could preserve the discovered lesson.
+7. The TAG could then be removed while the optimized logic remained.
+
 ## 3. Sanitized Example
 
 The following identifiers are fictional public examples. They do not reveal production logic or real report values.
+
+A complete before/after walkthrough is available in the [sanitized Report TAG diagnostic sample](report-tag-diagnostic-sample.md).
 
 ```text
 [LOGIC:SRC-CHECK]  Source package verified
@@ -125,6 +170,17 @@ It also made continued use risky. If the TAG-to-logic mapping became stale or in
 - Revealed dependencies between logic blocks
 - Helped convert an opaque report prompt into explicit modules
 - Made optimization progress understandable to a non-AI user
+
+### Direct advantages and disadvantages
+
+| Advantages during Development | Disadvantages and risks |
+|---|---|
+| Makes the responsible logic visible to the user and AI | A stale or incorrect mapping can direct the AI to the wrong logic |
+| Narrows the correction scope | Additional labels increase prompt and maintenance complexity |
+| Reduces unnecessary changes to unrelated logic | TAGs can become an undocumented second rule layer |
+| Supports logic-specific before/after comparison | Visible internal structure may leak implementation detail |
+| Produces focused regression cases | Continued use can create false confidence in deterministic control |
+| Helps separate logic into explicit modules | Removing TAGs requires a dedicated regression pass |
 
 ## 7. Problems with Continued Use
 

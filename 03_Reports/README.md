@@ -6,6 +6,7 @@ Sanitized report-system architecture and case studies.
 - [Yearly-Candle Monitoring Report System](yearly-candle-monitoring-report.md)
 - [Yearly Report Email Delivery Module](yearly-report-email-delivery.md)
 - [Retired Report TAG Optimization](retired-report-tag-optimization.md)
+- [Sanitized Report TAG Diagnostic Sample](report-tag-diagnostic-sample.md)
 - [Download the sanitized color-coded HTML example](sanitized-g-yearly-report-example.html)
 
 ![Sanitized G-Yearly report preview](sanitized-g-yearly-report-preview.svg)
