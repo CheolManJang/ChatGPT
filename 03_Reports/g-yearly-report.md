@@ -6,6 +6,20 @@
 > [!CAUTION]
 > **Free, non-commercial technical sharing — use at your own risk.** This document describes architecture and sanitized operational lessons. It does not publish production data, raw financial records, real symbols, prices, holdings, recipients, private prompts, or core decision algorithms. Verify all behavior before production use. See the [Disclaimer](../DISCLAIMER.md).
 
+
+## Adoption Decision Summary
+
+| Field | Project record |
+|---|---|
+| Introduced because | A Drive-controlled original was needed for a system-specific report, raw-data exchange, and recovery package. |
+| Intended improvement | Separate source acquisition, validation, full processing, reporting, backup, and recovery. |
+| Main difficulty | Drive latency, identity, permissions, stale copies, partial parsing, and cross-context differences. |
+| Main advantage | User-visible original and practical connected-source workflow. |
+| Main disadvantage | Variable speed, provider dependence, synchronization ambiguity, and incomplete restoration. |
+| Observed result | Architecture and qualitative performance model are documented; controlled timing benchmark is incomplete. |
+| Current status | Development / partially verified. |
+| Retest trigger | Drive connector, permission, file format, account, context, or product changes. |
+
 ## 1. Why It Was Built
 
 The G-Yearly Report was built to test whether ChatGPT Plus can coordinate a persistent reporting workflow around a user-controlled Google Drive original without directly calling the OpenAI API.
