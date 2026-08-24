@@ -6,6 +6,20 @@
 > [!CAUTION]
 > **Use at your own risk.** This material is provided for technical education and general information only, without warranties. You are responsible for evaluating, testing, securing, and legally complying with any implementation. See the [Disclaimer](../DISCLAIMER.md).
 
+
+## Adoption Decision Summary
+
+| Field | Project record |
+|---|---|
+| Introduced because | Library, Drive, Gmail, Memory, Chat, Projects, and Work were being treated as interchangeable when they have different boundaries. |
+| Intended improvement | Assign an authoritative source and responsibility to each system. |
+| Main difficulty | Access, identity, permissions, latency, synchronization, and behavior vary by context. |
+| Main advantage | Clearer source selection and fewer silent substitutions. |
+| Main disadvantage | More explicit routing, validation, and migration work. |
+| Observed result | Source-boundary matrix and confirmed non-guarantees are documented. |
+| Current status | Architecture approved; behavior remains context-dependent. |
+| Retest trigger | Plan, product, connector, permission, account, or workspace changes. |
+
 ## 1. Purpose
 
 A ChatGPT-centered operating system uses several different storage and execution surfaces. They are not interchangeable.
