@@ -130,7 +130,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.3.0** — ChatGPT Plus no-API architecture, Google Drive, and Gmail workflow
+**v0.4.0** — Yearly-candle monitoring report applied-technology case study
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
@@ -138,6 +138,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 ## Detailed Documentation
 
 - [ChatGPT Plus No-API Architecture](docs/chatgpt-plus-no-api-architecture.md) — overall applied-technology model, Plus reference environment, Free adaptation, Google Drive purpose, Gmail workflow, scheduled tasks, data separation, advantages, limitations, and current construction status.
+- [Yearly-Candle Monitoring Report System](docs/yearly-candle-monitoring-report.md) — motivation, goals, private master, multi-session market verification, report and Gmail pipeline, difficulties, solutions, failure lessons, current status, limitations, and next steps.
 - [Rule Management and Work Tracking System](docs/rule-management-and-work-tracking.md) — why the system was built, architecture, rule lifecycle, History, work management, concurrency, advantages, disadvantages, difficulties, limitations, open questions, and next steps.
 - [MENU and CMD Input Interface](docs/menu-and-command-interface.md) — command and menu namespaces, dot-based identifiers, explanation requests, parsing order, ambiguity handling, rule lifecycle integration, limitations, and tests.
 
