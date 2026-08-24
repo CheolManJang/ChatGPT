@@ -13,6 +13,22 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.14.2] - 2026-08-24
+
+### Added
+
+- Documented the project observation that small prompt, rule, report, stage, example, or formatting changes can reintroduce previously retired behavior.
+- Added the 2026-08-24 tested ChatGPT Plus web/Work baseline and distinguished the observation from a universal product guarantee.
+- Explained that precise rules reduce ambiguity but do not compile a probabilistic AI into permanently fixed behavior.
+- Added mandatory post-change regression checks for retired TAGs and commands, stage ordering, stop conditions, NG/HOLD, continuation, aliases, contexts, and source versions.
+
+### Changed
+
+- Classified every material change as a possible regression trigger.
+- Required deterministic state machines, contracts, database constraints, validators, and tests to detect and contain AI drift.
+- Added Live-promotion blocking when retired behavior reappears.
+- Updated the current public documentation version from 0.14.1 to 0.14.2.
+
 ## [0.14.1] - 2026-08-24
 
 ### Added
