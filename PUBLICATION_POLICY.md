@@ -1,5 +1,8 @@
 # Public Repository Safety and Publication Policy
 
+> [!NOTE]
+> **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; product behavior and observed limitations are specific to the tested plan, context, permissions, connected apps, and rollout state. Revalidate after material product changes.
+
 ## 1. Purpose
 
 This repository shares **ChatGPT applied-technology architecture**, not private operational intelligence.
@@ -236,7 +239,7 @@ Authoritative operational source files, registered masters, approved supporting 
 
 ### Private Google Drive
 
-Verified backup copies and recovery packages only; not the normal execution or search authority.
+Operational originals for systems assigned to Drive, including G-Yearly Report; approved raw-data sharing; verified backup copies and recovery packages.
 
 ### Gmail
 
