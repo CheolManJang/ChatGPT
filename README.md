@@ -9,7 +9,7 @@
 > [!WARNING]
 > **AI-assisted responses:** Straightforward questions may be answered by ChatGPT. AI-generated responses can contain errors or omissions. Verify all technical information before applying it to production systems. Material design decisions and rule changes require human review and approval.
 
-A public technical knowledge-sharing project for building a persistent, rule-driven operational partnership with ChatGPT Plus—without directly using the OpenAI API.
+A non-commercial public technical knowledge-sharing project—not a product sale or paid service—for building a persistent, rule-driven operational partnership with ChatGPT Plus—without directly using the OpenAI API.
 
 The purpose of this repository is to show how ChatGPT can become the operational center of a practical system rather than only a conversational assistant.
 
@@ -152,7 +152,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.8.2** — Repository disclaimer and user-responsibility notice
+**v0.8.3** — Non-commercial technical-sharing clarification
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
