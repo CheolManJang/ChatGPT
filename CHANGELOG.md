@@ -13,6 +13,21 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.14.1] - 2026-08-24
+
+### Added
+
+- Defined TAGs as temporary Development, optimization, migration, testing, or diagnostic scaffolding only.
+- Added required TAG owner, scope, reason, creation version, expiration condition, permanent replacement target, and removal regression test.
+- Added a mandatory pre-Live removal procedure covering definitions, activations, aliases, fallbacks, prompts, memory guidance, files, schedules, and tests.
+- Documented why continued TAG use drifts across logic changes, contexts, priorities, missing or extra labels, Memory, Library, schedules, and model interpretation.
+
+### Changed
+
+- Added a Live promotion gate that rejects business behavior still dependent on TAGs, prompt-only routing, or unversioned experimental controls.
+- Defined TAG removal as a required completion step for optimization rather than optional cleanup.
+- Updated the current public documentation version from 0.14.0 to 0.14.1.
+
 ## [0.14.0] - 2026-08-24
 
 ### Added
