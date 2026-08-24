@@ -269,7 +269,6 @@ The repository's consolidated terms are:
 - No product, paid service, support obligation, professional advice, service level, warranty, indemnity, or guaranteed result is offered.
 - Users must independently test, secure, back up, verify, and confirm compliance.
 - Responsibility is limited to the maximum extent permitted by applicable law.
-- Liability that applicable law does not allow to be excluded or limited remains unaffected.
 
 See the full [Disclaimer](DISCLAIMER.md).
 
