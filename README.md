@@ -124,6 +124,13 @@ Development and Live rules may both remain active. When a Development rule is va
 
 These questions will be documented as GitHub Issues so that alternative designs can be discussed openly.
 
+## Current Public Version
+
+**v0.1.0** — Initial architecture documentation
+
+- [Changelog](CHANGELOG.md)
+- [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
+
 ## Detailed Documentation
 
 - [Rule Management and Work Tracking System](docs/rule-management-and-work-tracking.md) — why the system was built, architecture, rule lifecycle, History, work management, concurrency, advantages, disadvantages, difficulties, limitations, open questions, and next steps.
