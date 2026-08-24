@@ -66,10 +66,28 @@ Public documentation intentionally excludes private trading algorithms, operatio
 
 Any financial, reporting, monitoring, notification, or automated workflow must be independently validated. Repository examples must not be treated as a recommendation to buy, sell, hold, or otherwise transact in any asset.
 
-## 9. Acceptance
+## 9. Reference Examples from Google Terms
+
+The following references show that even a large service provider separates a short service description from detailed warranty and liability terms.
+
+Google's current Terms of Service, which the official service-specific list links to Google Drive, states:
+
+> “we provide our services ‘as is’ without any express or implied warranties”
+
+It also limits responsibility, as permitted by law, for categories including indirect or consequential losses. See [Google Terms of Service](https://policies.google.com/terms?hl=en-US) and Google's [service-specific terms list for Drive](https://policies.google.com/terms/service-specific?hl=en-US).
+
+Google's Drive-specific terms state:
+
+> “we don’t make any commitments about ... reliability, availability, or ability to meet your needs”
+
+They also describe excluded loss categories and preserve liability that cannot legally be excluded. See [Google Drive Terms of Service](https://www.google.com/drive/terms-of-service/archived/).
+
+The Drive page is currently presented by Google at an archived URL but remains linked from Google's current service-specific terms list. These quotations are cited as drafting references only. Google's terms do not govern this repository, and this repository does not claim the same legal position, resources, contractual relationship, or enforceability as Google.
+
+## 10. Acceptance
 
 By using or implementing repository material, you acknowledge that you have read this disclaimer, understand the risks, and accept responsibility for your use to the extent permitted by applicable law.
 
-## 10. License Status
+## 11. License Status
 
 This disclaimer does not grant permission to copy, modify, distribute, or reuse repository content. Licensing rights are governed separately by the repository's selected license. Until a license is added, public visibility alone does not automatically grant reuse or redistribution rights.
