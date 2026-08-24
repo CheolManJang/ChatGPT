@@ -13,6 +13,20 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.8.6] - 2026-08-24
+
+### Added
+
+- Consolidated the common Google, Microsoft, and open-source responsibility structure into repository-specific terms.
+- Added explicit “as is” and “as available” language.
+- Added no-product, no-paid-service, no-support-obligation, no-service-level, no-warranty, no-indemnity, and no-guaranteed-result terms.
+- Added explicit user duties for testing, security, backups, verification, automation review, and legal compliance.
+- Expanded covered loss categories while preserving liabilities that cannot legally be excluded.
+
+### Changed
+
+- Updated the current public documentation version from 0.8.5 to 0.8.6.
+
 ## [0.8.5] - 2026-08-24
 
 ### Added
