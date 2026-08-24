@@ -157,7 +157,76 @@ A full return to the previous behavior could not be guaranteed.
 
 Memory behavior could vary with settings, account, plan, context, project, workspace policy, and product changes. A result observed in one chat did not prove identical behavior in ChatGPT Work, a Project, or a scheduled task.
 
-## 6. Why the Approach Was Retired
+## 6. Retired OPEN/CLOSE Synchronization Commands
+
+As the synchronization problem became visible, the project experimented with explicit `OPEN` and `CLOSE`-style commands.
+
+### Intended purpose
+
+The commands were intended to create a clear user-visible boundary around a work session:
+
+- `OPEN`: begin a controlled session, identify the expected source, and prepare the working context.
+- `CLOSE`: finish the session, record results, synchronize approved changes, and leave a known continuation state.
+
+The exact syntax and internal behavior changed during experimentation. The important design intent was to prevent an undefined conversational session from silently reading, changing, or carrying forward operational rules.
+
+### Why the idea appeared useful
+
+An explicit start and end seemed capable of providing:
+
+- A visible synchronization point
+- A place to compare Library and remembered state
+- A place to acquire and release session ownership
+- A place to save changes and History
+- A clear boundary for continuation in another chat
+- A way to stop use of stale context after work completed
+
+### Problems discovered
+
+The commands were conversational instructions, not product-level transaction hooks. They could request behavior, but could not guarantee that ChatGPT had actually:
+
+- Loaded every intended memory item
+- Excluded stale or conflicting memory
+- Replaced memory atomically
+- Persisted every approved change
+- Removed temporary context
+- Synchronized another Chat, Project, Work session, or scheduled task
+- Prevented a concurrent session from using an older state
+- Completed `CLOSE` after a timeout, interruption, or context-length limit
+
+An `OPEN` response could therefore look successful while the underlying context remained incomplete. A `CLOSE` response could look complete while Library, memory, TASK state, History, or another session remained unsynchronized.
+
+### Failure scenarios
+
+- `OPEN` used a remembered summary older than the registered source.
+- A Library change occurred after `OPEN` but before `CLOSE`.
+- The conversation ended before `CLOSE`.
+- `CLOSE` recorded a summary but not every required rule or result.
+- Two sessions were opened against different source versions.
+- A user interpreted “closed” as proof that memory was cleared or synchronized.
+- A later session resumed without being able to verify the previous close result.
+
+### Retirement decision
+
+`OPEN` and `CLOSE` were retired as Memory synchronization commands because they created a false sense of transactional control over a product feature that did not expose the required deterministic guarantees.
+
+The names must not be documented as proof that ChatGPT Memory can be opened, locked, committed, synchronized, or closed like a database.
+
+### What replaced them
+
+The useful intent was preserved at the deterministic system layer:
+
+- Rule Engine session acquisition and version verification
+- Task Manager execution attempts and continuation records
+- Explicit source fetch and validation
+- Separate `TASK.START`, `TASK.COMPLETE`, `TASK.NG`, and `TASK.HOLD` operations
+- Rule validation, promotion, and History commands
+- Session GUID, heartbeat, lock ownership, idempotency, and reconciliation
+- A final result record that states what was actually verified
+
+A user-facing session command may later coordinate these functions, but it must report the verified state of the underlying stores. It must never claim that ChatGPT Memory itself was transactionally opened or closed.
+
+## 14. Why the Approach Was Retired
 
 The approach optimized apparent speed by weakening certainty.
 
