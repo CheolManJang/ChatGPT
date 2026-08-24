@@ -13,6 +13,7 @@
 |---|---|
 | Introduced because | Report processing had become slow, and the report contained many logic blocks whose individual cost and weak points were difficult to isolate. |
 | Intended improvement | Identify each logic in Development output, locate slow or inefficient logic, optimize it independently, and preserve before/after evidence. |
+| Initial continuation intention | The feature was useful enough that the project wanted to keep using it for ongoing Report visibility and optimization. |
 | Main difficulty | Keeping TAG-to-logic mappings synchronized and preventing AI attention from being misdirected. |
 | Main advantage | Focused diagnosis without changing unrelated logic. |
 | Main disadvantage | TAG drift, hidden rule duplication, context influence, leakage risk, and regression. |
@@ -22,13 +23,15 @@
 
 ## 1. Status
 
-**Status: Diagnostic instrumentation completed; optimized logic retained; visible TAG layer removed before Live.**
+**Status: TAG was effective and the project initially wanted continued use, but it was retired after AI stability limits could not be solved through additional rules. Optimized logic was retained; the visible TAG layer was removed before Live.**
 
-The report contained multiple independent and interacting logic blocks. Temporary TAG markers were added to the generated report so a user and ChatGPT could see which logic produced a section, row, status, warning, or omission.
+The report contained multiple independent and interacting logic blocks. TAG markers were added to the generated report so a user and ChatGPT could see which logic produced a section, row, status, warning, or omission.
 
 The TAG itself was not the optimization. It was an observable diagnostic label. By tracing a wrong result back to its responsible logic, the project could expose that logic's weak point, correct it, rerun the same case, and compare the result.
 
-After each logic was optimized and validated, its useful behavior was moved into explicit functions, rules, inputs, validators, and tests. The temporary TAGs were removed from the Live report.
+The project initially wanted to retain TAG visibility because it made later diagnosis and optimization easier. Continued-use testing showed that the AI could not keep the behavior stable: TAGs increased interpretation burden, and even small report or rule changes could reset, reconstruct, or alter the TAG behavior. Repeated attempts to strengthen the written rules did not make the mechanism reliably persistent.
+
+By that time, the individual logic had already been corrected and optimized. The project therefore retained the improved logic in explicit functions, rules, inputs, validators, and tests, but removed the TAG layer from the Live report.
 
 ## 2. Why TAGs Were Introduced
 
@@ -56,7 +59,7 @@ A single report can contain many logic blocks whose results appear together:
 
 When the final report was simply “wrong,” it was difficult to determine which logic created the error. The visible result did not show whether the cause was source selection, incomplete input, calculation, classification, sorting, formatting, or a later transformation.
 
-Temporary TAGs were therefore inserted into the Development report as instrumentation. Each tagged output made the responsible logic observable.
+TAGs were therefore inserted into the Development report as instrumentation. Each tagged output made the responsible logic observable. Because this worked well, continued use was initially preferred rather than immediate removal.
 
 This allowed the user to point to a specific result and ask, in effect: “Which logic produced this part, and where is its weak point?”
 
@@ -66,7 +69,7 @@ The TAG mechanism was introduced only after the first report had already been as
 
 The user could observe the slow workflow and see defects in the report, but the AI had to search a broad and interacting set of instructions. A global optimization attempt could spend time revisiting unrelated logic or improve one result while unintentionally changing another logic, output order, exception, or format.
 
-The project therefore added a visible identity to each Development logic and result. The user and AI could isolate a logic, inspect its processing scope and output, find unnecessary work or weak conditions, optimize only that logic, and then rerun the Report. Suspicious results were traced through the same TAG. The optimized logic was compared with the previous behavior and retained only after regression checks.
+The project therefore added a visible identity to each Development logic and result. The user and AI could isolate a logic, inspect its processing scope and output, find unnecessary work or weak conditions, optimize only that logic, and then rerun the Report. Suspicious results were traced through the same TAG. The optimized logic was compared with the previous behavior and retained only after regression checks. Since the feature was useful, the project wanted to keep it available for future Report work.
 
 This user-observation loop was essential. The TAG did not make the Report faster by itself and did not decide whether a result was correct. It made a logic boundary visible so the user and AI could find a bottleneck or weak point and optimize that logic together.
 
@@ -149,7 +152,7 @@ In the final Live report, these internal diagnostic TAGs were removed. Only appr
 11. Move the proven logic into explicit code, rules, validators, and state.
 12. Remove diagnostic TAGs and verify that Live output still behaves correctly.
 
-TAGs were thus temporary observability scaffolding for logic-by-logic optimization.
+TAGs were effective observability scaffolding for logic-by-logic optimization. They became temporary only after continued-use stability proved unattainable in the tested AI workflow.
 
 ## 5. Why a Simple TAG Had Large AI Impact
 
@@ -240,7 +243,9 @@ Operational TAG names or combinations could reveal internal workflow priorities 
 
 ## 8. Why the TAG Layer Was Removed
 
-The experiment succeeded because the TAGs helped isolate slow logic, identify weak points, and optimize the Report. They were not intended to remain part of the final report.
+The experiment succeeded because the TAGs helped isolate slow logic, identify weak points, and optimize the Report. The project wanted to continue using the feature because that visibility remained useful.
+
+Removal was therefore not the original preference. It was a later engineering decision forced by observed AI limitations.
 
 ### Primary removal reason: a small visible TAG had large AI weight
 
@@ -262,7 +267,9 @@ That created four direct risks:
 3. **Regression** — a small later change could reactivate a retired TAG behavior or restore an older output method.
 4. **False permanence** — users could assume the optimized result was fixed, while the AI was still reconstructing behavior from TAGs and surrounding context.
 
-For this reason, TAG removal was part of the optimization completion criteria, not optional cleanup. TAGs were used only long enough to find and optimize the problem logic. The optimized behavior then had to work identically without TAGs before promotion to Live.
+The project tried to stabilize continued TAG use by writing more precise rules and reinforcing removal, activation, and interpretation conditions. This did not solve the problem. A small change to the Report, prompt, example, rule, or format could still reset the intended TAG state, reconstruct an earlier behavior, or change how the AI weighted the TAG.
+
+Since the underlying Logic had already been supplemented, corrected, and optimized, keeping the unstable TAG layer no longer justified its AI processing burden and regression risk. The project therefore removed TAGs while retaining the optimized Logic. The final non-TAG Report had to preserve the validated result before promotion to Live.
 
 Continued use would create a second maintenance problem:
 
@@ -275,7 +282,7 @@ Continued use would create a second maintenance problem:
 - Users could mistake diagnostic labels for business results.
 - The TAG layer would require its own versioning, History, backup, and recovery.
 
-The optimization goal was achieved when the logic became faster, independently testable, and behaviorally equivalent without relying on visible TAGs. At that point, the scaffolding had to be removed before Live.
+The optimization goal was achieved when the logic became faster, independently testable, and behaviorally equivalent without relying on visible TAGs. TAG removal was the practical fallback after desired continued use could not be made stable—not an assumption made when the feature was first introduced.
 
 ## 9. What Replaced TAG-Based Control
 
@@ -299,6 +306,8 @@ Internal technical records may retain stable module and version identifiers. The
 > **Approved rule:** TAGs may be used temporarily only in Development, optimization, migration, testing, or diagnosis. A TAG-dependent implementation must not be promoted to Live.
 
 Persistent TAG-based business logic is not approved.
+
+This is the rule adopted **after** the continued-use failure. It does not mean the feature was originally designed only for short-term use. Future TAG use is restricted to temporary diagnosis because the project already observed that persistent use could not be stabilized by written rules alone.
 
 Every temporary TAG must have:
 
@@ -372,7 +381,7 @@ Continued TAG use tends to “go out of alignment” because:
 - Model interpretation changes with surrounding context even when the label is unchanged.
 - Temporary exceptions become permanent without formal promotion or History.
 
-This drift may appear gradual: early runs work, later runs become inconsistent, and no single database change explains the difference. That is why removal is a required optimization-completion step, not optional cleanup.
+This drift may appear gradual: early runs work, later runs become inconsistent, and no single database change explains the difference. After the project concluded that desired continued use could not be stabilized, removal became the required completion step for this implementation.
 
 ## 13. Current AI Limitation: Small Changes Can Restore Retired Behavior
 
@@ -438,14 +447,14 @@ The TAG experiment helped the project:
 - Discover dependencies between logic blocks
 - Convert opaque report behavior into explicit modules and tests
 
-The final gain came not from retaining TAGs, but from using them to discover structure and then deleting them.
+The project would have preferred to retain the useful visibility. When stable continued use proved unattainable, the final gain was preserved by keeping the structure and optimized Logic discovered through TAGs while deleting only the unstable TAG layer.
 
 ## 15. Lessons for Developers
 
 - A short AI control marker can have much greater effect than its visible size suggests.
-- Temporary diagnostic instrumentation is useful for discovering logic boundaries and weak points.
+- Diagnostic instrumentation can be valuable enough that continued use is desirable, but AI stability must be proven rather than assumed.
 - Every persistent control language requires versioning, validation, History, and recovery.
 - Labels do not provide deterministic state.
-- Optimizations should have removal criteria.
-- Successful scaffolding should be removed after the permanent structure can stand alone.
+- When continued use cannot be stabilized, removal criteria protect the optimized result from the diagnostic layer's side effects.
+- A useful feature may still need to be retired when its benefit has already been absorbed into stable Logic and its remaining control layer causes regression risk.
 - The safest prompt optimization is often moving business logic out of the prompt.

@@ -13,6 +13,20 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.14.7] - 2026-08-24
+
+### Corrected
+
+- Corrected the TAG lifecycle history: the project did not introduce TAGs with a predetermined plan to remove them. The feature worked well, and continued use was initially desired for ongoing Report visibility and optimization.
+- Documented that TAG retirement was a later decision caused by observed AI limitations: high interpretation burden, behavior reset or reconstruction after small changes, and failure of increasingly precise written rules to keep the mechanism stable.
+- Clarified that removal became reasonable only because the underlying Report Logic had already been supplemented, corrected, optimized, and regression-checked.
+
+### Changed
+
+- Reframed TAG removal as a practical fallback after desired continued use failed, rather than as optional cleanup or an original temporary-use assumption.
+- Clarified that the current temporary-use-only policy was adopted from this failure lesson and was not the feature's original intention.
+- Updated the current public documentation version from 0.14.6 to 0.14.7.
+
 ## [0.14.6] - 2026-08-24
 
 ### Corrected
