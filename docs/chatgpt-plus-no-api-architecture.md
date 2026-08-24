@@ -1,5 +1,8 @@
 # ChatGPT Applied Technology Without the OpenAI API
 
+> [!CAUTION]
+> **Use at your own risk.** This material is provided for technical education and general information only, without warranties. You are responsible for evaluating, testing, securing, and legally complying with any implementation. See the [Disclaimer](../DISCLAIMER.md).
+
 > [!NOTE]
 > **Reference baseline:** 2026-08-24 · Individual ChatGPT Plus account · ChatGPT web/Work environment · No direct OpenAI API integration. Product capabilities are verified against the official documentation linked in Section 16, while operational observations are specific to this project's tested account, permissions, connected apps, and rollout state. Recheck this baseline after material ChatGPT product changes.
 
