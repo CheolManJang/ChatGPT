@@ -3,6 +3,9 @@
 > [!NOTE]
 > **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; product behavior and observed limitations are specific to the tested plan, context, permissions, connected apps, and rollout state. Revalidate after material product changes.
 
+> [!CAUTION]
+> **Use at your own risk.** This material is provided for technical education and general information only, without warranties. You are responsible for evaluating, testing, securing, and legally complying with any implementation. See the [Disclaimer](../DISCLAIMER.md).
+
 ## 1. Overview
 
 This document describes a rule-management and work-tracking architecture designed during the rebuild of a long-running automation workflow.
