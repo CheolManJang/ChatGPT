@@ -159,7 +159,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.12.0** — Retired Library-to-memory experiment retrospective
+**v0.12.1** — Retired OPEN/CLOSE synchronization-command retrospective
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
