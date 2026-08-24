@@ -6,6 +6,20 @@
 > [!CAUTION]
 > **Use at your own risk.** This document does not expose production rules, private TASKs, memory contents, prompts, raw data, credentials, or financial algorithms. See the [Disclaimer](../DISCLAIMER.md).
 
+
+## Adoption Decision Summary
+
+| Field | Project record |
+|---|---|
+| Introduced because | New conversations could run simultaneously from different rule, TASK, source, or Memory snapshots. |
+| Intended improvement | Prevent split-brain, duplicate work, stale overwrites, and unsafe retries. |
+| Main difficulty | Chats cannot be locked as database sessions; interrupted external side effects remain uncertain. |
+| Main advantage | Authoritative-store ownership, version checks, idempotency, and reconciliation. |
+| Main disadvantage | Locks, heartbeats, leases, takeovers, and recovery add substantial complexity. |
+| Observed result | Public architecture is defined; full private concurrency implementation and testing are not claimed. |
+| Current status | Architecture approved; implementation/testing incomplete. |
+| Retest trigger | Concurrency model, database, connector, context, external action, or product changes. |
+
 ## 1. Problem
 
 A user can open a new conversation while another conversation is still working. Both sessions may believe they are operating on the same system, while each actually holds different:
