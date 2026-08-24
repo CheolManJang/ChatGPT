@@ -130,13 +130,15 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.4.0** — Yearly-candle monitoring report applied-technology case study
+**v0.5.0** — Reliability, rule-drift recovery, and publication safety
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
 
 ## Detailed Documentation
 
+- [ChatGPT Reliability and Recovery](docs/chatgpt-reliability-and-recovery.md) — why stable workflows can suddenly drift, required foundation, memory review, conflict diagnosis, recovery steps, preventive controls, and limitations.
+- [Public Repository Safety Policy](PUBLICATION_POLICY.md) — prohibited algorithms and data, sanitization, publication gates, screenshot safety, incident response, and public/private boundaries.
 - [ChatGPT Plus No-API Architecture](docs/chatgpt-plus-no-api-architecture.md) — overall applied-technology model, Plus reference environment, Free adaptation, Google Drive purpose, Gmail workflow, scheduled tasks, data separation, advantages, limitations, and current construction status.
 - [Yearly-Candle Monitoring Report System](docs/yearly-candle-monitoring-report.md) — motivation, goals, private master, multi-session market verification, report and Gmail pipeline, difficulties, solutions, failure lessons, current status, limitations, and next steps.
 - [Rule Management and Work Tracking System](docs/rule-management-and-work-tracking.md) — why the system was built, architecture, rule lifecycle, History, work management, concurrency, advantages, disadvantages, difficulties, limitations, open questions, and next steps.
@@ -165,6 +167,12 @@ These questions will be documented as GitHub Issues so that alternative designs 
 ```
 
 The structure will grow gradually. Documentation will be added only after each topic is organized and sanitized.
+
+## Safety Boundary
+
+This repository publishes the engineering architecture, not private decision intelligence.
+
+Never publish core trading algorithms, exact decision rules, real symbols, monitoring or target prices, holdings, raw master data, production prompts, credentials, recipients, or private connected files. See the [Public Repository Safety Policy](PUBLICATION_POLICY.md).
 
 ## Data Safety
 
