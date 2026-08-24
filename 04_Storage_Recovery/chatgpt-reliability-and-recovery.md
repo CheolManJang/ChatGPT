@@ -382,3 +382,11 @@ Reliable ChatGPT application requires more than a good prompt.
 It requires authoritative sources, Development/Live separation, versioning, work results, source verification, memory review, regression tests, and explicit recovery procedures.
 
 The safest design assumes that context can drift and makes drift detectable, diagnosable, and recoverable.
+
+## Small Changes Can Reintroduce Retired Behavior
+
+> **Observed baseline: 2026-08-24, tested ChatGPT Plus web/Work contexts without direct OpenAI API calls.**
+
+The project observed that a small change to a prompt, rule, report stage, formatting requirement, example, or retrieved source could reintroduce previously removed behavior. Precise written rules reduce ambiguity but do not compile the AI into a permanently fixed program.
+
+Every material change is therefore a regression trigger. Reload authoritative sources, test retired behavior, compare with the approved baseline, verify every supported context, and block Live promotion on regression. Deterministic databases, state machines, validation gates, and tests must contain probabilistic drift.
