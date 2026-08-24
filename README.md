@@ -1,5 +1,8 @@
 # ChatGPT Applied Technology
 
+> [!NOTE]
+> **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; product behavior and observed limitations are specific to the tested plan, context, permissions, connected apps, and rollout state. Revalidate after material product changes.
+
 > [!WARNING]
 > **AI-assisted responses:** Straightforward questions may be answered by ChatGPT. AI-generated responses can contain errors or omissions. Verify all technical information before applying it to production systems. Material design decisions and rule changes require human review and approval.
 
@@ -146,7 +149,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.8.0** — Reference-baseline and current-source alignment
+**v0.8.1** — Dated documents and system-specific source mapping
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
@@ -158,7 +161,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 - [Complete Backup and Recovery Manifest](docs/complete-backup-and-recovery-manifest.md) — why ordinary backups are incomplete, required backup contents, restore order, validation, completion criteria, and non-restorable state.
 - [ChatGPT Reliability and Recovery](docs/chatgpt-reliability-and-recovery.md) — why stable workflows can suddenly drift, required foundation, memory review, conflict diagnosis, recovery steps, preventive controls, and limitations.
 - [Public Repository Safety Policy](PUBLICATION_POLICY.md) — prohibited algorithms and data, sanitization, publication gates, screenshot safety, incident response, and public/private boundaries.
-- [ChatGPT Plus No-API Architecture](docs/chatgpt-plus-no-api-architecture.md) — baseline: 2026-08-24, individual Plus account, ChatGPT web/Work, no direct OpenAI API; covers Library as the authoritative source, Drive as backup-only, Gmail, scheduled tasks, advantages, limitations, and verified construction status.
+- [ChatGPT Plus No-API Architecture](docs/chatgpt-plus-no-api-architecture.md) — baseline: 2026-08-24, individual Plus account, ChatGPT web/Work, no direct OpenAI API; covers Library as the Yearly-Candle source, Drive as the G-Yearly original, raw-data exchange, and backup layer, Gmail, scheduled tasks, advantages, limitations, and verified construction status.
 - [Yearly-Candle Monitoring Report System](docs/yearly-candle-monitoring-report.md) — motivation, goals, private master, multi-session market verification, report and Gmail pipeline, difficulties, solutions, failure lessons, current status, limitations, and next steps.
 - [Rule Management and Work Tracking System](docs/rule-management-and-work-tracking.md) — why the system was built, architecture, rule lifecycle, History, work management, concurrency, advantages, disadvantages, difficulties, limitations, open questions, and next steps.
 - [MENU and CMD Input Interface](docs/menu-and-command-interface.md) — command and menu namespaces, dot-based identifiers, explanation requests, parsing order, ambiguity handling, rule lifecycle integration, limitations, and tests.
