@@ -10,6 +10,28 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.6.0] - 2026-08-24
+
+### Added
+
+- Compared ChatGPT Library and Google Drive by purpose, access path, observed latency, version identity, synchronization risk, and operational boundary.
+- Documented Gmail attachment failure modes and a safe attachment acquisition and validation procedure.
+- Documented saved-memory speed benefits and synchronization risks.
+- Compared Chat, Chat inside a ChatGPT Project, ChatGPT Work, and Work inside a ChatGPT Project.
+- Added a source-of-truth matrix describing what can and cannot be authoritative.
+- Documented confirmed non-guarantees across connected storage, projects, memory, Work, and background execution.
+- Documented why chat-only, database-only, or file-only backups cannot provide full recovery.
+- Added a complete backup manifest covering rules, work, History, MENU/CMD, projects, Library, Drive, Gmail, scheduled tasks, memory review, connectors, tests, GitHub state, and recovery runbooks.
+- Added a restore sequence and objective recovery-completion criteria.
+- Documented system state that cannot be restored exactly.
+- Added a GitHub Issue for full-system backup and recovery design.
+
+### Changed
+
+- Updated the public documentation version from 0.5.0 to 0.6.0.
+- Clarified that the recovery target is a verified operational state, not exact replay of hidden model or transient execution state.
+- Clarified that Library and Drive are complementary layers rather than interchangeable universal storage.
+
 ## [0.5.0] - 2026-08-24
 
 ### Added
