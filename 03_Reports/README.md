@@ -7,8 +7,14 @@
 > **Use at your own risk.** This material is provided for technical education and general information only, without warranties. Evaluate, test, secure, back up, and legally review any implementation. See the [Disclaimer](../DISCLAIMER.md).
 > **사용 시 주의.** 본 자료는 교육 및 일반 정보 제공 목적이며, 어떠한 보증도 제공하지 않습니다. 모든 구현을 직접 평가·테스트하고, 보안과 백업을 확인하며, 필요한 법적 검토를 수행하십시오. [면책 조항](../DISCLAIMER.md)을 참조하십시오.
 
-
 Sanitized report-system architecture and case studies.
+
+## 매매 레포트
+
+- [매매 레포트 전체 기능 목록과 처리 흐름](trading-report/README.md)
+- [E. 결과 요청 및 분석 상세설계](trading-report/result-request-analysis.md)
+
+## Existing report documents
 
 - [G-Yearly Report: Google Drive–Based Case Study](g-yearly-report.md)
 - [Yearly-Candle Monitoring Report System](yearly-candle-monitoring-report.md)
