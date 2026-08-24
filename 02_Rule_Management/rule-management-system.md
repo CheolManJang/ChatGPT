@@ -21,7 +21,7 @@ The Rule Management System keeps approved operational rules separate from conver
 - Which previous value must be restored during rollback?
 - Is a similar or conflicting rule already registered?
 
-TASK records are deliberately excluded from this document and are defined in the separate [Task Management System](../03_Task_Management/task-management-system.md).
+TASK records are deliberately excluded from this document and are defined in the separate [Task Management System](../02_Task_Management/task-management-system.md).
 
 ## 2. Why It Was Built
 
