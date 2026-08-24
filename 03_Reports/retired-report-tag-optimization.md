@@ -179,7 +179,29 @@ The optimization goal was to remove unnecessary reasoning and context—not to c
 
 ## 10. Current Usage Rule
 
+> **Approved rule:** TAGs may be used temporarily only in Development, optimization, migration, testing, or diagnosis. A TAG-dependent implementation must not be promoted to Live.
+
 Persistent TAG-based business logic is not approved.
+
+Every temporary TAG must have:
+
+- A declared owner and scope
+- A reason for use
+- A creation version
+- An expiration or removal condition
+- A permanent replacement target
+- A regression test proving safe removal
+
+Before Live promotion:
+
+1. Convert TAG meaning into explicit fields, states, contracts, validations, or commands.
+2. Remove the TAG definition, activation, aliases, and fallback behavior.
+3. Search prompts, memory guidance, files, schedules, and tests for remaining dependencies.
+4. Run the non-TAG regression baseline.
+5. Confirm that missing or extra TAG text cannot change Live behavior.
+6. Record removal evidence in the promotion result.
+
+The Live promotion gate must fail when business behavior still depends on a TAG.
 
 TAG-like labels may still be used only as:
 
@@ -220,7 +242,22 @@ If TAGs are temporarily reintroduced for diagnosis or migration:
 10. Run regression tests proving the removal did not change approved behavior.
 11. Record the optimization and removal result.
 
-## 12. Optimization Result
+## 12. Why Continued TAG Use Drifts
+
+Continued TAG use tends to “go out of alignment” because:
+
+- The label remains while its underlying logic changes.
+- One prompt updates the TAG definition while another context keeps the earlier definition.
+- New tags overlap older scopes and alter priority.
+- A missing tag silently suppresses a required stage.
+- Extra tag-like text accidentally activates irrelevant behavior.
+- Memory, Library, scheduled prompts, and current chat hold different tag sets.
+- Model interpretation changes with surrounding context even when the label is unchanged.
+- Temporary exceptions become permanent without formal promotion or History.
+
+This drift may appear gradual: early runs work, later runs become inconsistent, and no single database change explains the difference. That is why removal is a required optimization-completion step, not optional cleanup.
+
+## 13. Optimization Result
 
 The TAG experiment helped the project:
 
@@ -234,7 +271,7 @@ The TAG experiment helped the project:
 
 The final gain came not from retaining TAGs, but from using them to discover structure and then deleting them.
 
-## 13. Lessons for Developers
+## 14. Lessons for Developers
 
 - A short AI control marker can have much greater effect than its visible size suggests.
 - Temporary prompt structure is useful for discovering module boundaries.
