@@ -1,1 +1,199 @@
-# ChatGPT
+# Practical Development Notes and Solutions
+
+A public technical knowledge-sharing repository based on real development work, difficult implementation problems, design decisions, experiments, and lessons learned.
+
+The purpose of this repository is twofold:
+
+1. Share solutions that may help developers facing similar problems.
+2. Publish unresolved technical questions so that other developers can suggest better approaches.
+
+This is not a production-data repository. All examples are sanitized and focus on reusable technical ideas.
+
+## Topics
+
+### Rule Management and Rule Engine Design
+
+A database-driven rule-management system using Delphi and SQLite, including:
+
+- Development and Live rule separation
+- Development-to-Live validation and promotion
+- Rule grouping and relationship tracking with GUIDs
+- Duplicate and similar-rule detection
+- Change history and audit trails
+- Active-mode management
+- Shared processing through a Global Function interface
+
+### Database Concurrency and Recovery
+
+Practical design questions involving:
+
+- Database locks
+- Unique session IDs
+- Heartbeats and timeout detection
+- Ownership verification before commit
+- Conflict and NG handling
+- Interrupted-operation recovery
+- History retention and database-size management
+
+### Work and Task Management
+
+Designing a work queue that records not only what must be done, but also what actually happened:
+
+- Priority and priority sequence
+- Required execution order
+- Duplicate prevention
+- Registered, completed, cancelled, NG, and HOLD states
+- Work descriptions and result descriptions
+- Registration and completion timestamps
+- Resuming interrupted work
+- Diagnosing historical failures
+
+### Delphi Development
+
+Reusable implementation notes and examples for:
+
+- SQLite access and transaction handling
+- Global functions and shared modules
+- GUID and session management
+- API communication
+- File downloads and large-response handling
+- Event-based file processing
+- Defensive error handling
+
+### Financial and Public APIs
+
+Technical integration notes may include:
+
+- Kiwoom OpenAPI stock-master and status information
+- Trading suspension and administrative status checks
+- DART Open API authentication and corporate-code downloads
+- Large XML/ZIP response processing
+- News and disclosure integration architecture
+
+Only API techniques and fictional examples are shared. Real accounts, holdings, trading rules, and private financial data are excluded.
+
+### Printing and Device Integration
+
+Implementation notes for topics such as:
+
+- Zebra ZPL commands
+- Built-in printer fonts
+- English-only label output
+- Character encoding
+- Delphi-to-printer communication
+- PLC and 24V device integration concepts
+
+### Automation and Reporting Architecture
+
+General technical patterns for:
+
+- Scheduled reports
+- Data completeness validation
+- Multi-stage verification
+- Notification delivery checks
+- Failure reporting
+- Backup and synchronization workflows
+
+## Initial Project: Rule Management Rebuild
+
+The first documented project is a rebuild of a common rule-management system.
+
+### Current Design
+
+The system uses:
+
+- An auto-increment integer primary key
+- **Create_GUID** to identify rule creation
+- **Group_GUID** to group related rules
+- **Link_GUID** to connect Development, Live, and History records
+- A unique Session ID for each active operation
+- Heartbeats to detect inactive sessions
+- History records containing previous values and change reasons
+
+Development and Live rules may both remain active. When a Development rule is validated, its values are inserted into or used to update the related Live rule. The previous Live state is preserved in History.
+
+### Questions Under Review
+
+- What is the safest lock scope for concurrent sessions?
+- How should abandoned sessions be detected and recovered?
+- When should a failed operation be retried automatically?
+- How should similar rules be detected without blocking valid variants?
+- How long should detailed History be retained?
+- How should normal completion, NG, HOLD, and cancellation be represented consistently?
+- What information is required to continue work safely in a later session?
+
+These questions will be documented as GitHub Issues so that alternative designs can be discussed openly.
+
+## Planned Repository Structure
+
+```text
+.
+├── README.md
+├── CHANGELOG.md
+├── docs/
+│   ├── rule-management/
+│   ├── database/
+│   ├── delphi/
+│   ├── api-integration/
+│   ├── printing/
+│   └── automation/
+├── examples/
+│   ├── delphi/
+│   ├── sql/
+│   └── sample-data/
+└── .github/
+    ├── ISSUE_TEMPLATE/
+    └── pull_request_template.md
+```
+
+The structure will grow gradually. Documentation will be added only after each topic is organized and sanitized.
+
+## Data Safety
+
+Never commit:
+
+- Passwords, access tokens, API keys, or private certificates
+- Account numbers or personal identifiers
+- Email authentication information
+- Production databases or database backups
+- Real holdings, orders, prices, or private investment strategies
+- Internal server addresses
+- Private machine paths
+- Proprietary customer or company data
+
+Examples must use fictional names, values, identifiers, and logs.
+
+## How to Participate
+
+Feedback and contributions are welcome.
+
+You can:
+
+- Open an Issue for a technical question or bug
+- Comment on an unresolved design problem
+- Suggest improvements to a database schema
+- Propose safer concurrency and recovery patterns
+- Share an alternative Delphi implementation
+- Submit a Pull Request containing documentation or sanitized sample code
+
+A useful technical Issue should include:
+
+- Problem statement
+- Expected behavior
+- Actual behavior
+- Current design or attempted solution
+- Reproduction steps
+- Sanitized logs, schema, or code
+- Specific questions for reviewers
+
+## Project Status
+
+This repository is at an early documentation and architecture stage. The README defines the overall scope; detailed documents, Issues, sample schemas, and example code will be added incrementally.
+
+## Language
+
+The main documentation is written in English to reach a wider developer audience. Korean notes or bilingual explanations may be added when they improve clarity.
+
+## License
+
+A license has not yet been selected. Until a license is added, the repository is publicly viewable, but reuse and redistribution rights are not automatically granted.
