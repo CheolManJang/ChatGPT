@@ -263,6 +263,14 @@ Coordination, rule application, validation, reporting, and approval requests.
 - To the maximum extent permitted by applicable law, the project owner and contributors disclaim liability for direct, indirect, incidental, special, consequential, or other losses or damages arising from use or inability to use the material.
 - Liability that applicable law does not permit to be excluded or limited remains unaffected.
 
+The repository's consolidated terms are:
+
+- Materials are provided “as is” and “as available.”
+- No product, paid service, support obligation, professional advice, service level, warranty, indemnity, or guaranteed result is offered.
+- Users must independently test, secure, back up, verify, and confirm compliance.
+- Responsibility is limited to the maximum extent permitted by applicable law.
+- Liability that applicable law does not allow to be excluded or limited remains unaffected.
+
 See the full [Disclaimer](DISCLAIMER.md).
 
 ## 13. Core Rule
