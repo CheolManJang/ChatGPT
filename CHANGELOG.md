@@ -13,6 +13,14 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.8.3] - 2026-08-24
+
+### Clarified
+
+- Defined the repository as a non-commercial technical knowledge-sharing and public discussion project.
+- Clarified that it does not sell a product, paid service, consulting engagement, support contract, or guaranteed result.
+- Clarified that public access does not create a seller–buyer, vendor–customer, consultant–client, or service-provider relationship.
+
 ## [0.8.2] - 2026-08-24
 
 ### Added
