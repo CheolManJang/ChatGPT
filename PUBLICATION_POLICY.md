@@ -8,7 +8,7 @@
 
 ## 1. Purpose
 
-This repository shares **ChatGPT applied-technology architecture**, not private operational intelligence.
+This repository is a **non-commercial public technical knowledge-sharing and discussion project**. It shares ChatGPT applied-technology architecture; it does not sell a product, paid service, consulting engagement, support contract, or guaranteed result.
 
 Public documentation must help other users understand system design, reliability, workflow, and limitations without exposing the user's core algorithms, private data, or competitive decision rules.
 
