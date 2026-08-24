@@ -130,13 +130,15 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.5.0** — Reliability, rule-drift recovery, and publication safety
+**v0.6.0** — Storage, workspace, synchronization, backup, and recovery boundaries
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
 
 ## Detailed Documentation
 
+- [Storage, Context, and Workspace Boundaries](docs/storage-context-and-workspace-boundaries.md) — Library vs. Google Drive, Gmail attachments, memory synchronization, Chat, Projects, Work, authoritative sources, and confirmed non-guarantees.
+- [Complete Backup and Recovery Manifest](docs/complete-backup-and-recovery-manifest.md) — why ordinary backups are incomplete, required backup contents, restore order, validation, completion criteria, and non-restorable state.
 - [ChatGPT Reliability and Recovery](docs/chatgpt-reliability-and-recovery.md) — why stable workflows can suddenly drift, required foundation, memory review, conflict diagnosis, recovery steps, preventive controls, and limitations.
 - [Public Repository Safety Policy](PUBLICATION_POLICY.md) — prohibited algorithms and data, sanitization, publication gates, screenshot safety, incident response, and public/private boundaries.
 - [ChatGPT Plus No-API Architecture](docs/chatgpt-plus-no-api-architecture.md) — overall applied-technology model, Plus reference environment, Free adaptation, Google Drive purpose, Gmail workflow, scheduled tasks, data separation, advantages, limitations, and current construction status.
