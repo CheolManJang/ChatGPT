@@ -149,7 +149,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.8.9** — Third-party provider responsibility boundary
+**v0.9.0** — G-Yearly Google Drive case study
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
@@ -163,6 +163,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 - [Public Repository Safety Policy](PUBLICATION_POLICY.md) — prohibited algorithms and data, sanitization, publication gates, screenshot safety, incident response, and public/private boundaries.
 - [Disclaimer](DISCLAIMER.md) — user responsibility, no warranties, no professional advice, testing obligations, and limitation of liability.
 - [ChatGPT Plus No-API Architecture](docs/chatgpt-plus-no-api-architecture.md) — baseline: 2026-08-24, individual Plus account, ChatGPT web/Work, no direct OpenAI API; covers Library as the Yearly-Candle source, Drive as the G-Yearly original, raw-data exchange, and backup layer, Gmail, scheduled tasks, advantages, limitations, and verified construction status.
+- [G-Yearly Report: Google Drive–Based Case Study](docs/g-yearly-report.md) — why the Drive-based system was built, its registered original, workflow, qualitative speed model, advantages, disadvantages, encountered problems, reliability controls, benchmark plan, current status, and publication boundary.
 - [Yearly-Candle Monitoring Report System](docs/yearly-candle-monitoring-report.md) — motivation, goals, private master, multi-session market verification, report and Gmail pipeline, difficulties, solutions, failure lessons, current status, limitations, and next steps.
 - [Rule Management and Work Tracking System](docs/rule-management-and-work-tracking.md) — why the system was built, architecture, rule lifecycle, History, work management, concurrency, advantages, disadvantages, difficulties, limitations, open questions, and next steps.
 - [MENU and CMD Input Interface](docs/menu-and-command-interface.md) — command and menu namespaces, dot-based identifiers, explanation requests, parsing order, ambiguity handling, rule lifecycle integration, limitations, and tests.
