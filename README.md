@@ -4,10 +4,7 @@
 > **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; product behavior and observed limitations are specific to the tested plan, context, permissions, connected apps, and rollout state. Revalidate after material product changes.
 
 > [!CAUTION]
-> **Free, non-commercial technical sharing — use at your own risk.** Materials are provided “as is.” No product, paid service, support obligation, warranty, or guaranteed result is offered. Users must independently verify and protect their systems and data. See the [Disclaimer](DISCLAIMER.md).
-
-> [!WARNING]
-> **AI-assisted responses:** Straightforward questions may be answered by ChatGPT. AI-generated responses can contain errors or omissions. Verify all technical information before applying it to production systems. Material design decisions and rule changes require human review and approval.
+> **Free, non-commercial technical sharing — use at your own risk.** All documentation, examples, code fragments, workflows, and AI-assisted responses are provided “as is” and may be inaccurate, incomplete, outdated, incompatible, or unsafe for a particular environment. No product, paid service, support obligation, warranty, or guaranteed result is offered. Review and test everything independently, protect systems and data, and supervise automated actions before production use. Material design decisions and rule changes require human review and approval. See the [Disclaimer](DISCLAIMER.md).
 
 A non-commercial public technical knowledge-sharing project—not a product sale or paid service—for building a persistent, rule-driven operational partnership with ChatGPT Plus—without directly using the OpenAI API.
 
@@ -152,7 +149,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.8.7** — Consolidated non-commercial responsibility terms
+**v0.8.8** — Plain-language open technical-sharing notice
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
