@@ -10,6 +10,23 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.2.0] - 2026-08-24
+
+### Added
+
+- Documented the MENU and CMD input interface.
+- Defined MENU as navigation and CMD as executable operation.
+- Defined dot-based canonical identifiers such as CMD.100 and MENU.100.
+- Documented number-only invocation and attached explanation requests.
+- Documented deterministic parsing order and ambiguity handling.
+- Integrated MENU and CMD definitions with Development, Live, History, sessions, and work results.
+- Documented advantages, disadvantages, difficulties, limitations, suggested schema, and parser tests.
+
+### Changed
+
+- Updated the current public version from 0.1.0 to 0.2.0.
+- Expanded detailed documentation links in README.
+
 ## [0.1.0] - 2026-08-24
 
 ### Added
