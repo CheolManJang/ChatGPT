@@ -159,7 +159,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.13.0** — Multi-session synchronization and locking architecture
+**v0.14.0** — Retired Report TAG optimization retrospective
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
@@ -176,7 +176,8 @@ These questions will be documented as GitHub Issues so that alternative designs 
 - [Disclaimer](DISCLAIMER.md) — user responsibility, no warranties, no professional advice, testing obligations, and limitation of liability.
 - [ChatGPT Plus No-API Architecture](01_Architecture/chatgpt-plus-no-api-architecture.md) — baseline: 2026-08-24, individual Plus account, ChatGPT web/Work, no direct OpenAI API; covers Library as the Yearly-Candle source, Drive as the G-Yearly original, raw-data exchange, and backup layer, Gmail, scheduled tasks, advantages, limitations, and verified construction status.
 - [G-Yearly Report: Google Drive–Based Case Study](03_Reports/g-yearly-report.md) — why the Drive-based system was built, its registered original, workflow, qualitative speed model, advantages, disadvantages, encountered problems, reliability controls, benchmark plan, current status, and publication boundary.
-- [Yearly Report Email Delivery Module](03_Reports/yearly-report-email-delivery.md) — separates validated report packages from Gmail delivery, recipient/attachment checks, idempotency, sent/delivered/received/replied states, NG, HOLD, and resend safety.
+- [Yearly Report Email Delivery Module](03_Reports/yearly-report-email-delivery.md)
+- [Retired Report TAG Optimization](03_Reports/retired-report-tag-optimization.md) — temporary stage-focused prompt routing, its large AI attention impact, benefits, TAG proliferation and synchronization risks, optimization result, and removal. — separates validated report packages from Gmail delivery, recipient/attachment checks, idempotency, sent/delivered/received/replied states, NG, HOLD, and resend safety.
 - [Sanitized color-coded report example](03_Reports/sanitized-g-yearly-report-example.html) — fictional HTML layout with important validation states highlighted; no operational data.
 - [Yearly-Candle Monitoring Report System](03_Reports/yearly-candle-monitoring-report.md) — motivation, goals, private master, multi-session market verification, report and Gmail pipeline, difficulties, solutions, failure lessons, current status, limitations, and next steps.
 - [Rule Management System](02_Rule_Management/rule-management-system.md) — Development, Live, History, validation, promotion, rollback, rule ownership, and concurrency.
