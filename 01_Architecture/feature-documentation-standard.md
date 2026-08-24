@@ -64,8 +64,41 @@ Every feature document must answer:
 14. **Next work and acceptance criteria**
     - What must be completed and verified before broader use or Live promotion?
 
-15. **Publication safety**
+15. **Supporting examples and visual evidence**
+    - Add a sanitized sample when it materially improves understanding or verification.
+    - Suitable artifacts include Markdown examples, fictional input/output, HTML previews, screenshots recreated with fake data, Mermaid flows, schema extracts, state tables, before/after comparisons, and reconstructed failure cases.
+    - Explain what the sample proves and what it does not prove.
+
+16. **Publication safety**
     - Which data, logic, prompts, credentials, links, recipients, or operational details must remain private?
+
+## Supporting Artifact Rule
+
+Supporting artifacts are required when prose alone cannot clearly show structure, sequence, state, layout, or failure behavior.
+
+Preferred artifacts:
+
+- **Markdown example:** rules, TASK results, History, configuration, and failure records
+- **HTML example:** report or email layout
+- **SVG or recreated image:** safe visual preview without operational screenshots
+- **Mermaid diagram:** lifecycle, workflow, synchronization, or recovery sequence
+- **Sanitized schema:** tables, fields, keys, and relationships
+- **Before/after comparison:** optimization or migration result
+- **Failure example:** NG, HOLD, timeout, stale version, partial result, or recovery
+- **Test fixture:** fictional input, expected output, and acceptance result
+
+Every artifact must:
+
+1. Use fictional identifiers and non-operational values.
+2. Remove real symbols, prices, holdings, accounts, recipients, file IDs, private links, credentials, and prompts.
+3. State that it is sanitized.
+4. Identify the feature version and document baseline.
+5. Describe what is illustrated.
+6. Avoid implying that a visual example proves production readiness.
+7. Be updated or removed when the related feature changes.
+8. Pass the same publication gate as prose.
+
+Do not attach a real screenshot merely because it is convenient. Recreate the relevant structure when the original contains private or reconstructable information.
 
 ## Required Adoption Summary
 
@@ -132,4 +165,5 @@ Do not publish a feature document until:
 - Advantages and disadvantages are both stated
 - Failure and recovery are documented
 - Private data and reconstructable core algorithms are removed
-- Links and document baseline are verified
+- Required supporting artifacts are attached, sanitized, and explained
+- Links, previews, and document baseline are verified
