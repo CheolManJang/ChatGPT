@@ -13,6 +13,24 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.14.5] - 2026-08-24
+
+### Corrected
+
+- Corrected the primary Report TAG adoption trigger: Report processing had become slow, and TAGs were introduced to isolate the many contributing logic blocks so each could be inspected and optimized independently.
+- Clarified that finding logic-specific defects and weak points was an important benefit of the same mechanism, but not the complete original reason for introducing TAGs.
+- Clarified that TAGs did not improve speed by themselves; they exposed logic boundaries, reduced the optimization search scope, and helped identify unnecessary or repeated work.
+
+### Added
+
+- Added performance-analysis and processing-scope rows to the before/during/after comparison.
+- Added a sanitized performance-diagnosis example without publishing actual timings or production rules.
+- Added regression requirements to verify that optimized logic does not repeat unchanged work and that complete Report behavior remains equivalent.
+
+### Changed
+
+- Updated the current public documentation version from 0.14.4 to 0.14.5.
+
 ## [0.14.4] - 2026-08-24
 
 ### Added

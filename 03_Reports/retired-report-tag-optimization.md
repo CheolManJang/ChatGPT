@@ -11,12 +11,12 @@
 
 | Field | Project record |
 |---|---|
-| Introduced because | A report contained many logic blocks, making it difficult to locate which logic produced an incorrect result. |
-| Intended improvement | Add temporary visible diagnostic identifiers, find logic-specific weak points, optimize one logic, and add regression evidence. |
+| Introduced because | Report processing had become slow, and the report contained many logic blocks whose individual cost and weak points were difficult to isolate. |
+| Intended improvement | Identify each logic in Development output, locate slow or inefficient logic, optimize it independently, and preserve before/after evidence. |
 | Main difficulty | Keeping TAG-to-logic mappings synchronized and preventing AI attention from being misdirected. |
 | Main advantage | Focused diagnosis without changing unrelated logic. |
 | Main disadvantage | TAG drift, hidden rule duplication, context influence, leakage risk, and regression. |
-| Observed result | The diagnostics helped optimize logic and were removed before Live; persistent TAG control is prohibited. |
+| Observed result | Project observation: logic-by-logic diagnosis reduced the broad optimization scope and improved report processing; exact public timing data is not retained. TAGs were removed before Live. |
 | Current status | Retired / replaced by explicit modules, evidence, and tests. |
 | Retest trigger | Any report logic, prompt, format, example, model, or context change. |
 
@@ -31,6 +31,14 @@ The TAG itself was not the optimization. It was an observable diagnostic label. 
 After each logic was optimized and validated, its useful behavior was moved into explicit functions, rules, inputs, validators, and tests. The temporary TAGs were removed from the Live report.
 
 ## 2. Why TAGs Were Introduced
+
+### Primary trigger: report processing speed
+
+The TAG feature was introduced after the Report workflow developed a speed problem. The report had accumulated many logic blocks, and the AI repeatedly had to consider a broad set of rules, examples, exceptions, and output requirements. When the complete Report was treated as one large unit, it was difficult to determine which logic consumed unnecessary processing effort or caused repeated analysis.
+
+The purpose of TAG was therefore to make each logic separately identifiable during Development. The project could inspect one logic at a time, find its inefficient conditions or unnecessary scope, optimize it, and compare the Report behavior before and after the change.
+
+Finding wrong or unusual results was an important benefit of the same mechanism, but it was not the only starting point. The original operational problem was Report speed, and TAG provided a way to locate and optimize the logic contributing to that problem.
 
 A single report can contain many logic blocks whose results appear together:
 
@@ -54,18 +62,20 @@ This allowed the user to point to a specific result and ask, in effect: “Which
 
 ### Actual adoption story
 
-The TAG mechanism was introduced only after the first report had already been assembled from many logic blocks. At that point, the main problem was no longer whether the report could be generated. The problem was that the combined output did not reveal which individual logic was responsible when a result looked wrong.
+The TAG mechanism was introduced only after the first report had already been assembled from many logic blocks and Report processing had become slow. At that point, the main problem was no longer whether the report could be generated. The problems were that the combined workflow was expensive to analyze as one unit and that its output did not reveal which individual logic was slow, inefficient, or responsible when a result looked wrong.
 
-The user could see the defect in the report, but the AI had to search a broad and interacting set of instructions. A correction aimed at the whole report could improve one result while unintentionally changing another logic, output order, exception, or format.
+The user could observe the slow workflow and see defects in the report, but the AI had to search a broad and interacting set of instructions. A global optimization attempt could spend time revisiting unrelated logic or improve one result while unintentionally changing another logic, output order, exception, or format.
 
-The project therefore added a visible identity to each Development result. The user inspected the report, pointed out the suspicious result, and used its TAG to identify the responsible logic. The AI then reviewed that logic's conditions, omissions, and boundary cases instead of rewriting the report globally. The corrected logic was rerun against the same case, compared with the previous output, and retained only after regression checks.
+The project therefore added a visible identity to each Development logic and result. The user and AI could isolate a logic, inspect its processing scope and output, find unnecessary work or weak conditions, optimize only that logic, and then rerun the Report. Suspicious results were traced through the same TAG. The optimized logic was compared with the previous behavior and retained only after regression checks.
 
-This user-observation loop was essential. The TAG did not decide whether a result was correct; it made the suspected source of the result visible so that the user and AI could investigate it together.
+This user-observation loop was essential. The TAG did not make the Report faster by itself and did not decide whether a result was correct. It made a logic boundary visible so the user and AI could find a bottleneck or weak point and optimize that logic together.
 
 ### Before and after adoption
 
 | Area | Before TAG diagnostics | During TAG diagnostics | Permanent result after TAG removal |
 |---|---|---|---|
+| Performance analysis | Whole Report treated as one broad optimization target | Logic-by-logic scope and repeated-work review | Optimized modules and regression evidence remain |
+| Processing scope | Unrelated logic repeatedly reconsidered | Selected logic and required dependencies only | Explicit boundaries reduce unnecessary cross-logic work |
 | Defect description | “The report result is wrong.” | “The result carrying `CLASSIFY` is wrong.” | Logic-specific test identifies the failing module. |
 | Search scope | Entire report prompt and all logic blocks | Responsible logic and known dependencies | Explicit module, contract, validator, and test scope |
 | Change risk | Unrelated behavior could be modified | Unrelated logic is marked out of scope | Regression suite protects approved behavior |
@@ -87,13 +97,14 @@ This user-observation loop was essential. The TAG did not decide whether a resul
 
 The important improvement was not shorter output or a new label. It was a safer optimization method:
 
-1. The user could identify the exact suspicious report result.
-2. The responsible logic became visible.
-3. The AI could narrow analysis to that logic and its dependencies.
-4. The logic's omission or weak boundary condition could be corrected without broad report rewrites.
-5. The same case could be compared before and after the change.
-6. A regression case could preserve the discovered lesson.
-7. The TAG could then be removed while the optimized logic remained.
+1. The whole Report no longer had to be treated as one undifferentiated optimization target.
+2. Slow, repetitive, or overly broad logic could be isolated.
+3. The AI could narrow analysis to that logic and its required dependencies.
+4. The user could also identify the exact suspicious report result produced by the logic.
+5. Inefficient conditions, omissions, or weak boundary cases could be corrected without broad report rewrites.
+6. The same controlled case could be compared before and after the change.
+7. A regression case could preserve the discovered lesson.
+8. The TAG could then be removed while the speed improvement and optimized logic remained.
 
 ## 3. Sanitized Example
 
@@ -160,6 +171,9 @@ It also made continued use risky. If the TAG-to-logic mapping became stale or in
 
 ## 6. Benefits During Optimization
 
+- Turned a general Report speed problem into logic-specific optimization work
+- Reduced repeated analysis of unrelated report logic
+- Made slow or overly broad logic easier to isolate
 - Made the responsible logic visible in the report
 - Allowed the user to identify the exact problematic output
 - Reduced the search area for the AI
@@ -392,6 +406,8 @@ The safe architecture assumes that AI behavior may regress. Deterministic state 
 
 The TAG experiment helped the project:
 
+- Address the Report speed problem through logic-by-logic optimization
+- Reduce unnecessary broad re-analysis of unrelated logic
 - Identify the logic responsible for each report result
 - Find logic-specific weak points
 - Optimize one logic without disturbing unrelated logic

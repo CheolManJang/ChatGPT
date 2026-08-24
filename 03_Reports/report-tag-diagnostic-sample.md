@@ -5,7 +5,20 @@
 
 ## Purpose
 
-This sample shows how a temporary Development TAG helps identify the logic responsible for an incorrect report result. It does not define a permanent routing command and must not appear in Live output.
+This sample shows how a temporary Development TAG helps isolate a slow or inefficient logic and identify the logic responsible for an incorrect report result. It does not define a permanent routing command and must not appear in Live output.
+
+## Performance Diagnosis
+
+```text
+REPORT_SCOPE     = ALL-LOGIC
+OBSERVED_PROBLEM = SLOW
+LOGIC_TAG        = CLASSIFY
+DIAGNOSIS        = repeated evaluation of an unchanged input branch
+ACTION           = cache validated input state and skip duplicate evaluation
+EVIDENCE         = controlled before/after comparison required
+```
+
+This fictional record illustrates the diagnosis structure only. No actual project timing or production rule is published.
 
 ## Before Optimization
 
@@ -50,6 +63,8 @@ VALIDATION = PASS
 - [x] Delivery readiness is unchanged
 - [x] TAG-free Live output matches approved behavior
 - [x] Retired TAG does not reappear after an unrelated format change
+- [x] Optimized logic does not repeat unchanged work
+- [x] Complete Report behavior remains equivalent after the performance change
 ```
 
 ## Live Output
