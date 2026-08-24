@@ -159,7 +159,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.14.0** — Retired Report TAG optimization retrospective
+**v0.14.1** — Development-only TAG and Live promotion gate
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
