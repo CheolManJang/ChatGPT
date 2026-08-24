@@ -13,6 +13,22 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.12.0] - 2026-08-24
+
+### Added
+
+- Added a retrospective on the retired experiment that loaded or summarized Library-based rules into ChatGPT saved memory.
+- Documented the original goals: faster startup, reduced repeated source retrieval, cross-conversation orientation, and less repeated explanation.
+- Documented observed benefits for lightweight recall and non-critical preferences.
+- Documented synchronization drift, missing version identity, summarization loss, non-deterministic recall, rule mixing, weak auditability, context differences, and incomplete backup and recovery.
+- Documented why memory was rejected as an authoritative store for Live rules, TASK state, report masters, and recovery.
+- Added the approved source boundary, replacement architecture, version-bound cache requirements, and a memory-drift diagnostic procedure.
+
+### Changed
+
+- Marked the Library-to-memory architecture as Retired rather than silently omitting the failed experiment.
+- Updated the current public documentation version from 0.11.0 to 0.12.0.
+
 ## [0.11.0] - 2026-08-24
 
 ### Added
