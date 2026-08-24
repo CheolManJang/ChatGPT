@@ -6,6 +6,20 @@
 > [!CAUTION]
 > **Use at your own risk.** This document contains sanitized architectural lessons only. It does not disclose production rules, private memory contents, prompts, raw data, financial algorithms, credentials, or personal information. See the [Disclaimer](../DISCLAIMER.md).
 
+
+## Adoption Decision Summary
+
+| Field | Project record |
+|---|---|
+| Introduced because | Repeated Library retrieval felt slow and new conversations required repeated orientation. |
+| Intended improvement | Use Memory for faster recall and continuity. |
+| Main difficulty | Memory lacked deterministic version identity, atomic synchronization, complete recall, and audit History. |
+| Main advantage | Faster lightweight recall and reduced repeated explanation. |
+| Main disadvantage | Drift, summarization loss, rule mixing, weak recovery, and false transactional assumptions. |
+| Observed result | Memory was rejected as an authoritative source; OPEN/CLOSE synchronization commands were also retired. |
+| Current status | Retired / replaced by authoritative stores and version-bound evidence. |
+| Retest trigger | Official Memory capabilities or deterministic synchronization controls materially change. |
+
 ## 1. Experiment Status
 
 **Status: Retired / not approved for authoritative operation.**
