@@ -13,6 +13,19 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.8.8] - 2026-08-24
+
+### Added
+
+- Added a plain-language responsibility summary tailored to a free, non-commercial GitHub technical-sharing project.
+- Combined common open-source and AI-project practices: educational purpose, “as is” delivery, no support promise, AI fallibility, independent testing, backup, security, human supervision, and use at the user's own risk.
+
+### Changed
+
+- Consolidated the README's separate responsibility and AI notices into one prominent warning.
+- Rewrote the wording for this repository instead of copying another project's disclaimer.
+- Updated the current public documentation version from 0.8.7 to 0.8.8.
+
 ## [0.8.7] - 2026-08-24
 
 ### Changed
