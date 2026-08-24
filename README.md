@@ -152,7 +152,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.8.4** — Concise front-page notice and Google terms references
+**v0.8.5** — Google and Microsoft responsibility references
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
