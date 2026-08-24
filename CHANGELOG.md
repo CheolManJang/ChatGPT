@@ -13,6 +13,22 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.11.0] - 2026-08-24
+
+### Added
+
+- Defined Rule Engine and Task Manager as functionally separate subsystems with separate databases, state models, services, lock namespaces, commands, transactions, History, and ownership.
+- Added an explicit cross-system integration contract using stable GUID references, correlation IDs, idempotent commands, results, and domain events.
+- Added a migration plan and acceptance criteria for private implementation; documentation does not claim that operational migration is already complete.
+- Added a standalone Yearly Report Email Delivery Module covering immutable validated packages, private recipient resolution, attachment validation, idempotency, sent/delivered/received/replied states, NG, HOLD, resend safety, and reply handling.
+- Added a publication-safe, color-coded HTML report example and SVG preview using fictional identifiers and redacted values only.
+
+### Changed
+
+- Split Rule Management, Task Management, and MENU/CMD into separate functional folders and documents.
+- Clarified that MENU/CMD routes operations but does not own Rule or TASK business state.
+- Updated the current public documentation version from 0.10.0 to 0.11.0.
+
 ## [0.10.0] - 2026-08-24
 
 ### Changed
