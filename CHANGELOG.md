@@ -13,6 +13,18 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.8.2] - 2026-08-24
+
+### Added
+
+- Added a prominent use-at-your-own-risk notice to README and every detailed document.
+- Added a standalone DISCLAIMER covering user responsibility, no warranties, professional-advice exclusions, validation duties, and limitation of liability.
+- Added legal-safety language to the publication policy, Issue notices, and AI-authored reply rules.
+
+### Changed
+
+- Updated the current public documentation version from 0.8.1 to 0.8.2.
+
 ## [0.8.1] - 2026-08-24
 
 ### Added
