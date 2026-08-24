@@ -149,7 +149,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.8.8** — Plain-language open technical-sharing notice
+**v0.8.9** — Third-party provider responsibility boundary
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
