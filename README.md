@@ -1,11 +1,15 @@
-# Practical Development Notes and Solutions
+# ChatGPT Applied Technology
 
-A public technical knowledge-sharing repository based on real development work, difficult implementation problems, design decisions, experiments, and lessons learned.
+A public technical knowledge-sharing project for building a persistent, rule-driven operational partnership with ChatGPT Plus—without directly using the OpenAI API.
 
-The purpose of this repository is twofold:
+The purpose of this repository is to show how ChatGPT can become the operational center of a practical system rather than only a conversational assistant.
 
-1. Share solutions that may help developers facing similar problems.
-2. Publish unresolved technical questions so that other developers can suggest better approaches.
+The reference implementation combines persistent rules, work management, MENU and CMD input, Google Drive, Gmail, GitHub, scheduled monitoring, and human approval.
+
+The repository also:
+
+1. Shares solutions that may help users and developers facing similar problems.
+2. Publishes unresolved technical questions so that others can suggest better approaches.
 
 This is not a production-data repository. All examples are sanitized and focus on reusable technical ideas.
 
@@ -126,13 +130,14 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.2.0** — MENU and CMD interface documentation
+**v0.3.0** — ChatGPT Plus no-API architecture, Google Drive, and Gmail workflow
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
 
 ## Detailed Documentation
 
+- [ChatGPT Plus No-API Architecture](docs/chatgpt-plus-no-api-architecture.md) — overall applied-technology model, Plus reference environment, Free adaptation, Google Drive purpose, Gmail workflow, scheduled tasks, data separation, advantages, limitations, and current construction status.
 - [Rule Management and Work Tracking System](docs/rule-management-and-work-tracking.md) — why the system was built, architecture, rule lifecycle, History, work management, concurrency, advantages, disadvantages, difficulties, limitations, open questions, and next steps.
 - [MENU and CMD Input Interface](docs/menu-and-command-interface.md) — command and menu namespaces, dot-based identifiers, explanation requests, parsing order, ambiguity handling, rule lifecycle integration, limitations, and tests.
 
