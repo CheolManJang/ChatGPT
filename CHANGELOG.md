@@ -10,6 +10,27 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.3.0] - 2026-08-24
+
+### Added
+
+- Reframed the project under the umbrella topic “ChatGPT Applied Technology.”
+- Documented the no-OpenAI-API approach using ChatGPT Plus as the reference environment.
+- Separated core patterns, Plus reference implementation, and availability-dependent extensions.
+- Documented Google Drive as the private persistent source layer.
+- Documented Gmail as the report, notification, reply, and approval communication layer.
+- Documented generation, validation, sending, delivery, receipt, and reply as separate workflow states.
+- Documented scheduled monitoring behavior and approval boundaries.
+- Added a Free-plan manual adaptation model without claiming universal feature availability.
+- Added official ChatGPT Work, plugins, scheduled tasks, email, and web references.
+- Documented current implementation, under-construction items, and capabilities not claimed.
+
+### Changed
+
+- Changed the README title to “ChatGPT Applied Technology.”
+- Updated the current public documentation version from 0.2.0 to 0.3.0.
+- Clarified that rule management, work management, MENU/CMD, Drive, Gmail, GitHub, and automation are modules of one partner-oriented system.
+
 ## [0.2.0] - 2026-08-24
 
 ### Added
