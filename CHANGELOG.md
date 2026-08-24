@@ -13,6 +13,22 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.14.3] - 2026-08-24
+
+### Corrected
+
+- Corrected the documented purpose of Report TAGs: they were added to Development report output as observable identifiers for the logic responsible for each result, not primarily as stage-selection commands.
+- Documented how the user and AI used visible TAGs to trace wrong, missing, duplicated, or inconsistent output to the responsible logic and expose that logic's weak point.
+- Added sanitized examples of logic identity, logic version, validation state, and result correlation.
+- Corrected the optimization workflow to emphasize logic inventory, tagged output, user inspection, focused correction, before/after comparison, and logic-specific regression tests.
+
+### Changed
+
+- Clarified that the final gain was the optimized, independently testable logic—not the TAG itself.
+- Mapped visible diagnostic TAGs to permanent internal module identifiers, version metadata, correlation evidence, deterministic tests, contracts, validation gates, TASK results, and History.
+- Reaffirmed removal of visible diagnostic TAGs before Live to prevent stale mappings, AI misdirection, internal-structure leakage, and regression.
+- Updated the current public documentation version from 0.14.2 to 0.14.3.
+
 ## [0.14.2] - 2026-08-24
 
 ### Added
