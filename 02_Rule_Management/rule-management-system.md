@@ -6,6 +6,20 @@
 > [!CAUTION]
 > **Use at your own risk.** This material is provided for technical education and general information only, without warranties. Evaluate, test, secure, back up, and legally review any implementation. See the [Disclaimer](../DISCLAIMER.md).
 
+
+## Adoption Decision Summary
+
+| Field | Project record |
+|---|---|
+| Introduced because | Conversation and Memory mixed proposals, obsolete instructions, and approved operational rules. |
+| Intended improvement | Create authoritative Development, Live, and History lifecycles with validation and rollback. |
+| Main difficulty | Defining identifiers, conflicts, promotion, locking, and retention without creating another ambiguous layer. |
+| Main advantage | Traceable and safer rule changes. |
+| Main disadvantage | More schema, validation, migration, and concurrency complexity. |
+| Observed result | Functional boundary is defined; private implementation migration remains to be verified. |
+| Current status | Architecture approved; implementation incomplete. |
+| Retest trigger | Schema, model behavior, concurrency, promotion, or source-boundary changes. |
+
 ## Functional Boundary
 
 The Rule Engine uses its own store, lifecycle, locks, validation, History, and command interface. It must not own TASK status, priority, execution attempts, or continuation state. See [Functional Separation: Rule Engine and Task Manager](../01_Architecture/rule-task-functional-separation.md).
