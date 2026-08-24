@@ -10,6 +10,28 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.4.0] - 2026-08-24
+
+### Added
+
+- Documented the yearly-candle monitoring report as a concrete ChatGPT Applied Technology use case.
+- Documented why the reporting system was built and its technical goals.
+- Documented the private master dataset and Google Drive source role.
+- Documented full-population market verification across regular and alternative sessions.
+- Documented staged decision-price selection and terminal-state classification.
+- Documented fixed report validation and Gmail delivery stages.
+- Documented the rule that missing data must never be converted into a negative result.
+- Documented major implementation difficulties and applied solutions.
+- Documented a significant incomplete-data failure case and the resulting architecture requirement.
+- Documented completed, partially tested, incomplete, deferred, and next-step work.
+- Added a public Issue for multi-session, full-population data completeness.
+
+### Changed
+
+- Updated the current public documentation version from 0.3.0 to 0.4.0.
+- Added the yearly-candle system to the README as an applied case study.
+- Clarified that production readiness requires repeated end-to-end population validation.
+
 ## [0.3.0] - 2026-08-24
 
 ### Added
