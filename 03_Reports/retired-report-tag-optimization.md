@@ -4,102 +4,113 @@
 > **Document baseline:** 2026-08-24. This document describes a sanitized optimization experiment used while restructuring the report workflow. The examples are fictional and do not expose production tags, prompts, report values, or core decision algorithms.
 
 > [!CAUTION]
-> **Use at your own risk.** TAG-based routing can improve temporary prompt organization but must not be assumed to provide deterministic execution, complete validation, or safe long-term rule management. See the [Disclaimer](../DISCLAIMER.md).
+> **Use at your own risk.** TAG-based diagnostic instrumentation can improve temporary report-logic analysis but must not be assumed to provide deterministic execution, complete validation, or safe long-term rule management. See the [Disclaimer](../DISCLAIMER.md).
 
 ## 1. Status
 
-**Status: Optimized, absorbed into explicit system structure, and removed as a persistent report-control mechanism.**
+**Status: Diagnostic instrumentation completed; optimized logic retained; visible TAG layer removed before Live.**
 
-TAG markers were temporarily introduced to separate report logic into stages and help ChatGPT focus on only the relevant instructions, sources, checks, and output requirements for the current stage.
+The report contained multiple independent and interacting logic blocks. Temporary TAG markers were added to the generated report so a user and ChatGPT could see which logic produced a section, row, status, warning, or omission.
 
-After the workflow was understood and optimized, the useful distinctions were moved into explicit modules, database fields, state transitions, validation gates, and command contracts. Persistent TAG-driven control was retired.
+The TAG itself was not the optimization. It was an observable diagnostic label. By tracing a wrong result back to its responsible logic, the project could expose that logic's weak point, correct it, rerun the same case, and compare the result.
+
+After each logic was optimized and validated, its useful behavior was moved into explicit functions, rules, inputs, validators, and tests. The temporary TAGs were removed from the Live report.
 
 ## 2. Why TAGs Were Introduced
 
-The report workflow combined many different concerns:
+A single report can contain many logic blocks whose results appear together:
 
-- Source acquisition
-- Source identity and freshness
-- Population completeness
-- Data normalization
-- Calculation
-- Classification
-- Exception handling
-- Output formatting
-- Human review
-- Email packaging and delivery
-- Failure recording
-- Backup and recovery
+- Source identity logic
+- Source freshness logic
+- Population completeness logic
+- Session or market-selection logic
+- Missing-data logic
+- Calculation logic
+- Classification logic
+- Sorting logic
+- Exception logic
+- Output formatting logic
+- Delivery-readiness logic
 
-When all instructions were presented as one large body of text, ChatGPT could give too much attention to irrelevant stages, miss a prerequisite, mix formatting with calculation, or treat an incomplete intermediate result as final.
+When the final report was simply “wrong,” it was difficult to determine which logic created the error. The visible result did not show whether the cause was source selection, incomplete input, calculation, classification, sorting, formatting, or a later transformation.
 
-TAGs created visible boundaries during optimization.
+Temporary TAGs were therefore inserted into the Development report as instrumentation. Each tagged output made the responsible logic observable.
+
+This allowed the user to point to a specific result and ask, in effect: “Which logic produced this part, and where is its weak point?”
 
 ## 3. Sanitized Example
 
-The following names are fictional public examples, not the private production implementation:
+The following identifiers are fictional public examples. They do not reveal production logic or real report values.
 
 ```text
-[TAG:SOURCE]
-[TAG:VALIDATE]
-[TAG:PROCESS]
-[TAG:FORMAT]
-[TAG:DELIVERY]
-[TAG:RESULT]
+[LOGIC:SRC-CHECK]  Source package verified
+[LOGIC:POP-CHECK]  Population incomplete → NG
+[LOGIC:CLASSIFY]   ITEM-A → REVIEW
+[LOGIC:SORT]       Output order validated
+[LOGIC:FORMAT]     Warning style applied
 ```
 
-A temporary staged request could specify:
+A Development report row could carry diagnostic metadata such as:
 
 ```text
-ACTIVE_TAGS = SOURCE, VALIDATE
-STOP_AFTER = VALIDATE
-REQUIRED_RESULT = PASS | NG | HOLD
+ITEM-DEMO
+RESULT = REVIEW
+LOGIC_TAG = CLASSIFY
+LOGIC_VERSION = DEV-EXAMPLE
+VALIDATION = NEEDS-REVIEW
 ```
 
-This told the working process to concentrate on source and validation, avoid later formatting or delivery, and leave a clear continuation point.
+If the row was wrong, the team inspected the classification logic rather than modifying unrelated source, sorting, formatting, or delivery logic.
+
+In the final Live report, these internal diagnostic TAGs were removed. Only approved user-facing status and warning labels remained.
 
 ## 4. How the Feature Was Used
 
-1. Divide the complete report workflow into bounded stages.
-2. Assign a temporary TAG to each stage.
-3. Associate the stage with required inputs, allowed actions, validations, outputs, and stop conditions.
-4. Activate only the TAGs needed for the current work.
-5. Require a stage result before activating the next stage.
-6. Record NG or HOLD instead of continuing when prerequisites failed.
-7. Use stage-specific tests to identify which instruction group caused an error.
-8. Consolidate the proven behavior into explicit system components.
-9. Remove the temporary TAG layer after migration and regression testing.
+1. Inventory the separate logic blocks that contribute to the report.
+2. Assign a temporary diagnostic TAG to each logic block.
+3. Add the responsible TAG and Development version to relevant report output.
+4. Run the complete report with sanitized or controlled test cases.
+5. Let the user inspect the visible result.
+6. Trace each wrong, missing, duplicated, or inconsistent result back to its TAG.
+7. Review only the responsible logic and its dependencies.
+8. Correct that logic without unnecessarily changing unrelated logic.
+9. Re-run the same case and compare before/after output.
+10. Add a regression case for the discovered weak point.
+11. Move the proven logic into explicit code, rules, validators, and state.
+12. Remove diagnostic TAGs and verify that Live output still behaves correctly.
 
-TAGs were therefore an analysis and refactoring aid—not the intended permanent runtime architecture.
+TAGs were thus temporary observability scaffolding for logic-by-logic optimization.
 
 ## 5. Why a Simple TAG Had Large AI Impact
 
-To a user, a TAG can look like a short label. For an AI system, it can materially influence:
+To the user, a TAG appeared to be a small label beside a report result. For the AI, it provided a strong association between visible output and the logic believed to have produced it.
 
-- Which instructions appear relevant
-- Which source fragments are retrieved or emphasized
-- The order in which reasoning stages are attempted
-- Which validations are expected
-- Whether a response is treated as intermediate or final
-- Which output format is selected
-- Which failure rule receives attention
-- How much context is loaded
-- Which competing rule is considered higher priority
+That association affected:
 
-A small textual marker can therefore carry disproportionate routing and attention weight.
+- Which logic was investigated
+- Which instructions and examples received attention
+- Which dependencies were considered relevant
+- Which test case was selected
+- Which before/after outputs were compared
+- Whether a defect was treated as calculation, classification, sorting, formatting, or validation
+- How much unrelated context could be ignored
 
-This made TAGs powerful during optimization—and dangerous when their exact meaning, version, and scope were not controlled.
+This made the TAG valuable: it converted a vague “the report is wrong” problem into a narrower “this logic produced a wrong result” problem.
+
+It also made continued use risky. If the TAG-to-logic mapping became stale or incorrect, the AI could confidently optimize the wrong component.
 
 ## 6. Benefits During Optimization
 
-- Reduced apparent context for each stage
-- Clearer separation between calculation and presentation
-- Easier stage-by-stage diagnosis
-- Faster identification of missing prerequisites
-- Better continuation after NG or HOLD
-- Easier comparison of alternative workflow orders
-- More focused test cases
-- A practical bridge from one large prompt toward modular architecture
+- Made the responsible logic visible in the report
+- Allowed the user to identify the exact problematic output
+- Reduced the search area for the AI
+- Prevented unrelated logic from being changed unnecessarily
+- Exposed logic-specific weak points and missing exceptions
+- Enabled before/after comparison for one logic
+- Produced focused regression cases
+- Revealed dependencies between logic blocks
+- Helped convert an opaque report prompt into explicit modules
+- Made optimization progress understandable to a non-AI user
 
 ## 7. Problems with Continued Use
 
@@ -145,37 +156,37 @@ Operational TAG names or combinations could reveal internal workflow priorities 
 
 ## 8. Why the TAG Layer Was Removed
 
-The experiment succeeded as a refactoring tool. It helped reveal the correct report stages and their boundaries.
+The experiment succeeded because the TAGs helped identify and repair weak logic. They were not intended to remain part of the final report.
 
-It was removed from permanent control because continued use would:
+Continued use would create a second maintenance problem:
 
-- Duplicate the Rule Engine
-- Duplicate the report state machine
-- Create another synchronization target
-- Require its own History and versioning
-- Increase prompt and maintenance complexity
-- Preserve probabilistic ambiguity at critical boundaries
-- Make backup and recovery more difficult
-- Risk exposing internal logic through tag combinations
+- Every TAG would need to remain synchronized with its logic.
+- A renamed or split logic would require TAG migration.
+- A stale mapping could send diagnosis to the wrong component.
+- Internal logic structure could leak through public or operational reports.
+- TAG text could influence later AI interpretation.
+- New report changes could revive retired TAG behavior.
+- Users could mistake diagnostic labels for business results.
+- The TAG layer would require its own versioning, History, backup, and recovery.
 
-The optimization goal was to remove unnecessary reasoning and context—not to create a permanent tagging language.
+The optimization goal was achieved when the logic became independently testable without relying on visible TAGs. At that point, the scaffolding had to be removed before Live.
 
 ## 9. What Replaced TAG-Based Control
 
-| Temporary TAG purpose | Current explicit replacement |
+| Temporary diagnostic purpose | Permanent replacement |
 |---|---|
-| Stage selection | Report state machine |
-| Required inputs | Typed input contract and source manifest |
-| Stage prerequisites | Validation gate |
-| Execution order | Allowed state transitions and TASK dependencies |
-| Scope selection | Module and command namespace |
-| Error stop | NG and HOLD states |
-| Continuation | TASK continuation record |
-| Output selection | Versioned report schema or template |
-| Delivery separation | Email Delivery Module |
-| Concurrency | Session GUID, lock, version check |
-| Audit | Rule History and TASK result History |
-| Synchronization | Authoritative source version and correlation records |
+| Identify responsible logic | Module/function identifier in internal execution records |
+| Show logic version | Versioned rule or code metadata |
+| Trace wrong output | Result evidence and correlation ID |
+| Isolate a weak point | Logic-specific deterministic test |
+| Compare before/after | Regression fixture and expected output |
+| Show dependencies | Typed input contract and dependency graph |
+| Stop on invalid input | Validation gate with NG/HOLD |
+| Preserve investigation | TASK result and History |
+| Control concurrency | Session GUID, lock, and version check |
+| Explain Live output | Approved user-facing reason/status fields |
+
+Internal technical records may retain stable module and version identifiers. The Live user report does not depend on visible diagnostic TAGs.
 
 ## 10. Current Usage Rule
 
@@ -232,10 +243,10 @@ If TAGs are temporarily reintroduced for diagnosis or migration:
 
 1. Define the exact purpose, owner, scope, and expiration.
 2. Use fictional public names when documenting the experiment.
-3. Bind every TAG to a documented module or state.
+3. Bind every TAG to the exact report logic, version, output location, and expected evidence.
 4. Prohibit TAG-only source or validation decisions.
-5. Record active TAGs in the TASK attempt.
-6. Test missing, duplicated, conflicting, and out-of-order tags.
+5. Record diagnostic TAG mappings in the Development TASK attempt.
+6. Test missing, duplicated, stale, conflicting, and incorrectly mapped tags.
 7. Compare results against the non-TAG baseline.
 8. Migrate useful behavior into explicit contracts.
 9. Remove the TAG and its aliases.
@@ -311,20 +322,20 @@ The safe architecture assumes that AI behavior may regress. Deterministic state 
 
 The TAG experiment helped the project:
 
-- Identify distinct report stages
-- Separate source validation from calculation
-- Separate report calculation from email delivery
-- Define NG, HOLD, and continuation boundaries
-- Reduce irrelevant context during analysis
-- Discover hidden dependencies
-- Convert prompt organization into explicit architecture
+- Identify the logic responsible for each report result
+- Find logic-specific weak points
+- Optimize one logic without disturbing unrelated logic
+- Add before/after regression evidence
+- Separate source, completeness, calculation, classification, sorting, formatting, and delivery concerns
+- Discover dependencies between logic blocks
+- Convert opaque report behavior into explicit modules and tests
 
 The final gain came not from retaining TAGs, but from using them to discover structure and then deleting them.
 
 ## 15. Lessons for Developers
 
 - A short AI control marker can have much greater effect than its visible size suggests.
-- Temporary prompt structure is useful for discovering module boundaries.
+- Temporary diagnostic instrumentation is useful for discovering logic boundaries and weak points.
 - Every persistent control language requires versioning, validation, History, and recovery.
 - Labels do not provide deterministic state.
 - Optimizations should have removal criteria.
