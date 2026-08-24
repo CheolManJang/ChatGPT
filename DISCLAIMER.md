@@ -17,13 +17,60 @@ Public access to the repository does not create a seller–buyer, vendor–custo
 
 Contributions, comments, and AI-assisted replies are shared to exchange technical ideas and should not be interpreted as an offer to sell or provide a commercial service.
 
-## 3. Not Professional Advice
+## 3. Consolidated Repository Terms
+
+The following terms summarize the responsibility structure used throughout this repository.
+
+### Provided “as is”
+
+All documentation, examples, schemas, prompts, workflows, code fragments, comments, and AI-assisted responses are provided **“AS IS”** and **“AS AVAILABLE.”**
+
+The project owner and contributors do not promise that the material:
+
+- Is accurate, complete, current, secure, or error-free
+- Will meet a particular requirement or produce a particular result
+- Will operate without interruption
+- Will remain compatible with ChatGPT, operating systems, Office software, Google Drive, Gmail, GitHub, external APIs, devices, or third-party software
+- Will prevent data loss, synchronization failure, service interruption, or incorrect output
+
+### No product or service commitment
+
+This is free, non-commercial technical knowledge sharing. It does not include:
+
+- A product sale or software delivery contract
+- Paid consulting or professional advice
+- Installation, maintenance, monitoring, repair, or support obligations
+- A service-level agreement
+- A warranty, indemnity, or guaranteed outcome
+- A commitment to correct every error or maintain compatibility
+
+### User assumes implementation responsibility
+
+Anyone who applies the material is responsible for:
+
+- Independent technical review and testing
+- Security and permission configuration
+- Backups, recovery tests, and data-loss prevention
+- Verifying AI-generated and third-party information
+- Reviewing automated actions and external communications
+- Compliance with applicable laws, regulations, contracts, licenses, and third-party terms
+- Deciding whether production use is appropriate
+
+### Limitation of responsibility
+
+To the maximum extent permitted by applicable law, the project owner and contributors disclaim responsibility for loss or damage arising from use, reliance, modification, implementation, failure, or inability to use the material.
+
+This includes loss of data, profits, revenue, opportunity, availability, reputation, or business continuity; incorrect results; security incidents; failed backups; and direct, indirect, incidental, special, consequential, exemplary, or punitive damages.
+
+This limitation does not exclude liability that applicable law does not allow to be excluded or limited.
+
+## 4. Not Professional Advice
 
 The repository does not provide legal, financial, investment, accounting, tax, cybersecurity, medical, or other regulated professional advice.
 
 Users must consult appropriately qualified professionals before relying on the material for decisions requiring professional judgment.
 
-## 4. User Responsibility
+## 5. User Responsibility
 
 You are solely responsible for:
 
@@ -38,7 +85,7 @@ You are solely responsible for:
 
 Applying, adapting, deploying, or operating material from this repository is at your own risk.
 
-## 5. No Warranty
+## 6. No Warranty
 
 The material is provided **“AS IS”** and **“AS AVAILABLE,”** without warranties or conditions of any kind, express or implied.
 
@@ -46,7 +93,7 @@ No warranty is made regarding accuracy, completeness, reliability, security, ava
 
 AI-generated material can contain errors, omissions, hallucinations, outdated information, insecure assumptions, or inconsistent results.
 
-## 6. Limitation of Liability
+## 7. Limitation of Liability
 
 To the maximum extent permitted by applicable law, the project owner and contributors will not be liable for claims, losses, costs, expenses, or damages arising from or related to use of, reliance on, modification of, implementation of, or inability to use repository material.
 
@@ -54,19 +101,19 @@ This includes, without limitation, direct, indirect, incidental, special, conseq
 
 Nothing in this disclaimer excludes or limits liability that applicable law does not allow to be excluded or limited.
 
-## 7. External Services and Product Changes
+## 8. External Services and Product Changes
 
 ChatGPT, connected apps, Google Drive, Gmail, GitHub, external APIs, and other services are operated by third parties and can change, fail, restrict access, or behave differently by plan, account, region, rollout, permission, and workspace policy.
 
 The project owner and contributors do not control or guarantee those services.
 
-## 8. Financial and Automated Workflows
+## 9. Financial and Automated Workflows
 
 Public documentation intentionally excludes private trading algorithms, operational prices, holdings, raw financial data, and user-specific decision rules.
 
 Any financial, reporting, monitoring, notification, or automated workflow must be independently validated. Repository examples must not be treated as a recommendation to buy, sell, hold, or otherwise transact in any asset.
 
-## 9. Reference Examples from Google Terms
+## 10. Reference Examples from Google and Microsoft Terms
 
 The following references show that even a large service provider separates a short service description from detailed warranty and liability terms.
 
@@ -102,10 +149,10 @@ Microsoft's public Terms of Use also warns that technical documents may contain 
 
 As with the Google examples, Microsoft's terms are drafting references only. They do not govern this repository or give this project Microsoft's contractual protections or legal resources.
 
-## 10. Acceptance
+## 11. Acceptance
 
 By using or implementing repository material, you acknowledge that you have read this disclaimer, understand the risks, and accept responsibility for your use to the extent permitted by applicable law.
 
-## 11. License Status
+## 12. License Status
 
 This disclaimer does not grant permission to copy, modify, distribute, or reuse repository content. Licensing rights are governed separately by the repository's selected license. Until a license is added, public visibility alone does not automatically grant reuse or redistribution rights.
