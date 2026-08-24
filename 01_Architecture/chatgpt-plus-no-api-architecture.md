@@ -1,4 +1,12 @@
 # ChatGPT Applied Technology Without the OpenAI API
+> [!NOTE]
+> **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; observed behavior depends on the tested plan, context, permissions, connected apps, and rollout. Revalidate after material product changes.
+> **기준:** 2026년 8월 24일. 참조 환경: ChatGPT 웹/Work를 사용하며 직접 OpenAI API를 호출하지 않는 개인 ChatGPT Plus 계정. 아키텍처 원칙은 일반적이지만, 관찰된 동작은 테스트한 플랜, 맥락, 권한, 연결된 앱 및 배포 상태에 따라 달라집니다. 중요한 제품 변경 후 다시 검증하십시오.
+
+> [!CAUTION]
+> **Use at your own risk.** This material is provided for technical education and general information only, without warranties. Evaluate, test, secure, back up, and legally review any implementation. See the [Disclaimer](../DISCLAIMER.md).
+> **사용 시 주의.** 본 자료는 교육 및 일반 정보 제공 목적이며, 어떠한 보증도 제공하지 않습니다. 모든 구현을 직접 평가·테스트하고, 보안과 백업을 확인하며, 필요한 법적 검토를 수행하십시오. [면책 조항](../DISCLAIMER.md)을 참조하십시오.
+
 
 > [!CAUTION]
 > **Use at your own risk.** This material is provided for technical education and general information only, without warranties. You are responsible for evaluating, testing, securing, and legally complying with any implementation. See the [Disclaimer](../DISCLAIMER.md).
@@ -144,25 +152,25 @@ ChatGPT is the operational coordinator, but it is not assumed to run continuousl
 
 The applied-technology system currently contains or plans the following modules:
 
-1. **Rule Management**  
+1. **Rule Management**
    Development, Live, validation, promotion, History, and rollback.
 
-2. **Work Management**  
+2. **Work Management**
    Priority, required order, duplicate prevention, result descriptions, NG, HOLD, cancellation, and continuation.
 
-3. **MENU and CMD Interface**  
+3. **MENU and CMD Interface**
    Short numeric or canonical inputs, explanation requests, parameter parsing, ambiguity handling, and audit records.
 
-4. **Persistent Source Layer**  
+4. **Persistent Source Layer**
    Approved files in connected storage rather than relying only on conversation memory.
 
-5. **Connected Application Layer**  
+5. **Connected Application Layer**
    Google Drive, Gmail, GitHub, and other approved tools.
 
-6. **Automation Layer**  
+6. **Automation Layer**
    Scheduled checks, recurring reports, event monitoring where supported, and quiet behavior when nothing changed.
 
-7. **Human Approval Layer**  
+7. **Human Approval Layer**
    Review before important external communication, publication, deletion, or rule change.
 
 ## 6. Library and Google Drive: System-Specific Operational Boundary

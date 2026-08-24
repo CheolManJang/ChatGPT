@@ -1,4 +1,12 @@
 # Changelog
+> [!NOTE]
+> **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; observed behavior depends on the tested plan, context, permissions, connected apps, and rollout. Revalidate after material product changes.
+> **기준:** 2026년 8월 24일. 참조 환경: ChatGPT 웹/Work를 사용하며 직접 OpenAI API를 호출하지 않는 개인 ChatGPT Plus 계정. 아키텍처 원칙은 일반적이지만, 관찰된 동작은 테스트한 플랜, 맥락, 권한, 연결된 앱 및 배포 상태에 따라 달라집니다. 중요한 제품 변경 후 다시 검증하십시오.
+
+> [!CAUTION]
+> **Use at your own risk.** This material is provided for technical education and general information only, without warranties. Evaluate, test, secure, back up, and legally review any implementation. See the [Disclaimer](DISCLAIMER.md).
+> **사용 시 주의.** 본 자료는 교육 및 일반 정보 제공 목적이며, 어떠한 보증도 제공하지 않습니다. 모든 구현을 직접 평가·테스트하고, 보안과 백업을 확인하며, 필요한 법적 검토를 수행하십시오. [면책 조항](DISCLAIMER.md)을 참조하십시오.
+
 
 > [!NOTE]
 > **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; product behavior and observed limitations are specific to the tested plan, context, permissions, connected apps, and rollout state. Revalidate after material product changes.
@@ -12,6 +20,20 @@ The project uses semantic-style documentation versions:
 - **Patch** — clarification, correction, formatting, or non-structural improvement
 
 Private operational data is never included in public version history.
+
+## [0.14.9] - 2026-08-24
+
+### Added
+
+- Added sanitized samples for the implemented TASK lifecycle and Rule DB promotion flow.
+- Registered `PUBLIC-DOC-NOTICE-001`, requiring the approved bilingual baseline and caution notice in every public document.
+
+### Changed
+
+- Reclassified Task Management and Rule Management from architecture-only/incomplete descriptions to bounded private implementations with explicitly separated hardening work.
+- Added version, baseline, environment, evidence class, fictional-data boundary, and retest information to the Report TAG sample.
+- Applied the bilingual NOTE and CAUTION block to every Markdown document and the public HTML report sample.
+- Removed README topic candidates that came only from technical questions and were not verified as shared implementation experience.
 
 ## [0.14.8] - 2026-08-24
 
@@ -243,7 +265,7 @@ Private operational data is never included in public version history.
 
 ### Added
 
-- Added a third-party provider responsibility boundary for Google Drive, Gmail, ChatGPT/OpenAI services, Delphi tooling, SQLite distributions and integrations, operating systems, GitHub, APIs, devices, libraries, and other dependencies.
+- Added a third-party provider responsibility boundary for connected services, development tooling, database distributions, operating systems, repositories, libraries, and other dependencies.
 - Clarified that support requests, complaints, claims, and exercises of legal rights concerning a third-party failure should be directed to the responsible provider or rights holder under its governing terms and procedures.
 - Clarified that this repository and its contributors do not represent, guarantee, insure, resell, or substitute for third-party providers.
 - Clarified that the clause does not predetermine legal liability, which depends on the facts, applicable law, and governing terms.

@@ -1,4 +1,12 @@
 # Task Management System
+> [!NOTE]
+> **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; observed behavior depends on the tested plan, context, permissions, connected apps, and rollout. Revalidate after material product changes.
+> **기준:** 2026년 8월 24일. 참조 환경: ChatGPT 웹/Work를 사용하며 직접 OpenAI API를 호출하지 않는 개인 ChatGPT Plus 계정. 아키텍처 원칙은 일반적이지만, 관찰된 동작은 테스트한 플랜, 맥락, 권한, 연결된 앱 및 배포 상태에 따라 달라집니다. 중요한 제품 변경 후 다시 검증하십시오.
+
+> [!CAUTION]
+> **Use at your own risk.** This material is provided for technical education and general information only, without warranties. Evaluate, test, secure, back up, and legally review any implementation. See the [Disclaimer](../DISCLAIMER.md).
+> **사용 시 주의.** 본 자료는 교육 및 일반 정보 제공 목적이며, 어떠한 보증도 제공하지 않습니다. 모든 구현을 직접 평가·테스트하고, 보안과 백업을 확인하며, 필요한 법적 검토를 수행하십시오. [면책 조항](../DISCLAIMER.md)을 참조하십시오.
+
 
 > [!NOTE]
 > **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; observed behavior depends on the tested plan, context, permissions, connected apps, and rollout. Revalidate after material product changes.
@@ -16,8 +24,8 @@
 | Main difficulty | External side effects and interrupted sessions are difficult to reconcile safely. |
 | Main advantage | Reliable continuation and auditable execution results. |
 | Main disadvantage | More states, records, ownership checks, and recovery work. |
-| Observed result | Separate Task Manager architecture is defined; the private live queue is not published. |
-| Current status | Architecture approved; implementation incomplete. |
+| Observed result | **Project observation:** TASK records were used to preserve priority, status, result/NG reason, HOLD, ownership, and continuation instead of relying on chat memory alone. The private queue and operational values are not published. |
+| Current status | Implemented for the project's bounded workflow; schema hardening, recovery tests, and external-side-effect reconciliation remain in Development. |
 | Retest trigger | Status-model, lock, retry, external-action, or context changes. |
 
 ## Functional Boundary
@@ -44,6 +52,25 @@ Rule definitions are maintained separately in the [Rule Management System](../02
 A completed flag cannot explain what was done. A generic error cannot explain the stop point, partial effects, retry safety, or continuation point. Long-running work may also stop because of missing data, permission failure, validation failure, session interruption, user review, or deliberate HOLD.
 
 The system must allow a new session to continue safely without relying on conversational memory.
+
+## 2.1 Actual Implementation Experience
+
+This subsystem was not only discussed as a future architecture. A private work-management store was used to register and update real project work. The implementation experience included:
+
+- Priority and a separate priority sequence, with equal-priority work falling back to registration order
+- Registration, start, completion, cancellation, NG, and HOLD states
+- Work description and a separate result description so “finished” also records what was done
+- Work area, required-order, and duplicate-prohibited controls
+- Session ownership and heartbeat information for interrupted or concurrent work
+- Continuation records so a later chat or Work session can resume the same TASK
+- NG records that preserve the stop point and cause rather than silently appearing complete
+- HOLD or Waiting for User Review when a decision must be made by the user
+
+**Observed improvement:** later work could distinguish normal completion from NG, identify what had already changed, and find the next continuation point without treating the last chat response as the authoritative execution record.
+
+**Observed difficulty:** a stopped ChatGPT response does not prove that database, file, connector, or message side effects also stopped. Ownership and heartbeat helped identify stale work, but side effects still required verification before retry.
+
+See the [sanitized TASK implementation sample](task-implementation-sample.md) for a reconstructed record and state transition.
 
 ## 3. Core TASK Fields
 
@@ -178,7 +205,8 @@ A resumable TASK must contain enough information to answer:
 
 ## 12. Current Limitations
 
-- Final TASK schema and state-transition table are not finalized.
+- The implemented private schema is not published and may continue to evolve.
+- Not every extended status has completed transition and recovery testing.
 - Timeout thresholds and stale-session recovery require testing.
 - The official private TASK source is not published.
 - Cross-context automatic ownership transfer is not guaranteed.
@@ -192,5 +220,5 @@ A resumable TASK must contain enough information to answer:
 3. Define ownership, heartbeat, timeout, and takeover procedures.
 4. Create Completed, NG, HOLD, Cancelled, and Waiting for User Review tests.
 5. Define idempotency evidence for external actions.
-6. Add a sanitized TASK example and History record.
+6. Extend the sanitized TASK example with timeout, duplicate, and external-side-effect recovery cases.
 7. Verify continuation in a new session without conversational reconstruction.

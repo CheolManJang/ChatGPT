@@ -2,7 +2,7 @@
 <rect width="1200" height="720" fill="#f5f7fb"/>
 <rect x="60" y="45" width="1080" height="630" rx="18" fill="white" stroke="#dce3ee"/>
 <text x="95" y="95" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#172033">G-Yearly Report — Sanitized Example</text>
-<text x="95" y="125" font-family="Arial,sans-serif" font-size="15" fill="#657089">Fictional structure only · No operational data</text>
+<text x="95" y="125" font-family="Arial,sans-serif" font-size="15" fill="#657089">Baseline 2026-08-24 · ChatGPT Plus web/Work · No direct OpenAI API · Fictional structure only</text>
 <rect x="95" y="150" width="1010" height="64" rx="8" fill="#eaf1ff"/><rect x="95" y="150" width="6" height="64" fill="#1457d9"/>
 <text x="120" y="178" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#172033">Publication-safe sample</text>
 <text x="120" y="201" font-family="Arial,sans-serif" font-size="14" fill="#44506a">Symbols, prices, holdings, raw data, links, prompts, and algorithms are removed.</text>
@@ -23,4 +23,5 @@
 <text x="115" y="540">ITEM-C</text><text x="310" y="540">NOT AVAILABLE</text><rect x="555" y="517" width="66" height="30" rx="15" fill="#ffebe9"/><text x="575" y="538" font-size="12" font-weight="700" fill="#b42318">NG</text><rect x="750" y="513" width="330" height="42" rx="7" fill="#ffebe9"/><text x="770" y="540" font-size="14" font-weight="700" fill="#b42318">Missing data ≠ negative result</text>
 </g>
 <rect x="95" y="590" width="1010" height="54" rx="8" fill="#f2f4f7"/><text x="115" y="622" font-family="Arial,sans-serif" font-size="14" fill="#657089">Layout and status-color example only — not a production or investment report.</text>
+<text x="95" y="665" font-family="Arial,sans-serif" font-size="12" fill="#657089">Use at your own risk / 사용 시 주의 · Revalidate after product changes · See DISCLAIMER.md / 면책 조항</text>
 </svg>

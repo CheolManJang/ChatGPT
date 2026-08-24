@@ -1,4 +1,12 @@
 # Rule Management System
+> [!NOTE]
+> **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; observed behavior depends on the tested plan, context, permissions, connected apps, and rollout. Revalidate after material product changes.
+> **기준:** 2026년 8월 24일. 참조 환경: ChatGPT 웹/Work를 사용하며 직접 OpenAI API를 호출하지 않는 개인 ChatGPT Plus 계정. 아키텍처 원칙은 일반적이지만, 관찰된 동작은 테스트한 플랜, 맥락, 권한, 연결된 앱 및 배포 상태에 따라 달라집니다. 중요한 제품 변경 후 다시 검증하십시오.
+
+> [!CAUTION]
+> **Use at your own risk.** This material is provided for technical education and general information only, without warranties. Evaluate, test, secure, back up, and legally review any implementation. See the [Disclaimer](../DISCLAIMER.md).
+> **사용 시 주의.** 본 자료는 교육 및 일반 정보 제공 목적이며, 어떠한 보증도 제공하지 않습니다. 모든 구현을 직접 평가·테스트하고, 보안과 백업을 확인하며, 필요한 법적 검토를 수행하십시오. [면책 조항](../DISCLAIMER.md)을 참조하십시오.
+
 
 > [!NOTE]
 > **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; observed behavior depends on the tested plan, context, permissions, connected apps, and rollout. Revalidate after material product changes.
@@ -16,8 +24,8 @@
 | Main difficulty | Defining identifiers, conflicts, promotion, locking, and retention without creating another ambiguous layer. |
 | Main advantage | Traceable and safer rule changes. |
 | Main disadvantage | More schema, validation, migration, and concurrency complexity. |
-| Observed result | Functional boundary is defined; private implementation migration remains to be verified. |
-| Current status | Architecture approved; implementation incomplete. |
+| Observed result | **Project observation:** a private Rule DB separated Development, Live, and History; rule changes could be validated, promoted, traced, and restored without treating chat memory as authoritative. |
+| Current status | Implemented for the project's bounded rule workflow; migration, concurrency, retention, and recovery hardening remain in Development. |
 | Retest trigger | Schema, model behavior, concurrency, promotion, or source-boundary changes. |
 
 ## Functional Boundary
@@ -42,6 +50,25 @@ TASK records are deliberately excluded from this document and are defined in the
 Conversation-only rule management can mix ideas, tests, obsolete instructions, and approved decisions. A later session may treat an old statement as current or promote an untested proposal accidentally.
 
 The system therefore treats chat and memory as useful context, but not as the sole operational source of truth.
+
+## 2.1 Actual Implementation Experience
+
+The project implemented and used a private Rule DB rather than stopping at a conceptual design. The public names below describe the sanitized logical structure, not a database export:
+
+- `RULE_DEFINITION` stores rule identity, scope, lifecycle, and relationship metadata.
+- `RULE_VALUE` stores Development and Live values separately.
+- `RULE_HISTORY` preserves previous values, change reasons, validation evidence, session identity, and outcome.
+- `RULE_PROMOTION_LOG` records Development-to-Live promotion attempts and results.
+- An integer primary key supports storage and joins, while Create, Group, and Link GUIDs preserve lineage and relationships.
+- SQLite write paths use explicit transactions; `BEGIN IMMEDIATE` and a bounded `busy_timeout` were used to reduce silent concurrent-write conflicts.
+- Validation includes required-field, relationship, and invariant checks before promotion.
+- Detailed History is retained and may be archived according to storage policy rather than silently deleted.
+
+**Observed improvement:** Development values could be changed and tested without overwriting the active Live value. Promotion could insert or update the linked Live record while preserving the former value and the reason for the change.
+
+**Observed difficulty:** semantic similarity is useful for warning about possible duplicates, but it is not safe enough to auto-merge rules. A false merge can erase a valid exception or scope difference, so ambiguous similarity remains a review decision.
+
+See the [sanitized Rule DB implementation sample](rule-db-implementation-sample.md) for the public schema boundary and a fictional promotion record.
 
 ## 3. Rule Layers
 
@@ -129,7 +156,7 @@ The interface should remain deterministic around database state. ChatGPT inferen
 
 ## 11. Current Limitations
 
-- Final schema and migration versioning remain under review.
+- The private schema exists, but its final migration/versioning contract remains under review.
 - Lock granularity and timeout recovery are not finalized.
 - Similarity thresholds are not finalized.
 - History retention and archive rules are not finalized.
@@ -145,4 +172,4 @@ The interface should remain deterministic around database state. ChatGPT inferen
 4. Create deterministic validation and regression tests.
 5. Define similarity review levels.
 6. Test conflicts, rollback, timeout, and concurrent promotion.
-7. Publish only sanitized implementation examples.
+7. Extend sanitized examples as migration, rollback, and concurrency tests are completed.
