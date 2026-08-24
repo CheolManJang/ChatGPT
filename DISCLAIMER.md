@@ -84,6 +84,24 @@ They also describe excluded loss categories and preserve liability that cannot l
 
 The Drive page is currently presented by Google at an archived URL but remains linked from Google's current service-specific terms list. These quotations are cited as drafting references only. Google's terms do not govern this repository, and this repository does not claim the same legal position, resources, contractual relationship, or enforceability as Google.
 
+### Microsoft software and services
+
+Microsoft's official software terms state:
+
+> “THE SOFTWARE IS LICENSED ‘AS IS.’ YOU BEAR THE RISK OF USING IT.”
+
+The same terms exclude warranties and limit recoverable damages only to the extent permitted by applicable law, while preserving statutory and regional consumer rights. See [Microsoft Software Licensing Terms](https://learn.microsoft.com/en-us/legal/information-protection/software-license-terms).
+
+Microsoft's Services Agreement, which lists Microsoft 365 consumer and web services among its covered services, states:
+
+> “WE DO NOT GUARANTEE THE SERVICES WILL BE ... ERROR-FREE OR THAT CONTENT LOSS WON’T OCCUR”
+
+It also acknowledges that computer and telecommunications systems are not fault-free and limits specified damages subject to local law. See the [Microsoft Services Agreement](https://www.microsoft.com/en-us/servicesagreement).
+
+Microsoft's public Terms of Use also warns that technical documents may contain inaccuracies or typographical errors and that products and programs may change. See [Microsoft Terms of Use](https://www.microsoft.com/en-us/legal/terms-of-use).
+
+As with the Google examples, Microsoft's terms are drafting references only. They do not govern this repository or give this project Microsoft's contractual protections or legal resources.
+
 ## 10. Acceptance
 
 By using or implementing repository material, you acknowledge that you have read this disclaimer, understand the risks, and accept responsibility for your use to the extent permitted by applicable law.
