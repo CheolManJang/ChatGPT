@@ -3,6 +3,9 @@
 > [!NOTE]
 > **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; product behavior and observed limitations are specific to the tested plan, context, permissions, connected apps, and rollout state. Revalidate after material product changes.
 
+> [!CAUTION]
+> **Use at your own risk.** This repository provides technical education and general information only, without warranties. You are responsible for evaluating, testing, securing, and legally complying with any implementation. To the maximum extent permitted by applicable law, the project owner and contributors disclaim liability for loss or damage arising from use or inability to use this material. See the [Disclaimer](DISCLAIMER.md).
+
 ## 1. Purpose
 
 This repository shares **ChatGPT applied-technology architecture**, not private operational intelligence.
@@ -249,7 +252,20 @@ Private delivery, replies, notifications, and approvals.
 
 Coordination, rule application, validation, reporting, and approval requests.
 
-## 12. Core Rule
+## 12. User Responsibility and Legal Disclaimer
+
+- Repository content is provided for technical education and general information.
+- It is not legal, financial, investment, accounting, tax, security, or other professional advice.
+- Examples and AI-assisted responses may contain errors, omissions, insecure assumptions, or outdated behavior.
+- Users must independently review, test, validate, secure, back up, and confirm legal and regulatory compliance before use.
+- Users assume the risks arising from implementation, configuration, automation, external communication, data processing, financial decisions, and production use.
+- No warranty is provided regarding accuracy, completeness, fitness for purpose, availability, non-infringement, or error-free operation.
+- To the maximum extent permitted by applicable law, the project owner and contributors disclaim liability for direct, indirect, incidental, special, consequential, or other losses or damages arising from use or inability to use the material.
+- Liability that applicable law does not permit to be excluded or limited remains unaffected.
+
+See the full [Disclaimer](DISCLAIMER.md).
+
+## 13. Core Rule
 
 > Publish the engineering method, not the private decision method.
 
