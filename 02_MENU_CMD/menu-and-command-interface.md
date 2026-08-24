@@ -6,6 +6,20 @@
 > [!CAUTION]
 > **Use at your own risk.** This material is provided for technical education and general information only, without warranties. You are responsible for evaluating, testing, securing, and legally complying with any implementation. See the [Disclaimer](../DISCLAIMER.md).
 
+
+## Adoption Decision Summary
+
+| Field | Project record |
+|---|---|
+| Introduced because | Natural-language input alone created ambiguity between navigation, explanation, and executable operations. |
+| Intended improvement | Provide predictable MENU navigation and CMD routing to separate subsystem interfaces. |
+| Main difficulty | Aliases, attached explanations, legacy commands, and context-dependent interpretation can conflict. |
+| Main advantage | Short, repeatable user input with clearer routing. |
+| Main disadvantage | Parser and compatibility rules require maintenance; commands can imply guarantees they do not provide. |
+| Observed result | Dot-based MENU/CMD design is documented; OPEN/CLOSE Memory commands are retired. |
+| Current status | Development / partially verified. |
+| Retest trigger | Parser, command namespace, model interpretation, or subsystem-interface changes. |
+
 ## 1. Overview
 
 This document describes a compact text interface for invoking commands and menus in a conversational or automation-driven system.
