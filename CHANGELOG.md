@@ -13,6 +13,22 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.13.0] - 2026-08-24
+
+### Added
+
+- Added a dedicated multi-session synchronization and locking retrospective for simultaneous Chat, Project, Work, and scheduled-task contexts.
+- Documented split-brain scenarios involving different rule versions, duplicate TASK ownership, mid-run source changes, interrupted owners, delayed CLOSE operations, and Memory synchronization assumptions.
+- Defined the critical boundary that conversations and saved Memory are not treated as lockable transactional state.
+- Added Session GUID, authoritative-store lock, lock-scope, heartbeat, lease, takeover, optimistic version-check, idempotency, external-side-effect, reconciliation, and split-brain recovery designs.
+- Documented coordination between separate Rule Engine and Task Manager databases without assuming cross-database atomicity.
+- Added implementation acceptance requirements for concurrency, timeout, duplicate action, restore, and reconciliation tests.
+
+### Changed
+
+- Replaced conversational session synchronization assumptions with authoritative-record coordination.
+- Updated the current public documentation version from 0.12.1 to 0.13.0.
+
 ## [0.12.1] - 2026-08-24
 
 ### Added
