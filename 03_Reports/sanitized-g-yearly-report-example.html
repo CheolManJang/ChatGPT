@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sanitized G-Yearly Report Example</title>
+<style>
+:root{--ink:#172033;--muted:#657089;--line:#dce3ee;--blue:#1457d9;--blue-bg:#eaf1ff;--green:#146c43;--green-bg:#e8f7ef;--yellow:#8a5a00;--yellow-bg:#fff4ce;--red:#b42318;--red-bg:#ffebe9;--gray:#5d6677;--gray-bg:#f2f4f7}
+*{box-sizing:border-box} body{margin:0;background:#f5f7fb;color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1040px;margin:32px auto;padding:0 18px}.card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 24px rgba(24,39,75,.07);overflow:hidden}
+header{padding:26px 28px 18px;border-bottom:1px solid var(--line)}h1{margin:0 0 6px;font-size:26px}.sub{color:var(--muted)}
+.notice{margin:20px 28px;padding:14px 16px;border-left:5px solid var(--blue);background:var(--blue-bg);border-radius:8px}
+.legend{display:flex;flex-wrap:wrap;gap:10px;padding:0 28px 20px}.pill,.status{display:inline-block;padding:4px 9px;border-radius:999px;font-weight:700;font-size:12px}
+.blue{color:var(--blue);background:var(--blue-bg)}.green{color:var(--green);background:var(--green-bg)}.yellow{color:var(--yellow);background:var(--yellow-bg)}.red{color:var(--red);background:var(--red-bg)}.gray{color:var(--gray);background:var(--gray-bg)}
+section{padding:0 28px 24px}h2{font-size:18px;margin:5px 0 12px}table{width:100%;border-collapse:collapse}th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.important{font-weight:800;color:var(--red);background:var(--red-bg);padding:2px 6px;border-radius:5px}.review{font-weight:800;color:var(--yellow);background:var(--yellow-bg);padding:2px 6px;border-radius:5px}
+footer{padding:18px 28px;background:var(--gray-bg);color:var(--muted);font-size:13px}@media(max-width:720px){table{display:block;overflow-x:auto}header,section{padding-left:18px;padding-right:18px}.notice,.legend{margin-left:18px;margin-right:18px;padding-left:14px}}
+</style>
+</head>
+<body>
+<main>
+<div class="card">
+<header>
+<h1>G-Yearly Report — Sanitized Example</h1>
+<div class="sub">Documentation baseline: 2026-08-24 · Fictional structure only · No operational data</div>
+</header>
+<div class="notice"><strong>Publication-safe sample.</strong> Real symbols, prices, thresholds, holdings, accounts, recipients, raw data, file links, private prompts, and decision algorithms are intentionally removed.</div>
+<div class="legend">
+<span class="pill blue">SOURCE VERIFIED</span>
+<span class="pill green">COMPLETE</span>
+<span class="pill yellow">REVIEW</span>
+<span class="pill red">NG / STOP</span>
+<span class="pill gray">REDACTED</span>
+</div>
+<section>
+<h2>Run Summary</h2>
+<table>
+<tr><th>Field</th><th>Sanitized value</th><th>Status</th></tr>
+<tr><td>Registered source</td><td>G-DRIVE-SOURCE-ALIAS</td><td><span class="status blue">VERIFIED</span></td></tr>
+<tr><td>Source version</td><td>VERSION-REDACTED</td><td><span class="status blue">MATCHED</span></td></tr>
+<tr><td>Population validation</td><td>COUNT-REDACTED / EXPECTED-REDACTED</td><td><span class="status green">COMPLETE</span></td></tr>
+<tr><td>Report result</td><td>STRUCTURE-ONLY</td><td><span class="status yellow">HUMAN REVIEW</span></td></tr>
+</table>
+</section>
+<section>
+<h2>Sanitized Result Rows</h2>
+<table>
+<tr><th>Item</th><th>Decision value</th><th>Validation</th><th>Important note</th></tr>
+<tr><td>ITEM-A</td><td>VALUE-REDACTED</td><td><span class="status green">PASS</span></td><td>Public structural example</td></tr>
+<tr><td>ITEM-B</td><td>VALUE-REDACTED</td><td><span class="status yellow">REVIEW</span></td><td><span class="review">Manual confirmation required</span></td></tr>
+<tr><td>ITEM-C</td><td>NOT AVAILABLE</td><td><span class="status red">NG</span></td><td><span class="important">Missing data must not become a negative result</span></td></tr>
+</table>
+</section>
+<section>
+<h2>Result and Continuation</h2>
+<table>
+<tr><th>Result</th><th>Stop point</th><th>Retry safety</th><th>Continuation</th></tr>
+<tr><td>NG-SAMPLE</td><td>VALIDATION-STAGE</td><td>VERIFY-FIRST</td><td>Acquire and validate the missing source before resuming.</td></tr>
+</table>
+</section>
+<footer>This HTML demonstrates layout, color semantics, validation states, and failure recording only. It is not an investment report or production output.</footer>
+</div>
+</main>
+</body>
+</html>
