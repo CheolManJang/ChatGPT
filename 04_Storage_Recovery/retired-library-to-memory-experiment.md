@@ -226,7 +226,7 @@ The useful intent was preserved at the deterministic system layer:
 
 A user-facing session command may later coordinate these functions, but it must report the verified state of the underlying stores. It must never claim that ChatGPT Memory itself was transactionally opened or closed.
 
-## 14. Why the Approach Was Retired
+## 7. Why the Approach Was Retired
 
 The approach optimized apparent speed by weakening certainty.
 
@@ -246,7 +246,7 @@ The experiment was retired because it could not guarantee:
 
 The decision was not that memory has no value. The decision was that memory must not be promoted into an authoritative operational database.
 
-## 7. Current Approved Boundary
+## 8. Current Approved Boundary
 
 | Information type | Approved authoritative source | Memory role |
 |---|---|---|
@@ -260,7 +260,7 @@ The decision was not that memory has no value. The decision was that memory must
 | General vocabulary | Documentation | Useful orientation |
 | Recovery | Verified backup and recovery manifest | Cannot provide full recovery |
 
-## 8. Replacement Architecture
+## 9. Replacement Architecture
 
 The safer approach is:
 
@@ -276,7 +276,7 @@ The safer approach is:
 
 Memory can say, “The project uses a registered rule source.” It should not silently supply the complete Live rule set.
 
-## 9. Speed Versus Correctness
+## 10. Speed Versus Correctness
 
 The experiment exposed a recurring engineering trade-off:
 
@@ -291,7 +291,7 @@ The approved optimization is a **version-bound verified cache**, not unconstrain
 
 A cache must include source identity, source version or hash, extraction version, creation time, validation result, scope, and invalidation rule. If those fields are unavailable, the source must be fetched again.
 
-## 10. Diagnostic Procedure for Memory-Related Drift
+## 11. Diagnostic Procedure for Memory-Related Drift
 
 When behavior becomes inconsistent:
 
@@ -309,7 +309,7 @@ When behavior becomes inconsistent:
 
 Deleting memory alone does not restore the system. The authoritative source and operational state must also be verified.
 
-## 11. Lessons for Developers
+## 12. Lessons for Developers
 
 - Fast recall is not the same as correct state retrieval.
 - Personalization memory is not a transactional configuration store.
@@ -320,7 +320,7 @@ Deleting memory alone does not restore the system. The authoritative source and 
 - Failure and abandoned approaches should be documented, not hidden.
 - Recovery means validated operational behavior, not merely restoring a file.
 
-## 12. What May Be Published
+## 13. What May Be Published
 
 This retrospective may publish:
 
@@ -342,7 +342,7 @@ It must not publish:
 - Credentials or connected-app authorization details
 - Screenshots that reveal private memory summaries
 
-## 13. Current Conclusion
+## 14. Current Conclusion
 
 Saved memory is useful for human-friendly continuity and non-critical preferences. It is fast because it can reduce repeated explanation, but that speed comes without the versioning, transactions, completeness, and audit guarantees required for an operational rule system.
 
