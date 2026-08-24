@@ -4,7 +4,7 @@
 > **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; product behavior and observed limitations are specific to the tested plan, context, permissions, connected apps, and rollout state. Revalidate after material product changes.
 
 > [!CAUTION]
-> **Non-commercial technical sharing — use at your own risk.** No product, paid service, warranty, or guaranteed result is offered. See the [Disclaimer](DISCLAIMER.md).
+> **Free, non-commercial technical sharing — use at your own risk.** Materials are provided “as is.” No product, paid service, support obligation, warranty, or guaranteed result is offered. Users must independently verify and protect their systems and data. See the [Disclaimer](DISCLAIMER.md).
 
 > [!WARNING]
 > **AI-assisted responses:** Straightforward questions may be answered by ChatGPT. AI-generated responses can contain errors or omissions. Verify all technical information before applying it to production systems. Material design decisions and rule changes require human review and approval.
@@ -152,7 +152,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.8.5** — Google and Microsoft responsibility references
+**v0.8.6** — Consolidated non-commercial responsibility terms
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
