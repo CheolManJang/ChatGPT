@@ -10,6 +10,28 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.7.0] - 2026-08-24
+
+### Added
+
+- Documented a developer architecture for systems combining deterministic rules with ChatGPT inference.
+- Separated facts, approved rules, model inference, state, tools, validation, and human approval.
+- Defined contract-first inputs, rules, outputs, and side effects.
+- Added explicit state-machine, idempotency, bounded-retry, fail-closed, and post-execution verification guidance.
+- Added deterministic tests, scenario evaluations, output rubrics, and release regression sets.
+- Added observability fields for rule versions, sources, tool results, external evidence, NG reasons, and continuation points.
+- Added prompt and tool-design guidance.
+- Added privacy, least-privilege, and human-approval boundaries.
+- Added a Plus/no-direct-OpenAI-API implementation strategy.
+- Added an eight-phase development sequence from observation through operation and recovery.
+- Added common anti-patterns and a developer release checklist.
+- Added a public Issue to discuss the boundary between deterministic logic and ChatGPT inference.
+
+### Changed
+
+- Updated the public documentation version from 0.6.0 to 0.7.0.
+- Clarified that developers should build a deterministic operating shell around probabilistic inference rather than rely on a larger prompt.
+
 ## [0.6.0] - 2026-08-24
 
 ### Added
