@@ -1,5 +1,8 @@
 # Complete Backup and Recovery Manifest
 
+> [!NOTE]
+> **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; product behavior and observed limitations are specific to the tested plan, context, permissions, connected apps, and rollout state. Revalidate after material product changes.
+
 ## 1. Why a Normal Backup Is Not a Complete Recovery
 
 Copying one chat, one database, or one master file does not recreate the complete ChatGPT operating system.
