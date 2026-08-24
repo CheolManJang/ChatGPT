@@ -369,3 +369,10 @@ The key design decisions are:
 - Allow compact explanation requests without accidental execution.
 - Resolve ambiguity explicitly.
 - Manage entries through the same Development, Live, History, session, and work-management architecture as other rules.
+
+## Retired Commands: OPEN and CLOSE
+
+The project previously experimented with `OPEN` and `CLOSE`-style commands to control Library-to-Memory synchronization and conversational work-session boundaries. They were retired because a conversational command could not prove deterministic memory loading, atomic synchronization, persistence, clearing, cross-context consistency, or completion after interruption.
+
+These names must not imply that ChatGPT Memory behaves like a transactional database. The current architecture uses explicit Rule Engine and Task Manager commands, registered source verification, Session GUID ownership, History, idempotency, and reconciliation. See [Retired Experiment: Loading Library Rules into ChatGPT Memory](../04_Storage_Recovery/retired-library-to-memory-experiment.md).
+
