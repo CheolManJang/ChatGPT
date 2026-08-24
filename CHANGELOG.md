@@ -10,6 +10,28 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.5.0] - 2026-08-24
+
+### Added
+
+- Documented ChatGPT reliability risks, context drift, rule conflict, and unexpected behavior changes.
+- Documented required foundation work before scheduling or repeated automation.
+- Defined an authority order for safety rules, Live rules, work state, private sources, documentation, task prompts, memory, and conversational hints.
+- Documented safe use of ChatGPT memory as a recall layer rather than the only authoritative rule source.
+- Added a memory-review and isolated-diagnostic procedure based on current ChatGPT settings.
+- Added a step-by-step rule-conflict diagnostic and recovery process.
+- Added preventive rule, work, output, and automation controls.
+- Added a Public Repository Safety and Publication Policy.
+- Explicitly prohibited publication of core trading algorithms, exact decision criteria, real symbols, prices, holdings, raw data, production prompts, credentials, recipients, and private system artifacts.
+- Added sanitization, screenshot, publication-gate, GitHub verification, and accidental-disclosure procedures.
+- Added a GitHub Issue for public technical discussion of rule drift and recovery.
+
+### Changed
+
+- Updated the public documentation version from 0.4.0 to 0.5.0.
+- Added a prominent safety boundary to README.
+- Clarified that memory review is only one diagnostic layer and cannot replace Live rules, History, source verification, or regression tests.
+
 ## [0.4.0] - 2026-08-24
 
 ### Added
