@@ -10,6 +10,20 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.8.0] - 2026-08-24
+
+### Added
+
+- Added a mandatory reference baseline for claims labeled current, implemented, available, advantage, disadvantage, or limitation.
+- Required verification date, tested plan, execution context, connector permissions, evidence class, and retest triggers.
+- Added a dated Plus/no-API reference-environment notice to the architecture document.
+
+### Corrected
+
+- Aligned the public architecture with the approved operational boundary: ChatGPT Library is the authoritative execution, search, and recovery source; Google Drive is backup-only.
+- Distinguished official product documentation from account-specific project observations.
+- Updated the README documentation summary and public version.
+
 ## [0.7.0] - 2026-08-24
 
 ### Added
