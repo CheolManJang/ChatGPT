@@ -6,7 +6,20 @@ This repository shares **ChatGPT applied-technology architecture**, not private 
 
 Public documentation must help other users understand system design, reliability, workflow, and limitations without exposing the user's core algorithms, private data, or competitive decision rules.
 
-## 2. Never Publish
+## 2. Currency and Reference Baseline
+
+Any public statement described as current, supported, implemented, available, advantageous, disadvantageous, or limited must identify:
+
+1. Verification date
+2. Tested plan and account type
+3. Execution context: Chat, Project, Work, or scheduled task
+4. Connected application and relevant permission boundary
+5. Evidence class: official documentation, project observation, or inference
+6. Retest trigger, including material product, permission, or rollout changes
+
+Official product documentation and project-specific observations must not be presented as the same evidence. Undated current-state claims are incomplete and must be corrected before publication.
+
+## 3. Never Publish
 
 The following content must not be committed, quoted, summarized in reconstructable detail, attached to an Issue, or included in a screenshot.
 
@@ -62,7 +75,7 @@ The following content must not be committed, quoted, summarized in reconstructab
 - Unredacted email content
 - Connected-app authorization details
 
-## 3. What May Be Published
+## 4. What May Be Published
 
 - High-level architecture
 - Generic lifecycle and state models
@@ -78,7 +91,7 @@ The following content must not be committed, quoted, summarized in reconstructab
 - Open technical questions
 - Non-sensitive test scaffolding
 
-## 4. Sanitization Rules
+## 5. Sanitization Rules
 
 Before publication:
 
@@ -95,7 +108,7 @@ Before publication:
 
 Sanitization is not only deleting names. Relationships, exact thresholds, repeated examples, and field combinations can reveal the underlying method.
 
-## 5. Publication Gate
+## 6. Publication Gate
 
 Every proposed public change must pass:
 
@@ -150,7 +163,7 @@ After commit:
 - Check commit diff.
 - Record the publication result.
 
-## 6. Screenshot Policy
+## 7. Screenshot Policy
 
 Screenshots are high risk because they may reveal information outside the intended crop.
 
@@ -167,7 +180,7 @@ Before publication:
 
 The memory-settings screenshot supplied for discussion is used only to understand the product control. It is not added to the public repository.
 
-## 7. Public Examples
+## 8. Public Examples
 
 Use neutral examples such as:
 
@@ -182,7 +195,7 @@ MENU.200
 
 Do not use lightly modified real values. Fictional examples should be structurally useful but operationally useless.
 
-## 8. GitHub Issues and Comments
+## 9. GitHub Issues and Comments
 
 Public comments must follow the same policy as repository files.
 
@@ -198,7 +211,7 @@ When responding:
 - Escalate ambiguous requests to the user.
 - Refuse requests that would reconstruct the core algorithm.
 
-## 9. If Sensitive Data Is Published Accidentally
+## 10. If Sensitive Data Is Published Accidentally
 
 1. Stop further sharing.
 2. Remove the exposed file or comment.
@@ -211,15 +224,19 @@ When responding:
 
 Deleting the latest file alone may not remove sensitive content from Git history.
 
-## 10. Repository Boundary
+## 11. Repository Boundary
 
 ### Public GitHub
 
 Architecture, sanitized examples, version history, limitations, and technical discussion.
 
+### Private ChatGPT Library
+
+Authoritative operational source files, registered masters, approved supporting files, and private outputs.
+
 ### Private Google Drive
 
-Operational source files, real datasets, private reports, user-specific configuration, and approved backups.
+Verified backup copies and recovery packages only; not the normal execution or search authority.
 
 ### Gmail
 
@@ -229,7 +246,7 @@ Private delivery, replies, notifications, and approvals.
 
 Coordination, rule application, validation, reporting, and approval requests.
 
-## 11. Core Rule
+## 12. Core Rule
 
 > Publish the engineering method, not the private decision method.
 
