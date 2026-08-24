@@ -186,6 +186,8 @@ Do not use lightly modified real values. Fictional examples should be structural
 
 Public comments must follow the same policy as repository files.
 
+Straightforward questions may be answered by ChatGPT. AI-generated responses can contain errors or omissions and must be verified before production use. Material design decisions and rule changes require human review and approval. AI-assisted replies should clearly carry this warning.
+
 When responding:
 
 - Answer architectural questions.
