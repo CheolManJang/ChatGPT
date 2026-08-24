@@ -1,8 +1,12 @@
 # Report Systems
 
-Sanitized report-system case studies.
+Sanitized report-system architecture and case studies.
 
 - [G-Yearly Report: Google Drive–Based Case Study](g-yearly-report.md)
 - [Yearly-Candle Monitoring Report System](yearly-candle-monitoring-report.md)
+- [Yearly Report Email Delivery Module](yearly-report-email-delivery.md)
+- [Download the sanitized color-coded HTML example](sanitized-g-yearly-report-example.html)
 
-These documents publish architecture and lessons only. They exclude raw data, real symbols, prices, holdings, recipients, and core decision algorithms.
+![Sanitized G-Yearly report preview](sanitized-g-yearly-report-preview.svg)
+
+The example uses only fictional identifiers and redacted placeholders. These documents exclude raw data, real symbols, prices, holdings, recipients, private prompts, and core decision algorithms.
