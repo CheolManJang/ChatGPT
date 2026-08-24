@@ -13,6 +13,17 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.10.0] - 2026-08-24
+
+### Changed
+
+- Reorganized technical documents into visible top-level topic folders: Architecture, Rule/Work/MENU, Reports, and Storage/Recovery.
+- Added an index README to every topic folder.
+- Updated all root documentation links to the new paths.
+- Added a visible Feedback folder with direct links for viewing Issues and creating a new Issue.
+- Added clear instructions for commenting on an existing topic or opening a new technical question.
+- Updated the current public documentation version from 0.9.0 to 0.10.0.
+
 ## [0.9.0] - 2026-08-24
 
 ### Added
