@@ -13,6 +13,20 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.9.0] - 2026-08-24
+
+### Added
+
+- Added a standalone G-Yearly Report case study using its registered Google Drive original.
+- Documented why the system was built, its source boundary, high-level workflow, advantages, disadvantages, and current status.
+- Added a qualitative stage-by-stage speed model and explicitly marked controlled timing benchmarks as not yet completed.
+- Documented delayed file recognition, permission mismatch, duplicate or stale copies, partial parsing, accumulated end-to-end latency, and incomplete recovery risks.
+- Added reliability controls, a sanitized performance-test plan, next work, and strict publication-safety boundaries.
+
+### Changed
+
+- Updated the current public documentation version from 0.8.9 to 0.9.0.
+
 ## [0.8.9] - 2026-08-24
 
 ### Added
