@@ -1,5 +1,8 @@
 # Yearly-Candle Monitoring Report System
 
+> [!NOTE]
+> **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; product behavior and observed limitations are specific to the tested plan, context, permissions, connected apps, and rollout state. Revalidate after material product changes.
+
 ## 1. Overview
 
 This document describes a real applied-technology use case built around ChatGPT Plus without directly using the OpenAI API: a yearly-candle-based market monitoring and reporting workflow.
@@ -105,15 +108,20 @@ It may contain private fields such as:
 
 This dataset belongs in private connected storage, not public GitHub.
 
-### Google Drive role
+### Current source boundary as of 2026-08-24
 
-Google Drive is used or planned as the persistent private source layer to:
+This document describes the **Yearly-Candle Monitoring Report**, whose current authoritative master is the registered ChatGPT Library source.
 
-- Keep the latest approved master
-- Share the same source across sessions
-- Back up approved additions and changes
-- Avoid relying on temporary chat attachments
-- Preserve operational data outside public documentation
+The separate **G-Yearly Report** uses its Google Drive original as the execution source.
+
+Google Drive also provides:
+
+- Approved raw-data sharing
+- Verified backups of Library-managed systems
+- Recovery packages
+- User-managed source files for systems explicitly assigned to Drive
+
+These source roles must not be merged or silently substituted.
 
 Before a report run, the workflow should verify:
 
