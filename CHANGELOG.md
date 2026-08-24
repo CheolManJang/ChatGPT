@@ -1,5 +1,8 @@
 # Changelog
 
+> [!NOTE]
+> **Document baseline:** 2026-08-24. Reference environment: individual ChatGPT Plus account using ChatGPT web/Work without direct OpenAI API calls. Architectural principles are general; product behavior and observed limitations are specific to the tested plan, context, permissions, connected apps, and rollout state. Revalidate after material product changes.
+
 All notable public technical changes to this repository will be documented in this file.
 
 The project uses semantic-style documentation versions:
@@ -9,6 +12,21 @@ The project uses semantic-style documentation versions:
 - **Patch** — clarification, correction, formatting, or non-structural improvement
 
 Private operational data is never included in public version history.
+
+## [0.8.1] - 2026-08-24
+
+### Added
+
+- Added a visible 2026-08-24 document baseline to every Markdown document.
+- Added an explicit per-system source map.
+
+### Corrected
+
+- Corrected the over-broad statement that Google Drive is backup-only.
+- Clarified that the Yearly-Candle Monitoring Report uses its registered Library master.
+- Clarified that the G-Yearly Report uses its Google Drive original.
+- Documented Google Drive's additional roles for approved raw-data sharing, backups, and system-specific operational sources.
+- Prohibited silent provider substitution without an approved migration.
 
 ## [0.8.0] - 2026-08-24
 
