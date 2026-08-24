@@ -1,5 +1,8 @@
 # ChatGPT Applied Technology
 
+> [!WARNING]
+> **AI-assisted responses:** Straightforward questions may be answered by ChatGPT. AI-generated responses can contain errors or omissions. Verify all technical information before applying it to production systems. Material design decisions and rule changes require human review and approval.
+
 A public technical knowledge-sharing project for building a persistent, rule-driven operational partnership with ChatGPT Plus—without directly using the OpenAI API.
 
 The purpose of this repository is to show how ChatGPT can become the operational center of a practical system rather than only a conversational assistant.
