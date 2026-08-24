@@ -13,6 +13,19 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.8.9] - 2026-08-24
+
+### Added
+
+- Added a third-party provider responsibility boundary for Google Drive, Gmail, ChatGPT/OpenAI services, Delphi tooling, SQLite distributions and integrations, operating systems, GitHub, APIs, devices, libraries, and other dependencies.
+- Clarified that support requests, complaints, claims, and exercises of legal rights concerning a third-party failure should be directed to the responsible provider or rights holder under its governing terms and procedures.
+- Clarified that this repository and its contributors do not represent, guarantee, insure, resell, or substitute for third-party providers.
+- Clarified that the clause does not predetermine legal liability, which depends on the facts, applicable law, and governing terms.
+
+### Changed
+
+- Updated the current public documentation version from 0.8.8 to 0.8.9.
+
 ## [0.8.8] - 2026-08-24
 
 ### Added
