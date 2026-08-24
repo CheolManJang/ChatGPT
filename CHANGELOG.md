@@ -13,6 +13,15 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.8.7] - 2026-08-24
+
+### Changed
+
+- Removed the duplicated standalone non-excludable-liability sentence from the public disclaimer and publication policy.
+- Retained the standard “to the maximum extent permitted by applicable law” qualification used in major platform terms.
+- Added OpenAI's official accuracy, user-verification, warranty, and liability terms as a drafting reference.
+- Updated the current public documentation version from 0.8.6 to 0.8.7.
+
 ## [0.8.6] - 2026-08-24
 
 ### Added
