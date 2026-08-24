@@ -13,6 +13,19 @@ The project uses semantic-style documentation versions:
 
 Private operational data is never included in public version history.
 
+## [0.14.8] - 2026-08-24
+
+### Added
+
+- Added an explicit explanation that the Report TAG document shares a real development experience with other developers and users; it does not prescribe a universal stopping rule.
+- Summarized the complete case: Report slowdown, Logic-level TAG introduction, successful optimization, desire for continued use, AI stability failure after small changes, unsuccessful rule reinforcement, preservation of optimized Logic, and removal of the unstable TAG layer.
+- Added the transferable lesson that other teams should test and choose among retention, redesign, deterministic implementation, pause, or removal for their own environments.
+
+### Clarified
+
+- Clarified that the lesson is not to stop after a fixed number of failures, but to document benefits and instability honestly and not claim that additional written rules solved an observed AI limitation.
+- Updated the current public documentation version from 0.14.7 to 0.14.8.
+
 ## [0.14.7] - 2026-08-24
 
 ### Corrected

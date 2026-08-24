@@ -6,6 +6,24 @@
 > [!CAUTION]
 > **Use at your own risk.** TAG-based diagnostic instrumentation can improve temporary report-logic analysis but must not be assumed to provide deterministic execution, complete validation, or safe long-term rule management. See the [Disclaimer](../DISCLAIMER.md).
 
+## Why This Experience Is Shared
+
+This document is a development case study, not a universal rule telling other developers when they must stop or remove a feature.
+
+The project is sharing the complete experience because the failure was as useful as the successful optimization:
+
+1. Report processing became slow as multiple Logic blocks accumulated.
+2. TAGs were added to identify and optimize each Logic independently.
+3. The method worked, exposed weak points, and improved the underlying Logic.
+4. The project wanted to continue using TAGs because the visibility remained valuable.
+5. In the tested AI workflow, small unrelated changes could reset, reconstruct, or alter TAG behavior.
+6. Repeatedly strengthening the written rules did not make continued use stable.
+7. Because Logic correction and optimization were already complete, the project preserved those gains and removed only the unstable TAG layer.
+
+Other developers and users can use this case to recognize similar trade-offs, design their own tests, and decide whether a useful AI-facing feature should be retained, redesigned, moved into deterministic code, paused, or removed in their own environment.
+
+The lesson is not “stop after a fixed number of failures.” The lesson is to record both benefit and instability honestly, preserve the value already obtained, and avoid presenting an AI limitation as if it had been solved merely by adding more written rules.
+
 
 ## Adoption Decision Summary
 
