@@ -6,6 +6,20 @@
 > [!CAUTION]
 > **Use at your own risk.** This material is provided for technical education and general information only, without warranties. Evaluate, test, secure, back up, and legally review any implementation. See the [Disclaimer](../DISCLAIMER.md).
 
+
+## Adoption Decision Summary
+
+| Field | Project record |
+|---|---|
+| Introduced because | Completed/not-completed flags could not explain results, failures, partial effects, or continuation. |
+| Intended improvement | Make priority, ownership, NG, HOLD, results, retry safety, and continuation explicit. |
+| Main difficulty | External side effects and interrupted sessions are difficult to reconcile safely. |
+| Main advantage | Reliable continuation and auditable execution results. |
+| Main disadvantage | More states, records, ownership checks, and recovery work. |
+| Observed result | Separate Task Manager architecture is defined; the private live queue is not published. |
+| Current status | Architecture approved; implementation incomplete. |
+| Retest trigger | Status-model, lock, retry, external-action, or context changes. |
+
 ## Functional Boundary
 
 The Task Manager uses its own store, lifecycle, locks, execution attempts, results, and command interface. It must not directly update Development or Live rules. See [Functional Separation: Rule Engine and Task Manager](../01_Architecture/rule-task-functional-separation.md).
