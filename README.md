@@ -124,6 +124,10 @@ Development and Live rules may both remain active. When a Development rule is va
 
 These questions will be documented as GitHub Issues so that alternative designs can be discussed openly.
 
+## Detailed Documentation
+
+- [Rule Management and Work Tracking System](docs/rule-management-and-work-tracking.md) — why the system was built, architecture, rule lifecycle, History, work management, concurrency, advantages, disadvantages, difficulties, limitations, open questions, and next steps.
+
 ## Planned Repository Structure
 
 ```text
