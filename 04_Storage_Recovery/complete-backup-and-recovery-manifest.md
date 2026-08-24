@@ -6,6 +6,20 @@
 > [!CAUTION]
 > **Use at your own risk.** This material is provided for technical education and general information only, without warranties. You are responsible for evaluating, testing, securing, and legally complying with any implementation. See the [Disclaimer](../DISCLAIMER.md).
 
+
+## Adoption Decision Summary
+
+| Field | Project record |
+|---|---|
+| Introduced because | File-only or chat-only backups could not restore operational behavior. |
+| Intended improvement | Back up rules, TASKs, History, manifests, schedules, connectors, tests, and recovery instructions. |
+| Main difficulty | Hidden model state, permissions, transient context, and external side effects cannot be cloned exactly. |
+| Main advantage | Recovery targets a verified working state rather than a misleading file-presence check. |
+| Main disadvantage | More storage, verification, restore ordering, and recurring test cost. |
+| Observed result | Complete recovery requirements are documented; exact hidden-state restoration is not claimed. |
+| Current status | Development / recovery design. |
+| Retest trigger | Schema, provider, permission, schedule, source, model, or system-boundary changes. |
+
 ## 1. Why a Normal Backup Is Not a Complete Recovery
 
 Copying one chat, one database, or one master file does not recreate the complete ChatGPT operating system.
