@@ -159,7 +159,7 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.12.1** — Retired OPEN/CLOSE synchronization-command retrospective
+**v0.13.0** — Multi-session synchronization and locking architecture
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
@@ -170,7 +170,8 @@ These questions will be documented as GitHub Issues so that alternative designs 
 - [Storage, Context, and Workspace Boundaries](04_Storage_Recovery/storage-context-and-workspace-boundaries.md) — Library vs. Google Drive, Gmail attachments, memory synchronization, Chat, Projects, Work, authoritative sources, and confirmed non-guarantees.
 - [Complete Backup and Recovery Manifest](04_Storage_Recovery/complete-backup-and-recovery-manifest.md) — why ordinary backups are incomplete, required backup contents, restore order, validation, completion criteria, and non-restorable state.
 - [ChatGPT Reliability and Recovery](04_Storage_Recovery/chatgpt-reliability-and-recovery.md)
-- [Retired Library-to-Memory Experiment](04_Storage_Recovery/retired-library-to-memory-experiment.md) — original speed and continuity goal, observed benefits, synchronization drift, summarization loss, non-deterministic recall, weak auditability, retirement decision, and approved replacement boundary. — why stable workflows can suddenly drift, required foundation, memory review, conflict diagnosis, recovery steps, preventive controls, and limitations.
+- [Retired Library-to-Memory Experiment](04_Storage_Recovery/retired-library-to-memory-experiment.md)
+- [Multi-Session Synchronization and Locking](04_Storage_Recovery/multi-session-synchronization-and-locking.md) — concurrent Chat/Project/Work sessions, split-brain risks, Session GUIDs, authoritative-store locks, heartbeats, version checks, takeover, idempotency, and reconciliation. — original speed and continuity goal, observed benefits, synchronization drift, summarization loss, non-deterministic recall, weak auditability, retirement decision, and approved replacement boundary. — why stable workflows can suddenly drift, required foundation, memory review, conflict diagnosis, recovery steps, preventive controls, and limitations.
 - [Public Repository Safety Policy](PUBLICATION_POLICY.md) — prohibited algorithms and data, sanitization, publication gates, screenshot safety, incident response, and public/private boundaries.
 - [Disclaimer](DISCLAIMER.md) — user responsibility, no warranties, no professional advice, testing obligations, and limitation of liability.
 - [ChatGPT Plus No-API Architecture](01_Architecture/chatgpt-plus-no-api-architecture.md) — baseline: 2026-08-24, individual Plus account, ChatGPT web/Work, no direct OpenAI API; covers Library as the Yearly-Candle source, Drive as the G-Yearly original, raw-data exchange, and backup layer, Gmail, scheduled tasks, advantages, limitations, and verified construction status.
