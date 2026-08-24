@@ -6,6 +6,10 @@
 > [!CAUTION]
 > **Use at your own risk.** This material is provided for technical education and general information only, without warranties. Evaluate, test, secure, back up, and legally review any implementation. See the [Disclaimer](../DISCLAIMER.md).
 
+## Functional Boundary
+
+The Task Manager uses its own store, lifecycle, locks, execution attempts, results, and command interface. It must not directly update Development or Live rules. See [Functional Separation: Rule Engine and Task Manager](../01_Architecture/rule-task-functional-separation.md).
+
 ## 1. Purpose
 
 The Task Management System records what work must be done, its priority and dependencies, what actually happened, whether it completed normally, and where a later session should continue.
