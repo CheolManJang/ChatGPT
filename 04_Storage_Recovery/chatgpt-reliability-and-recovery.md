@@ -6,6 +6,20 @@
 > [!CAUTION]
 > **Use at your own risk.** This material is provided for technical education and general information only, without warranties. You are responsible for evaluating, testing, securing, and legally complying with any implementation. See the [Disclaimer](../DISCLAIMER.md).
 
+
+## Adoption Decision Summary
+
+| Field | Project record |
+|---|---|
+| Introduced because | Previously stable behavior could change because of context drift, rule conflict, Memory, sources, or product changes. |
+| Intended improvement | Detect, isolate, diagnose, and recover from AI-assisted workflow drift. |
+| Main difficulty | Probabilistic interpretation makes the cause difficult to reproduce and small changes can revive retired behavior. |
+| Main advantage | Safer failure containment and evidence-based recovery. |
+| Main disadvantage | Repeated regression tests, source reloads, and human review increase cost and time. |
+| Observed result | Diagnostic and recovery procedures are documented; deterministic identical output is not guaranteed. |
+| Current status | Operational guidance / continuously revalidated. |
+| Retest trigger | Any material prompt, rule, source, model, product, permission, or context change. |
+
 ## 1. Purpose
 
 A ChatGPT-centered operating system requires explicit reliability controls.
