@@ -12,6 +12,16 @@ The purpose of this repository is to show how ChatGPT can become the operational
 
 The reference implementation combines persistent rules, work management, MENU and CMD input, Google Drive, Gmail, GitHub, scheduled monitoring, and human approval.
 
+## Questions and Technical Feedback
+
+Other users can ask questions and leave technical comments through GitHub Issues.
+
+- [View open Issues](https://github.com/CheolManJang/ChatGPT/issues)
+- [Create a new Issue](https://github.com/CheolManJang/ChatGPT/issues/new)
+- [Feedback and commenting guide](05_Feedback/README.md)
+
+Use an existing Issue for an existing topic, or create a new Issue for a new subject. Never include private operational data or reconstructable core algorithms.
+
 The repository also:
 
 1. Shares solutions that may help users and developers facing similar problems.
@@ -149,24 +159,24 @@ These questions will be documented as GitHub Issues so that alternative designs 
 
 ## Current Public Version
 
-**v0.9.0** — G-Yearly Google Drive case study
+**v0.10.0** — Topic folders and visible feedback entry point
 
 - [Changelog](CHANGELOG.md)
 - [Open design discussions](https://github.com/CheolManJang/ChatGPT/issues)
 
 ## Detailed Documentation
 
-- [Developer Approach for Rule-and-Inference Systems](docs/developer-approach-rule-and-inference-systems.md) — deterministic vs. inference boundaries, contracts, states, idempotency, verification, evals, observability, human approval, implementation sequence, anti-patterns, and release checklist.
-- [Storage, Context, and Workspace Boundaries](docs/storage-context-and-workspace-boundaries.md) — Library vs. Google Drive, Gmail attachments, memory synchronization, Chat, Projects, Work, authoritative sources, and confirmed non-guarantees.
-- [Complete Backup and Recovery Manifest](docs/complete-backup-and-recovery-manifest.md) — why ordinary backups are incomplete, required backup contents, restore order, validation, completion criteria, and non-restorable state.
-- [ChatGPT Reliability and Recovery](docs/chatgpt-reliability-and-recovery.md) — why stable workflows can suddenly drift, required foundation, memory review, conflict diagnosis, recovery steps, preventive controls, and limitations.
+- [Developer Approach for Rule-and-Inference Systems](01_Architecture/developer-approach-rule-and-inference-systems.md) — deterministic vs. inference boundaries, contracts, states, idempotency, verification, evals, observability, human approval, implementation sequence, anti-patterns, and release checklist.
+- [Storage, Context, and Workspace Boundaries](04_Storage_Recovery/storage-context-and-workspace-boundaries.md) — Library vs. Google Drive, Gmail attachments, memory synchronization, Chat, Projects, Work, authoritative sources, and confirmed non-guarantees.
+- [Complete Backup and Recovery Manifest](04_Storage_Recovery/complete-backup-and-recovery-manifest.md) — why ordinary backups are incomplete, required backup contents, restore order, validation, completion criteria, and non-restorable state.
+- [ChatGPT Reliability and Recovery](04_Storage_Recovery/chatgpt-reliability-and-recovery.md) — why stable workflows can suddenly drift, required foundation, memory review, conflict diagnosis, recovery steps, preventive controls, and limitations.
 - [Public Repository Safety Policy](PUBLICATION_POLICY.md) — prohibited algorithms and data, sanitization, publication gates, screenshot safety, incident response, and public/private boundaries.
 - [Disclaimer](DISCLAIMER.md) — user responsibility, no warranties, no professional advice, testing obligations, and limitation of liability.
-- [ChatGPT Plus No-API Architecture](docs/chatgpt-plus-no-api-architecture.md) — baseline: 2026-08-24, individual Plus account, ChatGPT web/Work, no direct OpenAI API; covers Library as the Yearly-Candle source, Drive as the G-Yearly original, raw-data exchange, and backup layer, Gmail, scheduled tasks, advantages, limitations, and verified construction status.
-- [G-Yearly Report: Google Drive–Based Case Study](docs/g-yearly-report.md) — why the Drive-based system was built, its registered original, workflow, qualitative speed model, advantages, disadvantages, encountered problems, reliability controls, benchmark plan, current status, and publication boundary.
-- [Yearly-Candle Monitoring Report System](docs/yearly-candle-monitoring-report.md) — motivation, goals, private master, multi-session market verification, report and Gmail pipeline, difficulties, solutions, failure lessons, current status, limitations, and next steps.
-- [Rule Management and Work Tracking System](docs/rule-management-and-work-tracking.md) — why the system was built, architecture, rule lifecycle, History, work management, concurrency, advantages, disadvantages, difficulties, limitations, open questions, and next steps.
-- [MENU and CMD Input Interface](docs/menu-and-command-interface.md) — command and menu namespaces, dot-based identifiers, explanation requests, parsing order, ambiguity handling, rule lifecycle integration, limitations, and tests.
+- [ChatGPT Plus No-API Architecture](01_Architecture/chatgpt-plus-no-api-architecture.md) — baseline: 2026-08-24, individual Plus account, ChatGPT web/Work, no direct OpenAI API; covers Library as the Yearly-Candle source, Drive as the G-Yearly original, raw-data exchange, and backup layer, Gmail, scheduled tasks, advantages, limitations, and verified construction status.
+- [G-Yearly Report: Google Drive–Based Case Study](03_Reports/g-yearly-report.md) — why the Drive-based system was built, its registered original, workflow, qualitative speed model, advantages, disadvantages, encountered problems, reliability controls, benchmark plan, current status, and publication boundary.
+- [Yearly-Candle Monitoring Report System](03_Reports/yearly-candle-monitoring-report.md) — motivation, goals, private master, multi-session market verification, report and Gmail pipeline, difficulties, solutions, failure lessons, current status, limitations, and next steps.
+- [Rule Management and Work Tracking System](02_Rule_Work_Menu/rule-management-and-work-tracking.md) — why the system was built, architecture, rule lifecycle, History, work management, concurrency, advantages, disadvantages, difficulties, limitations, open questions, and next steps.
+- [MENU and CMD Input Interface](02_Rule_Work_Menu/menu-and-command-interface.md) — command and menu namespaces, dot-based identifiers, explanation requests, parsing order, ambiguity handling, rule lifecycle integration, limitations, and tests.
 
 ## Planned Repository Structure
 
