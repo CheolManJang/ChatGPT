@@ -795,7 +795,7 @@ MCP를 NAS나 사내 DB에 연결하기 전에는 ChatGPT의 데이터 처리·�
 - Data Controls FAQ  
   https://help.openai.com/en/articles/7730893-datacontrols-faq
 - Google App for ChatGPT – Data Controls FAQ  
-  https://help.openai.com/en/articles/10408842-google-connector-for-chatgpt-data-controls-faq
+  https://help.openai.com/en/articles/10408842/google-connector-for-chatgpt-data-controls-faq
 - Connected Apps  
   https://help.openai.com/en/collections/12923329
 
@@ -846,46 +846,9 @@ This conversation is restricted to developer MCPs
 
 ---
 
-## 31. Gmail 앱을 사용하지 않는 경우의 선택적 대안 — NAS에서 Mail 발송
-
-Gmail 앱/플러그인이 해당 대화에서 선택되지 않았거나, 운영 설계상 ChatGPT의 Gmail Tool에 의존하지 않으려는 경우에는 메일 발송을 NAS 측 기능으로 분리할 수 있다.
-
-```text
-ChatGPT
-   ↓
-NAS MCP/API
-   ↓
-Report 생성/데이터 처리
-   ↓
-NAS Mail Sender
-   ↓
-SMTP / Mail Server
-   ↓
-수신자
-```
-
-### 장점
-
-- 해당 대화에서 Gmail Connector를 반드시 사용할 필요가 없음
-- DB 처리와 Mail 발송을 NAS 쪽 Workflow로 묶을 수 있음
-
-### 새로 생기는 고려사항
-
-- SMTP 인증정보 보호
-- 수신자 정보 보호
-- Mail 발송 로그
-- 실패/재전송 처리
-- SMTP Rate Limit
-- 메일 서버 정책
-- 스팸/보안 정책
-
-즉 NAS Mail Sender는 MCP 때문에 Gmail이 막혀서 반드시 필요한 우회가 아니라, **Gmail 앱을 사용하지 않거나 메일 기능을 NAS 쪽으로 분리하려는 경우 선택할 수 있는 대안**이다.
-
----
-
 # 실제 구축 중 얻은 교훈
 
-## 32. 시행착오와 변경한 결정
+## 31. 시행착오와 변경한 결정
 
 | 시도 | 문제 | 최종 판단 |
 |---|---|---|
@@ -897,11 +860,11 @@ SMTP / Mail Server
 | HTTPS → HTTP Proxy | Session Cookie 오류 | X-Forwarded Header 추가 |
 | PmaAbsoluteUri root | `/phpMyAdmin/` Path 누락 | External URL 전체 경로 지정 |
 | File Station config 교체 | 파일 권한 문제 | Owner/Mode 재확인 |
-| Custom MCP + Gmail | Gmail 앱/플러그인이 선택되지 않은 대화에서 Gmail 호출 불가 | 필요한 앱을 함께 선택·활성화하거나 NAS Mail Sender를 선택적 대안으로 사용 |
+| Custom MCP + Gmail | Gmail 앱/플러그인이 선택되지 않은 대화에서 Gmail 호출 불가 | 필요한 Gmail 앱/플러그인을 함께 선택·활성화 |
 
 ---
 
-## 33. 현재 최종 아키텍처
+## 32. 현재 최종 아키텍처
 
 ### ChatGPT ↔ NAS
 
@@ -944,7 +907,7 @@ MariaDB
 
 # 장점과 단점
 
-## 34. 장점
+## 33. 장점
 
 - MariaDB Port를 ChatGPT 연결 목적으로 직접 공개하지 않아도 됨
 - 정형 DB를 SQL로 빠르게 검색 가능
@@ -956,7 +919,7 @@ MariaDB
 
 ---
 
-## 35. 단점과 위험
+## 34. 단점과 위험
 
 - NAS가 인터넷에 노출되는 구조라면 NAS 자체 공격면이 증가함
 - MCP Server 또는 Tool이 과도한 권한을 가지면 피해 범위가 커질 수 있음
@@ -973,7 +936,7 @@ MariaDB
 
 # 도입 전 검토사항
 
-## 36. MCP/NAS 도입 Checklist
+## 35. MCP/NAS 도입 Checklist
 
 ### ChatGPT / OpenAI
 
@@ -1019,7 +982,6 @@ MariaDB
 - [ ] Secure MCP Tunnel 정책
 - [ ] OpenAI API를 추가로 사용하는 경우 API 비용
 - [ ] NAS 전력/도메인/인증서/백업 비용
-- [ ] 외부 SMTP 또는 메일 서비스 비용
 - [ ] 정책 변경 후 비용 증가 가능성
 
 ### 운영
@@ -1029,7 +991,6 @@ MariaDB
 - [ ] DDNS 장애 대응
 - [ ] DB Lock/Transaction 정책
 - [ ] SQL 오류 시 Rollback
-- [ ] Mail 실패 시 재전송
 - [ ] 관리자 계정/SSH 활성화 절차
 - [ ] 장애 해결 후 임시 진단 파일 삭제
 
@@ -1037,7 +998,7 @@ MariaDB
 
 # 결론
 
-## 37. 도입 판단 시 함께 봐야 할 것
+## 36. 도입 판단 시 함께 봐야 할 것
 
 ChatGPT와 NAS를 MCP/HTTPS API로 연결하면 개인 또는 조직의 DB를 ChatGPT의 Tool로 조회하고, 허용된 범위에서 변경하는 환경을 만들 수 있다.
 
@@ -1067,19 +1028,19 @@ MCP 도입 전 OpenAI의 Data Controls, App 데이터 처리, Memory, 데이터 
 
 Tunnel은 테스트 당시 별도 Tunnel 사용료 없이 사용했지만 향후 정책은 변경될 수 있다.
 
-ChatGPT 플랜, Credits, API 사용, Tunnel, 메일, NAS 운영비용을 함께 검토해야 한다.
+ChatGPT 플랜, Credits, API 사용, Tunnel, NAS 운영비용을 함께 검토해야 한다.
 
-### 5. 가용성과 우회 경로
+### 5. 가용성과 대화별 Tool 상태
 
 실제 테스트에서는 Tunnel이 끊긴 상태에서 ChatGPT의 NAS 작업이 중단됐다.
 
-Gmail을 함께 사용할 때는 필요한 Gmail 앱/플러그인이 해당 대화에 선택·활성화되어 있는지 확인해야 한다. Gmail Tool에 의존하지 않도록 설계하려는 경우에는 NAS가 직접 Mail을 발송하는 구조를 선택적 대안으로 사용할 수 있다.
+Gmail 등 다른 App을 함께 사용할 때는 필요한 앱/플러그인이 해당 대화에 선택·활성화되어 있는지 확인해야 한다.
 
-즉 실제 운영에는 장애 시 우회 경로뿐 아니라 **대화별 Tool/App 선택 상태를 확인하는 절차**도 필요하다.
+즉 실제 운영에는 장애 시 대체 연결 경로와 함께 **대화별 Tool/App 선택 상태를 확인하는 절차**도 필요하다.
 
 ---
 
-## 38. 이번 구축에서 최종적으로 확인한 것
+## 37. 이번 구축에서 최종적으로 확인한 것
 
 ```text
 ChatGPT → NAS HTTPS/MCP 연결
@@ -1099,7 +1060,6 @@ phpMyAdmin Session Cookie 문제 해결
 SSH 기반 Runtime/권한 진단
 작업 종료 후 SSH/admin 비활성화
 Gmail 앱/플러그인 미선택으로 인한 호출 불가 경험
-NAS Mail Sender 선택적 대안
 ```
 
 이 문서의 목적은 특정 구성을 정답으로 제시하는 것이 아니라, 실제 구축 과정에서 성공한 방법뿐 아니라 **실패한 접근, 변경 이유, 운영 중 발견한 제약과 도입 전 확인해야 할 조건까지 함께 공유하는 것**이다.
@@ -1151,7 +1111,5 @@ Private Key
 Token
 실제 인증서
 Connection String
-실제 SMTP Password
-실제 수신자 정보
 민감한 Screen Capture
 ```
