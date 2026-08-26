@@ -32,7 +32,7 @@
 - 인증정보가 유출되었을 때 피해 범위를 줄일 수 있는가
 - 동일 요청 재전송(Replay)을 구분할 수 있는가
 - 터널이 끊기거나 PC가 재부팅되면 어떻게 되는가
-- Custom MCP 사용 시 ChatGPT의 다른 연결 앱과 충돌하지 않는가
+- Custom MCP와 Gmail 등 다른 연결 앱을 같은 대화에서 사용할 때 필요한 앱/플러그인이 함께 선택·활성화되어 있는가
 - NAS 관리용 phpMyAdmin도 HTTPS로 운영할 수 있는가
 - Docker를 사용할 수 없는 구형 Synology에서도 구현 가능한가
 
@@ -827,26 +827,28 @@ OpenAI도 API Key를 Repository에 Commit하지 말고 환경변수 또는 Secre
 
 ---
 
-## 30. Custom MCP 사용 중 Gmail 호출 제한 경험
+## 30. Custom MCP 사용 대화에서 Gmail이 호출되지 않았던 원인 정정
 
-실제 테스트 환경에서는 Custom/Developer MCP를 사용하는 대화에서 NAS MCP Tool은 호출되지만 Gmail 등 기본 연결 앱 호출이 제한되는 상황을 경험했다.
+실제 테스트 환경에서는 NAS MCP Tool은 호출되는데 Gmail Tool이 보이지 않거나 호출되지 않는 상황을 경험했다. 당시에는 Custom/Developer MCP 사용 자체가 Gmail 호출을 제한하는 것으로 해석했지만, 이후 확인한 결과 **MCP를 사용한다고 해서 Gmail 연결이 자동으로 끊기는 것은 아니었다.**
+
+핵심 원인은 해당 대화에서 Gmail 앱/플러그인이 선택·활성화되지 않아 사용할 수 있는 Tool 목록에 포함되지 않았던 것이었다.
+
+당시 다음과 같은 오류도 관찰했다.
 
 ```text
 FORBIDDEN:
 This conversation is restricted to developer MCPs
 ```
 
-이 내용은 **모든 ChatGPT 사용자에게 항상 발생한다고 일반화할 수 없다.**
+이 오류는 그 시점의 대화 구성과 선택된 Tool/App 상태에서 관찰한 결과이며, **Custom MCP와 Gmail이 원천적으로 함께 사용할 수 없다는 의미로 일반화하지 않는다.**
 
-제품 배포 상태, 플랜, Developer Mode, App 권한이 변경될 수 있기 때문에 우리의 테스트 환경에서 실제로 관찰한 운영 제약으로 기록한다.
+따라서 MCP와 Gmail 등 다른 연결 앱을 함께 사용하는 Workflow에서는 먼저 해당 대화에서 필요한 앱/플러그인이 실제로 선택·활성화되어 있는지 확인해야 한다.
 
 ---
 
-## 31. Gmail 제한에 대한 실제 대안 — NAS에서 Mail 발송
+## 31. Gmail 앱을 사용하지 않는 경우의 선택적 대안 — NAS에서 Mail 발송
 
-NAS MCP로 데이터를 처리한 뒤 같은 대화에서 Gmail Tool 호출이 제한되면 전체 Workflow가 중단될 수 있었다.
-
-그래서 대안으로 메일 발송을 NAS 측 기능으로 분리했다.
+Gmail 앱/플러그인이 해당 대화에서 선택되지 않았거나, 운영 설계상 ChatGPT의 Gmail Tool에 의존하지 않으려는 경우에는 메일 발송을 NAS 측 기능으로 분리할 수 있다.
 
 ```text
 ChatGPT
@@ -864,7 +866,7 @@ SMTP / Mail Server
 
 ### 장점
 
-- 같은 대화에서 Gmail Connector가 반드시 호출될 필요가 없음
+- 해당 대화에서 Gmail Connector를 반드시 사용할 필요가 없음
 - DB 처리와 Mail 발송을 NAS 쪽 Workflow로 묶을 수 있음
 
 ### 새로 생기는 고려사항
@@ -877,7 +879,7 @@ SMTP / Mail Server
 - 메일 서버 정책
 - 스팸/보안 정책
 
-즉 Gmail 제한을 우회했지만 새로운 운영 책임이 NAS 쪽으로 이동한다.
+즉 NAS Mail Sender는 MCP 때문에 Gmail이 막혀서 반드시 필요한 우회가 아니라, **Gmail 앱을 사용하지 않거나 메일 기능을 NAS 쪽으로 분리하려는 경우 선택할 수 있는 대안**이다.
 
 ---
 
@@ -895,7 +897,7 @@ SMTP / Mail Server
 | HTTPS → HTTP Proxy | Session Cookie 오류 | X-Forwarded Header 추가 |
 | PmaAbsoluteUri root | `/phpMyAdmin/` Path 누락 | External URL 전체 경로 지정 |
 | File Station config 교체 | 파일 권한 문제 | Owner/Mode 재확인 |
-| Custom MCP + Gmail | 같은 대화에서 Gmail 제한 경험 | NAS Mail Sender로 우회 |
+| Custom MCP + Gmail | Gmail 앱/플러그인이 선택되지 않은 대화에서 Gmail 호출 불가 | 필요한 앱을 함께 선택·활성화하거나 NAS Mail Sender를 선택적 대안으로 사용 |
 
 ---
 
@@ -963,7 +965,7 @@ MariaDB
 - Tunnel 방식은 Client/Tunnel 가용성에 의존함
 - 직접 HTTPS 방식은 DDNS/인증서/Reverse Proxy/NAS 가용성에 의존함
 - ChatGPT 플랜·MCP 권한·App 조합 정책이 변경될 수 있음
-- Custom MCP와 다른 App의 동시 사용이 환경에 따라 제한될 수 있음
+- 대화에서 필요한 App/플러그인이 선택·활성화되지 않으면 해당 Tool을 호출할 수 없음
 - 외부 공개 phpMyAdmin은 추가적인 공격면이 됨
 - 구형 DSM/PHP/MariaDB는 업데이트 및 보안지원 한계를 확인해야 함
 
@@ -983,7 +985,7 @@ MariaDB
 - [ ] ChatGPT 데이터 보관·삭제 정책을 확인했는가
 - [ ] Model Improvement 설정을 확인했는가
 - [ ] 연결 App 데이터 처리 정책을 확인했는가
-- [ ] Gmail/Calendar/Contacts 등 다른 App과 함께 실제 테스트했는가
+- [ ] Gmail/Calendar/Contacts 등 필요한 App/플러그인이 해당 대화에 선택·활성화되어 있는가
 - [ ] 정책 변경 시 재검증 담당자를 정했는가
 
 ### 보안
@@ -1053,7 +1055,7 @@ RSA Signature, HTTPS, Timestamp, Nonce, DB 권한 제한은 위험을 줄이기 
 
 MCP Read/Write 지원 플랜, Developer Mode, Agent Mode, Deep Research, 다른 App과의 조합 등은 제품 정책에 영향을 받는다.
 
-이번 구축 과정에서도 Custom MCP 사용 대화에서 Gmail 호출이 제한되는 상황을 실제로 경험했다.
+이번 구축 과정에서는 NAS MCP Tool은 사용할 수 있었지만 Gmail Tool이 보이지 않는 상황을 경험했다. 이후 확인 결과 이것은 **MCP 사용 자체가 Gmail 연결을 차단해서가 아니라, 해당 대화에서 Gmail 앱/플러그인이 선택·활성화되지 않았기 때문**이었다. 따라서 여러 Tool을 함께 사용하는 Workflow에서는 필요한 앱이 현재 대화에 실제로 포함되어 있는지 확인해야 한다.
 
 ### 3. 데이터 보관과 내부 정책
 
@@ -1071,9 +1073,9 @@ ChatGPT 플랜, Credits, API 사용, Tunnel, 메일, NAS 운영비용을 함께 
 
 실제 테스트에서는 Tunnel이 끊긴 상태에서 ChatGPT의 NAS 작업이 중단됐다.
 
-Custom MCP와 Gmail을 함께 사용할 때도 제한을 경험했으며, 이 경우 NAS가 직접 Mail을 발송하는 구조를 대안으로 사용했다.
+Gmail을 함께 사용할 때는 필요한 Gmail 앱/플러그인이 해당 대화에 선택·활성화되어 있는지 확인해야 한다. Gmail Tool에 의존하지 않도록 설계하려는 경우에는 NAS가 직접 Mail을 발송하는 구조를 선택적 대안으로 사용할 수 있다.
 
-즉 실제 운영에는 반드시 장애 시 우회 경로가 필요하다.
+즉 실제 운영에는 장애 시 우회 경로뿐 아니라 **대화별 Tool/App 선택 상태를 확인하는 절차**도 필요하다.
 
 ---
 
@@ -1096,8 +1098,8 @@ Synology phpMyAdmin HTTPS Proxy
 phpMyAdmin Session Cookie 문제 해결
 SSH 기반 Runtime/권한 진단
 작업 종료 후 SSH/admin 비활성화
-Custom MCP + Gmail 제한 경험
-NAS Mail Sender 대안
+Gmail 앱/플러그인 미선택으로 인한 호출 불가 경험
+NAS Mail Sender 선택적 대안
 ```
 
 이 문서의 목적은 특정 구성을 정답으로 제시하는 것이 아니라, 실제 구축 과정에서 성공한 방법뿐 아니라 **실패한 접근, 변경 이유, 운영 중 발견한 제약과 도입 전 확인해야 할 조건까지 함께 공유하는 것**이다.
