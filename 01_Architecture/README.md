@@ -12,6 +12,7 @@ Architecture documents for the ChatGPT Applied Technology project.
 
 - [ChatGPT Plus No-API Architecture](chatgpt-plus-no-api-architecture.md)
 - [ChatGPT ↔ Synology NAS Integration Case Study](chatgpt-synology-nas-integration.md) — MariaDB direct-connection failure, HTTPS API, request signing, replay protection, Secure MCP Tunnel, DSM reverse proxy, phpMyAdmin HTTPS, migration validation, operational limits, security risks, and recovery lessons.
+- [Synology NAS PHP Threat Feed → MariaDB](nas-php-ip-threat-feed-mariadb.md) — External IP threat feeds, PHP 7.4 collection, IP validation and deduplication, stored-procedure UPSERT, feed audit history, least-privilege DB access, and DEV verification.
 - [Developer Approach for Rule-and-Inference Systems](developer-approach-rule-and-inference-systems.md)
 - [Functional Separation: Rule Engine and Task Manager](rule-task-functional-separation.md)
 
