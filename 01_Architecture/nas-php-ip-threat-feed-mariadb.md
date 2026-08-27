@@ -1,5 +1,25 @@
 # Synology NAS PHP Threat Feed → MariaDB 저장 구조
 
+> **Note**
+>
+> - 기준일: 2026-08-27
+> - 참조 환경: Synology DSM 6 계열, MariaDB 5.5.68, PHP 7.4
+> - 이 문서는 Synology NAS에서 외부 IP Threat Feed를 수집해 MariaDB DEV 데이터베이스에 저장한 검증 사례다.
+> - 외부 Threat Feed의 제공 방식·주소·정책과 Synology·MariaDB·PHP 환경은 변경될 수 있으므로 실제 도입 시 최신 공식 정보와 실행 환경을 다시 확인해야 한다.
+> - 이 문서는 교육 및 일반 기술정보 공유 목적이며 정확성·완전성·안전성을 보증하지 않는다.
+> - 실제 환경 적용 전 별도 평가, 백업, 보안 검토, 접근권한 검토, 비용 검토, 법적·조직 정책 검토가 필요하다.
+> - 비밀번호, 토큰, API Key, 실제 사용자 홈 경로 등 인증·운영 정보는 예시값으로 치환했다.
+>
+> **Caution**
+>
+> 외부 Threat Feed의 IP를 수집했다고 해서 해당 IP를 자동 차단해도 안전하다는 의미는 아니다. 오탐·공급망 변경·Feed 장애 가능성이 있으므로 자동 차단과 영구 차단은 별도 검증과 승인 절차를 적용해야 한다. DB 계정에는 최소 권한을 적용하고, DEV/LIVE 분리, 감사로그, 백업 및 복구 절차를 유지해야 한다.
+>
+> 저장소 공통 면책 및 공개 정책:
+> - [DISCLAIMER.md](../DISCLAIMER.md)
+> - [PUBLICATION_POLICY.md](../PUBLICATION_POLICY.md)
+
+---
+
 ## 개요
 
 Synology NAS에서 PHP 스크립트를 주기적으로 실행하여 외부 IP Threat Feed를 수집하고, MariaDB의 DEV 데이터베이스에 저장하는 구조다.
